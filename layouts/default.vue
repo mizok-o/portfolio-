@@ -6,7 +6,7 @@
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'GT america', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
@@ -15,8 +15,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #B70000;
+  color: #f0f0f0;
 }
-
+ul,li,p,a,{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
 *,
 *:before,
 *:after {

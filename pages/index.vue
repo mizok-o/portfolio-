@@ -2,9 +2,6 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        portfolio-
-      </h1>
       <h2 class="subtitle">
         My best Nuxt.js project
       </h2>
