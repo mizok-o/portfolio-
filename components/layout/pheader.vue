@@ -28,6 +28,7 @@ header.header-content
   right: 0
   top: 32vh
   font-size: 14px
+  opacity: 0
 
 .header-link
   display: block

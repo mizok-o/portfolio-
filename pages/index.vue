@@ -6,8 +6,8 @@
     .works-title
       img.main-title(src="../assets/img/Current Works.svg")
       img.main-title(src="../assets/img/strow.svg")
-    .product-list
-      .product-content
+    ul.product-list
+      li.product-content
         .product-title
           h3.product-number 01
           h4.title-text Happy Donuts
@@ -18,7 +18,7 @@
               | This is an original design made by me on dribbble.
             .link-dribbble
               a(href="dribbble.com") visit
-      .product-content
+      li.product-content
         .product-title
           h3.product-number 01
           h4.title-text Happy Donuts
@@ -42,29 +42,32 @@ export default {
 </script>
 
 <style lang="sass">
+  logo
+    position: relative
+
   .works
     margin: 24% 0 0 11%
   .works-title
     display: flex
+    animation: automove 4s linear infinite
   .main-title
     font-size: 96px
-    &:nth-child(2)
-      padding-left: 2%
+    &:nth-child(1)
+      padding: 0 24px 0 400px
 
   .product-list
+    width: 12000px
     display: flex
     justify-content: flex-start
-    width: 260%
+
   .product-content
-    width: 36%
   .product-title
     display: flex
-    width: 100%
     justify-content: flex-start
     align-items: baseline
-    margin: 6% 0 0
+    margin: 120px 0 0
     .title-text
-      margin-left: 10%
+      margin-left: 120px
       font-size: 48px
   .product-number
     font-size: 104px
@@ -73,18 +76,22 @@ export default {
     position: relative
     display: flex
     justify-content: flex-start
-    margin-bottom: 12%
+    margin-bottom: 200px
 
   .product-img
-    width: 64%
-    height: 48%
-    margin: 2% 0 0 10%
+    width: 720px
+    height: 560px
+    margin: 40px 0 0 120px
   .text
     position: absolute
-    right: -16%
+    right: -12%
     bottom: 0
     transform: rotate(-90deg)
     transform-origin: 0 100%
 
-
+  @keyframes automove
+    0%
+      transform: translate(0%)
+    100%
+      transform: translate(-100%)
 </style>

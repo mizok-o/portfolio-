@@ -1,17 +1,31 @@
 <template lang="pug">
-  img.NuxtLogo(src="../../assets/img/Kotaro Mizoguchi.svg")
+  .main-visual
+    img.NuxtLogo(src="../../assets/img/Kotaro Mizoguchi.svg")
+    img.background(src="../../assets/img/name.svg")
 </template>
 <style　lang="sass">
+.main-visual
+ padding-bottom: 600px
+
 .NuxtLogo
-  animation: 2s appear
-  margin: 12% 0 0 11%
+  position: absolute
+  top: 12%
+  left: 11%
+  display: block
   width: 72%
   height: auto
-
-@keyframes appear
-  0%
+  z-index: 1000
+  transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+  &:hover
     opacity: 0
+  &:hover + .header-text
+    opacity: 1
 
-  100%
-    opacity: 2
+
+.background
+  position: absolute
+  top: 12%
+  left: 11%
+  width: 72%
+  height: auto
 </style>
