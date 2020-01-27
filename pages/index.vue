@@ -1,69 +1,90 @@
-<template>
-  <div class="container">
-    <div>
-      <logo />
-      <h2 class="subtitle">
-        My best Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+.index
+  pheader
+  logo
+  .works
+    .works-title
+      img.main-title(src="../assets/img/Current Works.svg")
+      img.main-title(src="../assets/img/strow.svg")
+    .product-list
+      .product-content
+        .product-title
+          h3.product-number 01
+          h4.title-text Happy Donuts
+        .product-item
+          img.product-img(src="../assets/img/donuts.jpg")
+          .text
+            .textarea
+              | This is an original design made by me on dribbble.
+            .link-dribbble
+              a(href="dribbble.com") visit
+      .product-content
+        .product-title
+          h3.product-number 01
+          h4.title-text Happy Donuts
+        .product-item
+          img.product-img(src="../assets/img/donuts.jpg")
+          .text
+            .textarea
+              | This is an original design made by me on dribbble.
+            .link-dribbble
+              a(href="dribbble.com") visit
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-
+<script lang='coffee'>
+import Logo from '~/components/ui/Logo.vue'
+import pheader from '~/components/layout/pheader.vue'
 export default {
   components: {
-    Logo
-  }
-}
+      Logo,
+      pheader
+  }}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="sass">
+  .works
+    margin: 24% 0 0 11%
+  .works-title
+    display: flex
+  .main-title
+    font-size: 96px
+    &:nth-child(2)
+      padding-left: 2%
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  .product-list
+    display: flex
+    justify-content: flex-start
+    width: 260%
+  .product-content
+    width: 36%
+  .product-title
+    display: flex
+    width: 100%
+    justify-content: flex-start
+    align-items: baseline
+    margin: 6% 0 0
+    .title-text
+      margin-left: 10%
+      font-size: 48px
+  .product-number
+    font-size: 104px
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  .product-item
+    position: relative
+    display: flex
+    justify-content: flex-start
+    margin-bottom: 12%
 
-.links {
-  padding-top: 15px;
-}
+  .product-img
+    width: 64%
+    height: 48%
+    margin: 2% 0 0 10%
+  .text
+    position: absolute
+    right: -16%
+    bottom: 0
+    transform: rotate(-90deg)
+    transform-origin: 0 100%
+
+
 </style>
