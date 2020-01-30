@@ -17,12 +17,16 @@ html
   background-color: #B70000
   color: #f0f0f0
   box-sizing: border-box
+  -ms-overflow-style: none
+  scrollbar-width: none
+  &::-webkit-scrollbar
+    display: none
 
-ul, li, p, a
+li, p, a
   margin: 0
   padding: 0
 
-ul
+ul, ol
   list-style: none
   padding: 0
   margin: 0
@@ -42,4 +46,8 @@ a
 .container
   position: relative
   height: auto
+  -ms-overflow-style: none
+  scrollbar-width: none
+.container::-webkit-scrollbar
+  display: none
 </style>

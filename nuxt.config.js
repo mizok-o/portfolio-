@@ -23,7 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
-    'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.min.css'
   ],
   /*
   ** Plugins to load before mounting the App

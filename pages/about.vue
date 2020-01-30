@@ -12,6 +12,11 @@ export default {
   components: {
       Logo,
       pheader
+  },
+  head: {
+    bodyAttrs: {
+      class: 'content-about'
+    }
   }
 }
 </script>
