@@ -50,13 +50,13 @@ export default {
     ],
     /*
     ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-      config.module.rules.push({
-    test: /\.coffee$/,
-    use: 'coffee-loader',
-    exclude: /(node_modules)/
-  })
-    }
+  //   */
+  //   extend (config, ctx) {
+  //     config.module.rules.push({
+  //   test: /\.coffee$/,
+  //   use: 'coffee-loader',
+  //   exclude: /(node_modules)/
+  // })
+  //   }
   }
 }
