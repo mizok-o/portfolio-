@@ -62,67 +62,67 @@ export default {
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_01.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts aaa',
             text: 'mitarashi This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_02.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts bbb',
             text: 'kinako This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_03.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_04.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_05.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_06.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_06.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_08.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_09.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_10.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/donuts.jpg'),
+            image: require('~/assets/img/dribbble_11.jpg'),
             url: 'dribbble.com'
           },
         ]
