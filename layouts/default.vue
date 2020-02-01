@@ -22,8 +22,7 @@ html
   max-width: 100%
   &::-webkit-scrollbar
     display: none
-
-li, p, a
+li, a
   margin: 0
   padding: 0
 

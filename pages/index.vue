@@ -11,20 +11,21 @@
         img.main-title(src="../assets/img/Current Works.svg")
         img.main-title(src="../assets/img/strow.svg")
         img.main-title(src="../assets/img/Current Works.svg")
-    swiper(:options="swiperOption" ref="mySwiper").product-list
-      swiper-slide.product-item(v-for="(product, index) in products")
-        .product-title
-          .product-number(v-if="index <= 8") 0{{index + 1}}
-          .product-number(v-else) {{index + 1}}
-          h3.title-text {{product.title}}
-        .product-main
-          img.main-img(:src="product.image")
-          .main-text
-            .textarea {{product.text}}
-            .link-dribbble
-              a(:href="product.url") visit
-    .swiper-button-prev
-    .swiper-button-next
+    client-only
+      swiper(:options="swiperOption")
+        swiper-slide.product-item(v-for="(product, index) in products" :key="product.id")
+          .product-title
+            .product-number(v-if="index <= 8") 0{{index + 1}}
+            .product-number(v-else) {{index + 1}}
+            h3.title-text {{product.title}}
+          .product-main
+            img.main-img(:src="product.image")
+            .main-text
+              .textarea {{product.text}}
+              .link-dribbble
+                a(:href="product.url") visit
+      .swiper-button-prev
+      .swiper-button-next
 </template>
 
 <script>
@@ -139,27 +140,26 @@ export default {
 
 <style lang="sass">
 .works
-  /* padding: 0 0 0 16% */
-  position: relative
   width: 100%
   height: auto
 .works-title
-  margin: 0 0 0 -40%
-  width: 100%
+  margin: 0 0 0 -16%
+  width: 216%
 .auto-animation
   animation: automove 5s linear infinite
   display: flex
+  width: 100%
 .main-title
   width: 760px
   &:last-child
     margin-right: 0
 /* ワークスリスト */
-.product-list
+.swiper-container
   display: flex
   justify-content: flex-start
   height: auto
   padding: 0 0 10% 16%
-
+  overflow: none
 .product-item
   width: 100%
   margin: 0
