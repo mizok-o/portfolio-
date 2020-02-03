@@ -5,7 +5,6 @@ header.header-content
         a.header-link.link-about(href="/about") about
       li
         a.header-link.link-index(href="/") works
-    img.header-text(src="../../assets/img/sidetext.svg")
 </template>
 <script lang='coffee'>
 
@@ -21,13 +20,6 @@ header.header-content
   width: 88%
   height: auto
   justify-content: space-between
-
-.header-text
-  position: absolute
-  right: 0
-  top: 32vh
-  font-size: 14px
-  opacity: 0
 
 .content-about
   .link-about

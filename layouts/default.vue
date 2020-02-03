@@ -2,7 +2,7 @@
 .container
   nuxt
 </template>
-<script lang='coffee'>
+<script>
 </script>
 <style lang="sass">
 html
@@ -19,10 +19,10 @@ html
   box-sizing: border-box
   -ms-overflow-style: none
   scrollbar-width: none
+  max-width: 100%
   &::-webkit-scrollbar
     display: none
-
-li, p, a
+li, a
   margin: 0
   padding: 0
 

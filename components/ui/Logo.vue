@@ -5,24 +5,27 @@
 </template>
 <style lang="sass">
 .main-visual
-  height: 88vh
+  height: 90vh
 .NuxtLogo
   margin: 8% 0 0 12%
-  width: 70%
+  width: 64%
   height: auto
   fill: #fafafa
   transition: all .3s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+  +pc-lg-view
+    margin-top: 10%
+    width: 72%
+  +pc-md-view
+    width: 80%
   .cls-1
     stroke: #fafafa
     stroke-width: 1
     transition: all .3s cubic-bezier(0.55, 0.085, 0.68, 0.53)
   &:hover > .cls-1
     fill: #B70000
+.content-about
+  .NuxtLogo
+    pointer-events: none
+    opacity: .2
 
-/* .background
-  position: absolute
-  top: 12%
-  left: 11%
-  width: 72%
-  height: auto */
 </style>
