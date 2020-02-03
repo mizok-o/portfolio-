@@ -4,5 +4,8 @@
 </template>
 <style lang="sass">
 .about-metext
-  margin: 16% 0 0
+  margin: 12% 0 0
+  width: 72%
+  +pc-md-view
+    font-size: 16px
 </style>

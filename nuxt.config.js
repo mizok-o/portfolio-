@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -40,7 +39,21 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+  '@nuxtjs/style-resources'
+ ],
+ styleResources: {
+  sass: [
+   '@/assets/sass/_mixin.sass',
+   '@/assets/sass/_user-style.sass'
   ],
+  scss: [
+   '@/assets/scss/_variable.scss',
+   '@/assets/scss/_mixin.scss'
+  ],
+  stylus: [
+   '@/assets/stylus/layout.styl'
+  ]
+},
   /*
   ** Build configuration
   */

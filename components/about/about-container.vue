@@ -27,18 +27,15 @@ export default{
   position: absolute
   top: 0
   left: 0
-  width: 88%
+  width: 76%
   height: auto
-  margin: 16% 0 0 12%
+  margin: 12% 12% 0 12%
 .about-content
   display: flex
   width: 100%
   justify-content: space-between
 .about-description
-  width: 50%
-  max-width: 560px
-  margin: 0 8% 0 0
+  width: 48%
 .about-visual
-  width: 40%
-  margin: 0 12% 0 0
+  width: 50%
 </style>

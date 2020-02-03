@@ -13,11 +13,14 @@
 .sns-container
   display: flex
   justify-content: flex-end
-  margin: 120px 10% 0 0
+  width: 100%
+  margin: 4% 0 0 0
+  +pc-lg-view
+    margin-top: 6%
+  +pc-md-view
+    margin-top: 16%
 .sns-item
-  font-size: 24px
   margin-right: 8%
   &:last-child
     margin-right: 0
-
 </style>

@@ -66,7 +66,7 @@ header.header-content
   &::before
     content: ""
     position: absolute
-    top: 60%
+    top: 50%
     bottom: 50%
     left: 0
     width: 100%
