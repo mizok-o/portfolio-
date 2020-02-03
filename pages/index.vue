@@ -62,69 +62,81 @@ export default {
         },
         products: [
           {
-            title: 'Happy Donuts',
+            title: 'Ariana',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_01.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_001.jpg'),
             url: 'dribbble.com'
           },
           {
-            title: 'Happy Donuts aaa',
+            title: 'Pineapple',
             text: 'mitarashi This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_02.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_002.jpg'),
             url: 'dribbble.com'
           },
           {
-            title: 'Happy Donuts bbb',
+            title: 'Panpkin',
             text: 'kinako This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_03.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_003.jpg'),
+            url: 'dribbble.com'
+          },
+          {
+            title: 'Pianist',
+            text: 'This is an original design made by me on dribbble.',
+            image: require('~/assets/img/dribbble/dribbble_004.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_04.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_005.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_05.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_006.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_06.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_007.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_06.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_008.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_08.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_009.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_09.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_010.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_10.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_011.jpg'),
             url: 'dribbble.com'
           },
           {
             title: 'Happy Donuts',
             text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble_11.jpg'),
+            image: require('~/assets/img/dribbble/dribbble_012.jpg'),
+            url: 'dribbble.com'
+          },
+          {
+            title: 'Happy Donuts',
+            text: 'This is an original design made by me on dribbble.',
+            image: require('~/assets/img/dribbble/dribbble_013.jpg'),
             url: 'dribbble.com'
           },
         ]
@@ -140,10 +152,10 @@ export default {
   height: auto
 /* 自動アニメーション */
 .works-title
-  margin: 0 0 0 -16%
-  width: 216%
+  margin: 0 0 0 0
+  width: 1520px
 .auto-animation
-  animation: automove 5s linear infinite
+  animation: automove 2s linear infinite
   display: flex
   width: 100%
 .main-title
