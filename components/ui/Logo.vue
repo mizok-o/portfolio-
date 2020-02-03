@@ -27,5 +27,4 @@
   .NuxtLogo
     pointer-events: none
     opacity: .2
-
 </style>
