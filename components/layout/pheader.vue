@@ -6,13 +6,15 @@ header.header-content
       li
         a.header-link.link-index(href="/") works
 </template>
-<script lang='coffee'>
+<script>
 
 </script>
 <style lang="sass">
 .header-content
   margin: 3.5% 6% 0
   position: relative
+  +sp-view
+    margin: 5% 0 0 82%
 
 .header-menu
   position: fixed
@@ -20,6 +22,9 @@ header.header-content
   width: 88%
   height: auto
   justify-content: space-between
+  +sp-view
+    width: auto
+    position: fixed
 
 .content-about
   .link-about
@@ -34,6 +39,9 @@ header.header-content
       background-color: #fff
       transform: scale(1,1)
       pointer-events: none
+  +sp-view
+    .link-about, .link-index::after
+      display: none
 .content-index
   .link-index
     &::before
@@ -47,6 +55,8 @@ header.header-content
       background-color: #fff
       transform: scale(1,1)
       pointer-events: none
+    +sp-view
+      display: none
 
 .link-index
   &::after
@@ -76,6 +86,8 @@ header.header-content
     transform-origin: right
     pointer-events: none
     transition: transform 0.6s cubic-bezier(0.3, 0.575, 0.565, 1)
+    +sp-view
+      display: none
   &:hover::before
     transform: scale(1)
     transform-origin: left

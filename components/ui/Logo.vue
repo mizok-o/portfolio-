@@ -17,6 +17,10 @@
     width: 72%
   +pc-md-view
     width: 80%
+  +sp-view
+    transform: rotate(90deg)
+    width: 180%
+    margin: 72% 0 0 -44%
   .cls-1
     stroke: #fafafa
     stroke-width: 1

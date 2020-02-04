@@ -5,6 +5,8 @@
 .about-titile
   font-size: 64px
   font-weight: bold
-
+  +sp-view
+    font-size: 48px
+    margin-top: 8%
 
 </style>

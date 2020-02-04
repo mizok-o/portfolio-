@@ -7,4 +7,9 @@
   width: 100%
   height: auto
   margin-top: 2%
+  +pc-sm-view
+    margin-top: 24%
+  +sp-view
+    margin: 20% -16% 0
+    width: 136%
 </style>
