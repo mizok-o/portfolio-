@@ -19,8 +19,8 @@
     width: 80%
   +sp-view
     transform: rotate(90deg)
-    width: 180%
-    margin: 72% 0 0 -44%
+    width: 144%
+    margin: 56% 0 0 -28%
   .cls-1
     stroke: #fafafa
     stroke-width: 1
@@ -31,4 +31,8 @@
   .NuxtLogo
     pointer-events: none
     opacity: .2
+.content-index
+  +sp-view
+    .NuxtLogo
+      pointer-events: none
 </style>

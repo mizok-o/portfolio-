@@ -22,7 +22,10 @@ header.header-content
   width: 88%
   height: auto
   justify-content: space-between
+  z-index: 1000
   +sp-view
+    display: block
+    font-size: 18px
     width: auto
     position: fixed
 

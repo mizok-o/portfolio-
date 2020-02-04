@@ -30,7 +30,6 @@ export default{
   width: 76%
   height: auto
   margin: 12% 12% 0 12%
-  +sp-view
 .about-content
   display: flex
   width: 100%

@@ -28,7 +28,6 @@ export default {
 <style lang="sass">
 .content-about
   overflow: hidden
-  position: fixed
-  width: 100%
-  height: auto
+  +sp-view
+    overflow: inherit
 </style>

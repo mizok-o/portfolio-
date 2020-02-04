@@ -27,15 +27,19 @@
                 a(:href="product.url", target="_blank") visit
       .swiper-button-prev
       .swiper-button-next
+    .index-sns.u-sp-view
+      sns
 </template>
 
 <script>
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
+import Sns from '~/components/ui/Sns.vue'
 export default {
   components: {
     Logo: Logo,
-    pheader: pheader
+    pheader: pheader,
+    Sns: Sns
   },
   head: {
     bodyAttrs: {
@@ -47,7 +51,7 @@ export default {
       return {
         swiperOption: {
           slidesPerView: 1.1,
-          spaceBetween: 40,
+          spaceBetween: 16,
           paginationClickable: true,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
@@ -151,18 +155,22 @@ export default {
 .works
   width: 100%
   height: auto
+  margin: 18% 0 0
 /* 自動アニメーション */
 .works-title
-  margin: 0 0 0 0
-  width: 1520px
+  margin-left: -240px
+  width: 960px
 .auto-animation
-  animation: automove 2s linear infinite
+  animation: automove 5s linear infinite
   display: flex
   width: 100%
 .main-title
   width: 760px
   &:last-child
     margin-right: 0
+  +sp-view
+    margin-top: 2%
+    width: 480px
 /* スワイパー */
 .swiper-container
   display: flex
@@ -170,10 +178,10 @@ export default {
   height: auto
   padding: 0 0 7% 16%
   overflow: none
+  +sp-view
+    padding-left: 4%
 .product-item
   width: 100%
-  +pc-md-view
-    font-size: 80%
 .product-title
   display: flex
   justify-content: flex-start
@@ -182,28 +190,42 @@ export default {
   .title-text
     font-size: 320%
     width: 100%
+    +sp-view
+      font-size: 180%
 .product-number
   font-size: 600%
   margin: 0 14% 0 -12%
+  +sp-view
+    font-size: 380%
+    margin: 0 4% 0 0
 .product-main
   position: relative
   display: flex
   width: 100%
+  +sp-view
+    display: block
   /* スワイパー画像 */
 .main-link
   width: 68%
   height: auto
+  +sp-view
+    width: 88%
 .main-img
-  width: 100%
+  width: 88%
   height: auto
 .main-text
   position: absolute
-  right: -3%
+  right: 4%
   bottom: -50%
   width: 32%
   height: 50%
   transform: rotate(-90deg)
   transform-origin: top left
+  +sp-view
+    position: static
+    width: 64%
+    transform: none
+    margin: 4% 0 0 0
 /* visitテキスト */
 .link-dribbble
   display: block
@@ -223,6 +245,8 @@ export default {
     transform: scale(0)
     transform-origin: left
     transition: transform 0.6s cubic-bezier(0.3, 0.575, 0.565, 1)
+    +sp-view
+      display: none
   &:hover::before
     transform: scale(1)
     transform-origin: left
@@ -238,14 +262,23 @@ export default {
     width: 44px
     height: 44px
     background-size: 40% 40%
+  +sp-view
+    top: 85%
+    background-size: 24% 24%
   &:focus
     outline: 0
 .swiper-button-prev
   left: 8%
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.84375 5.90625L0 6.75L6.75 13.5L7.59375 12.6562L1.6875 6.75L7.59375 0.84375L6.75 0L3.375 3.375L0.84375 5.90625Z' fill='white'/%3E%3C/svg%3E")
+  +sp-view
+    left: 66%
 .swiper-button-next
   left: 14%
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.82031 7.59375L7.66406 6.75L0.84375 0L0 0.84375L5.90625 6.75L0 12.6562L0.84375 13.5L4.28906 10.125L6.82031 7.59375Z' fill='white'/%3E%3C/svg%3E")
+  +sp-view
+    left: 78%
+.index-sns
+  margin: -4% 0 0 8%
 @keyframes automove
   0%
     transform: translate(0%)

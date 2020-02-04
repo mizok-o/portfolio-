@@ -9,7 +9,6 @@
   +pc-md-view
     font-size: 16px
   +sp-view
-    font-size: 14px
     width: 100%
     margin-top: 8%
 </style>

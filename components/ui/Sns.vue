@@ -23,7 +23,7 @@
   display: flex
   justify-content: flex-end
   width: 100%
-  margin: 4% 0 0 0
+  margin: 8% 0 18% 0
   +pc-lg-view
     margin-top: 8%
   +pc-md-view
@@ -32,7 +32,7 @@
     margin-top: 16%
     justify-content: flex-start
 .sns-item
-  margin-right: 12%
+  margin-right: 8%
   &:last-child
     margin-right: 0
 .sns-icon

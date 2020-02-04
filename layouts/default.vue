@@ -22,6 +22,11 @@ html
   max-width: 100%
   &::-webkit-scrollbar
     display: none
+  +sp-view
+    font-size: 14px
+body, .container
+  position: relative
+  overflow-x: hidden
 li, a
   margin: 0
   padding: 0
@@ -30,7 +35,6 @@ ul, ol
   list-style: none
   padding: 0
   margin: 0
-
 *
   box-sizing: border-box
   margin: 0
