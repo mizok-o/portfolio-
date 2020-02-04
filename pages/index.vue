@@ -50,7 +50,7 @@ export default {
     data() {
       return {
         swiperOption: {
-          slidesPerView: 1.1,
+          slidesPerView: 1.14,
           spaceBetween: 16,
           paginationClickable: true,
           centeredSlides: true,
@@ -155,7 +155,9 @@ export default {
 .works
   width: 100%
   height: auto
-  margin: 18% 0 0
+  margin: 1% 0 0
+  +sp-view
+    margin-top: 18%
 /* 自動アニメーション */
 .works-title
   margin-left: -240px
@@ -169,17 +171,17 @@ export default {
   &:last-child
     margin-right: 0
   +sp-view
-    margin-top: 2%
+    margin-top: 3%
     width: 480px
 /* スワイパー */
 .swiper-container
   display: flex
   justify-content: flex-start
   height: auto
-  padding: 0 0 7% 16%
+  padding: 0 0 7% 10%
   overflow: none
   +sp-view
-    padding-left: 4%
+    padding-left: 0%
 .product-item
   width: 100%
 .product-title
@@ -211,12 +213,12 @@ export default {
   +sp-view
     width: 88%
 .main-img
-  width: 88%
+  width: 96%
   height: auto
 .main-text
   position: absolute
-  right: 4%
-  bottom: -50%
+  right: -2%
+  bottom: -48%
   width: 32%
   height: 50%
   transform: rotate(-90deg)
@@ -268,17 +270,15 @@ export default {
   &:focus
     outline: 0
 .swiper-button-prev
-  left: 8%
+  left: 3%
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.84375 5.90625L0 6.75L6.75 13.5L7.59375 12.6562L1.6875 6.75L7.59375 0.84375L6.75 0L3.375 3.375L0.84375 5.90625Z' fill='white'/%3E%3C/svg%3E")
   +sp-view
-    left: 66%
+    left: 64%
 .swiper-button-next
-  left: 14%
+  left: 9%
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.82031 7.59375L7.66406 6.75L0.84375 0L0 0.84375L5.90625 6.75L0 12.6562L0.84375 13.5L4.28906 10.125L6.82031 7.59375Z' fill='white'/%3E%3C/svg%3E")
   +sp-view
     left: 78%
-.index-sns
-  margin: -4% 0 0 8%
 @keyframes automove
   0%
     transform: translate(0%)

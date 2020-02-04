@@ -30,11 +30,21 @@
     margin-top: 10%
   +sp-view
     margin-top: 16%
-    justify-content: flex-start
+
 .sns-item
-  margin-right: 8%
+  margin-right: 12%
   &:last-child
     margin-right: 0
-.sns-icon
-  width: 88%
+  +sp-view
+    width: 22px
+    margin-right: 10%
+    &:last-child
+      margin: 0 16% 0 -2%
+.content-about
+  .sns-item
+    +sp-view
+      &:last-child
+        margin: 0 7% 0 -2%
+.sns-content
+  width: 22px
 </style>
