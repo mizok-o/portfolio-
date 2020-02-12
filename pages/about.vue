@@ -27,7 +27,7 @@ export default {
 </script>
 <style lang="sass">
 .content-about
-  overflow: hidden
+  overflow-y: hidden
   +sp-view
     overflow: inherit
 </style>

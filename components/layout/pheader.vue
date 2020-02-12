@@ -6,9 +6,6 @@ header.header-content
       li
         a.header-link.link-index(href="/") works
 </template>
-<script>
-
-</script>
 <style lang="sass">
 .header-content
   margin: 3.5% 6% 0
@@ -20,9 +17,9 @@ header.header-content
   position: fixed
   display: flex
   width: 88%
-  height: auto
   justify-content: space-between
   z-index: 1000
+  font-size: 20px
   +sp-view
     display: block
     font-size: 18px
@@ -35,7 +32,6 @@ header.header-content
       content: ""
       position: absolute
       top: 50%
-      bottom: 50%
       left: 0
       width: 100%
       height: 1px
@@ -51,7 +47,6 @@ header.header-content
       content: ""
       position: absolute
       top: 50%
-      bottom: 50%
       left: 0
       width: 100%
       height: 1px
@@ -63,7 +58,7 @@ header.header-content
 
 .link-index
   &::after
-    content: "24"
+    content: "13"
     position: absolute
     right: -36%
     top: -20%
@@ -71,16 +66,15 @@ header.header-content
     font-size: 14px
 
 .header-link
+  position: relative
   display: block
   width: 100%
   height: 24px
-  position: relative
   /* ヘッダーのホバーアニメーション */
   &::before
     content: ""
     position: absolute
     top: 50%
-    bottom: 50%
     left: 0
     width: 100%
     height: 1px

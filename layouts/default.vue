@@ -25,8 +25,25 @@ html
   +sp-view
     font-size: 14px
 body, .container
-  position: relative
   overflow-x: hidden
+  /* メニューアニメーション */
+body::after
+  content: ""
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #333
+  z-index: 9999
+  pointer-events: none
+  /* animation: load 2s cubic-bezier(0.895, 0.08, 0.42, 0.3) 1 */
+  transform: translateX(100%)
+@keyframes load
+  0%
+    transform: translate(0%)
+  100%
+    transform: translate(100%)
 li, a
   margin: 0
   padding: 0
