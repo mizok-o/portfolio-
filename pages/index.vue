@@ -53,7 +53,7 @@ export default {
           slidesPerView: 1.14,
           spaceBetween: 16,
           paginationClickable: true,
-          speed: 400,
+          speed: 1000,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',

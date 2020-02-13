@@ -2,29 +2,26 @@
   .about-text
     p.text-item Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
       | I post on instagram about my travel. My dream is remote-working abroad with a  computer once.
-    .text-item
-      h3 skills
-      p.about-subtext figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js
+    h2.text-item.about-subtitle skills
+    p.text-item.about-subtext figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
 </template>
 <script>
 
 export default{
- mounted() {
-   // rootからbottom:-150pxの位置で発火
-   const options = {
-     root: null,
-     rootMargin: "-72px",
-     threshold: .4
-   }
-   const images = document.querySelectorAll('.about-text')
-   images.forEach((target) => this.onIntersect(target, options))
- },
- methods: {
-   onIntersect(target, options = {}) {
-     const observer = new IntersectionObserver(this.addShowClass, options)
-     // 監視したい要素をobserveする。
-     observer.observe(target)
-   },
+  mounted() {
+    // rootからbottom:-150pxの位置で発火
+    this.onIntersect()
+  },
+  methods: {
+    onIntersect() {
+      const options = {
+        root: null,
+        rootMargin: "-72px",
+        threshold: 0.6
+      }
+      const observer = new IntersectionObserver(this.addShowClass)
+      observer.observe(this.$el)
+    },
    addShowClass(entries) {
      for(const e of entries) {
        if (e.intersectionRatio) {
@@ -41,29 +38,28 @@ export default{
 .about-text
   opacity: 0
 .showb
-  animation: fadeout 3s cubic-bezier(0.19, 1, 0.22, 1) 0s 1
   margin: 12% 0 0
   width: 72%
-  +pc-md-view
-    font-size: 16px
-  +sp-view
-    width: 100%
-    margin-top: 8%
+  .text-item
+    transform: translateX(0)
+
 .text-item
-  margin: 12% 0 0
+  transform: translateX(32%)
   width: 100%
-  +pc-md-view
-    font-size: 16px
+  transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
+  &:nth-child(1)
+    transition-delay: .05s
+  &:nth-child(2)
+    margin-top: 4%
+    transition-delay: .2s
+  &:nth-child(3)
+    margin-top: 2%
+    transition-delay: .25s
   +sp-view
     width: 100%
     margin-top: 8%
 .about-subtext
   word-wrap: break-word
-@keyframes fadeout
-  0%
-    opacity: 0
-    transform: translateX(20%)
-  100%
-    opacity: 1
-    transform: translateX(0%)
+.about-subtitle
+  font-size: 36px
 </style>

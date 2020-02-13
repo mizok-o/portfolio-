@@ -1,24 +1,22 @@
 <template lang="pug">
-  h1.about-title Who am I?
+  .about-title
+    h1.title-text Who am I?
 </template>
 <script>
 
 export default{
  mounted() {
-   // rootからbottom:-150pxの位置で発火
-   const options = {
-     root: null,
-     rootMargin: "-72px",
-     threshold: 0.8
-   }
-   const images = document.querySelectorAll('.about-title')
-   images.forEach((target) => this.onIntersect(target, options))
- },
+   this.onIntersect()
+   },
  methods: {
-   onIntersect(target, options = {}) {
-     const observer = new IntersectionObserver(this.addShowClass, options)
-     // 監視したい要素をobserveする。
-     observer.observe(target)
+   onIntersect() {
+     const options = {
+       root: null,
+       rootMargin: "-72px",
+       threshold: 0.6
+     }
+     const observer = new IntersectionObserver(this.addShowClass)
+     observer.observe(this.$el)
    },
    addShowClass(entries) {
      for(const e of entries) {
@@ -34,22 +32,14 @@ export default{
 </script>
 <style lang="sass">
 .showc
-  animation: fadeout .8s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s 1
+  .title-text
+    transform: translateX(0)
+
+.title-text
   font-size: 64px
+  transform: translateX(24%)
+  transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
   +sp-view
     font-size: 48px
     margin-top: 8%
-.about-title
-  opacity: 0
-  font-size: 64px
-  +sp-view
-    font-size: 48px
-    margin-top: 8%
-@keyframes fadeout
-  0%
-    opacity: 0
-    transform: translateX(60%)
-  100%
-    opacity: 1
-    transform: translateX(0%)
 </style>
