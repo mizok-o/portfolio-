@@ -23,24 +23,25 @@ export default{
 }
 </script>
 <style lang="sass">
+
+/* 全体 */
 .about-container
   position: absolute
   top: 0
   left: 0
-  width: 76%
-  height: auto
   margin: 12% 12% 0 12%
 
+/* 横並びさせる */
 .about-content
   display: flex
-  width: 100%
-  justify-content: space-between
-  +sp-view
+  +pc-md-view
     display: block
+
+/* 左側テキスト系 */
 .about-description
   width: 48%
-.about-visual
-  width: 50%
+
+/* 画像 */
 .about-visual, .about-description
   width: 100%
 </style>

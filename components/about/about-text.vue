@@ -6,7 +6,6 @@
     p.text-item.about-subtext figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
 </template>
 <script>
-
 export default{
   mounted() {
     // rootからbottom:-150pxの位置で発火
@@ -27,7 +26,6 @@ export default{
        if (e.intersectionRatio) {
          e.target.classList.add("showb")
         e.target.classList.remove("about-text")
-
        }
      }
    }
@@ -35,22 +33,36 @@ export default{
 }
 </script>
 <style lang="sass">
-.about-text
-  opacity: 0
+
+/* スクロール後に表示 */
 .showb
   margin: 12% 0 0
   width: 72%
+  +pc-md-view
+    margin-top: 4%
+  +sp-view
+    width: 100%
   .text-item
     transform: translateX(0)
 
+/* skillsテキスト */
+.about-subtext
+  word-wrap: break-word
+
+/* skillsタイトル
+.about-subtitle
+  font-size: 32px
+  +sp-view
+    font-size: 24px
+
+/* アニメーション設定 */
 .text-item
   transform: translateX(32%)
-  width: 100%
   transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
   &:nth-child(1)
     transition-delay: .05s
   &:nth-child(2)
-    margin-top: 4%
+    margin-top: 10%
     transition-delay: .2s
   &:nth-child(3)
     margin-top: 2%
@@ -58,8 +70,4 @@ export default{
   +sp-view
     width: 100%
     margin-top: 8%
-.about-subtext
-  word-wrap: break-word
-.about-subtitle
-  font-size: 36px
 </style>

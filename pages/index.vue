@@ -30,7 +30,6 @@
     .index-sns.u-sp-view
       sns
 </template>
-
 <script>
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
@@ -58,7 +57,7 @@ export default {
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           autoplay: {
-            delay: 6000,
+            delay: 4500,
             disableOnInteraction: false
           },
           navigation: {
@@ -150,12 +149,14 @@ export default {
     }
 }
 </script>
-
 <style lang="sass">
+
+/* ワークス全体 */
 .works
   width: 100%
   +sp-view
-/* 自動アニメーション */
+
+/* 自動再生currentワークス */
 .works-title
   width: 3052px
   +sp-view
@@ -170,13 +171,18 @@ export default {
   +sp-view
     margin-top: 3%
     width: 480px
+
 /* スワイパー */
+
+/* 全体 */
 .swiper-container
   display: flex
   justify-content: flex-start
   padding: 0 0 7% 10%
   +sp-view
     padding-left: 0%
+
+/* スライドのタイトル */
 .product-title
   display: flex
   justify-content: flex-start
@@ -186,24 +192,28 @@ export default {
     font-size: 320%
     +sp-view
       font-size: 180%
+/* スライドの番号 */
 .product-number
   font-size: 600%
   margin: 0 14% 0 -12%
   +sp-view
     font-size: 380%
     margin: 0 4% 0 0
+
+/* スワイパー画像 */
 .product-main
   position: relative
   display: flex
   +sp-view
     display: block
-  /* スワイパー画像 */
 .main-link
   width: 68%
   +sp-view
     width: 88%
 .main-img
   width: 88%
+
+/* 画像横のテキスト */
 .main-text
   position: absolute
   right: -2%
@@ -217,7 +227,8 @@ export default {
     width: 64%
     transform: none
     margin: 4% 0 0 0
-/* visitテキスト */
+
+/* visitリンク */
 .link-dribbble
   display: block
   position: relative
@@ -241,6 +252,7 @@ export default {
   &:hover::before
     transform: scale(1)
     transform-origin: left
+
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
@@ -268,6 +280,7 @@ export default {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.82031 7.59375L7.66406 6.75L0.84375 0L0 0.84375L5.90625 6.75L0 12.6562L0.84375 13.5L4.28906 10.125L6.82031 7.59375Z' fill='white'/%3E%3C/svg%3E")
   +sp-view
     left: 76%
+
 @keyframes automove
   0%
     transform: translate(-50%)

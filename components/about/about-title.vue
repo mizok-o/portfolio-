@@ -3,7 +3,6 @@
     h1.title-text Who am I?
 </template>
 <script>
-
 export default{
  mounted() {
    this.onIntersect()
@@ -23,7 +22,6 @@ export default{
        if (e.intersectionRatio) {
          e.target.classList.add("showc")
         e.target.classList.remove("about-title")
-
        }
      }
    }
@@ -31,10 +29,13 @@ export default{
 }
 </script>
 <style lang="sass">
+
+/* スクロール後に表示 */
 .showc
   .title-text
     transform: translateX(0)
 
+/* アニメーション設定 */
 .title-text
   font-size: 64px
   transform: translateX(24%)

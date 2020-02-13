@@ -56,41 +56,42 @@ export default{
 }
 </script>
 <style lang="sass">
+
+/* 全体 */
 .sns-container
   display: flex
   justify-content: flex-end
   width: 100%
-  margin: 8% 12% 18% 0
-  +pc-md-view
-    margin-top: 10%
-  +sp-view
-    margin-top: 16%
+  margin: 8% 12% 0 0
   &.showd
     .sns-item
       transform: translateX(0)
+
+/* トップの場合 */
 .content-index
   .sns-container
     margin-right: 16%
     width: 84%
+
+/* 1つずつ設定 */
 .sns-item
   transform: translateX(72%)
-  margin-right: 12%
-  transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
+  margin-right: 10%
+  transition: transform .9s cubic-bezier(0.6, 0.6, 0.22, 1)
+  +sp-view
+    transition-duration: .6s
   &:nth-child(1)
     transition-delay: .05s
   &:nth-child(2)
     transition-delay: .25s
   &:nth-child(3)
     transition-delay: .45s
+    +sp-view
+      margin-right: 8%
+      stroke-width: 2px
   &:nth-child(4)
+    margin-right: 0
     transition-delay: .65s
     +sp-view
-      stroke-width: 2px
-      margin-right: 8%
-.sns-twitter
-  margin-right: 0%
-  // +pc-sm-view
-  //   margin-top: 24%
-  // +sp-view
-  //   margin-top: 0
+      margin-right: -4%
 </style>

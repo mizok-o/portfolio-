@@ -3,7 +3,6 @@
     img.my-image(src="~/assets/img/about-me.jpg")
 </template>
 <script>
-
 export default{
   name: 'animation',
  mounted() {
@@ -33,16 +32,24 @@ export default{
 }
 </script>
 <style lang="sass">
+
+/* スクロール後に表示 */
 .show
   .my-image
-    transform: translateY(0)
+    transform: translateX(0)
+
+/* アニメーション設定 */
 .my-image
-  transform: translateY(16%)
-  transition: transform 1.2s cubic-bezier(0.6, 0.6, 0.22, 1) .35s
-  width: 112%
-  +pc-sm-view
-    margin-top: 24%
+  transform: translateX(-40%)
+  transition: transform 1.75s cubic-bezier(0.6, 0.6, 0.22, 1)
+  width: 100%
+  +pc-md-view
+    margin-top: 8%
+    width: 80%
   +sp-view
+    transform: translateX(-100%)
+    transition-delay: .55s
+    transition-duration: 1s
     margin: 20% -16% 0
     width: 136%
 </style>
