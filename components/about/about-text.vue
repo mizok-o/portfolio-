@@ -58,15 +58,15 @@ export default{
 /* アニメーション設定 */
 .text-item
   transform: translateX(32%)
-  transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
+  transition: transform .8s cubic-bezier(0.6, 0.6, 0.22, 1)
   &:nth-child(1)
     transition-delay: .05s
   &:nth-child(2)
     margin-top: 10%
-    transition-delay: .2s
+    transition-delay: .4s
   &:nth-child(3)
     margin-top: 2%
-    transition-delay: .25s
+    transition-delay: .45s
   +sp-view
     width: 100%
     margin-top: 8%

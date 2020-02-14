@@ -24,6 +24,9 @@ html
     display: none
   +sp-view
     font-size: 14px
+/* body
+  position: relative
+  cursor: none */
 body, .container
   overflow-x: hidden
   /* メニューアニメーション */

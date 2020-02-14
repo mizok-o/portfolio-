@@ -40,8 +40,8 @@ export default{
 
 /* アニメーション設定 */
 .my-image
-  transform: translateX(-40%)
-  transition: transform 1.75s cubic-bezier(0.6, 0.6, 0.22, 1)
+  transform: translateY(24%)
+  transition: transform 2s cubic-bezier(0.6, 0.6, 0.22, 1)
   width: 100%
   +pc-md-view
     margin-top: 8%

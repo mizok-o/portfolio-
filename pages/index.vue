@@ -1,5 +1,6 @@
 <template lang="pug" class=".index">
 .index
+  cursor
   pheader
   logo
   .works
@@ -34,11 +35,13 @@
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
+import cursor from '~/components/ui/cursor.vue'
 export default {
   components: {
     Logo: Logo,
     pheader: pheader,
-    Sns: Sns
+    Sns: Sns,
+    corsor: cursor
   },
   head: {
     bodyAttrs: {
@@ -150,6 +153,11 @@ export default {
 }
 </script>
 <style lang="sass">
+/* カーソル遅延 */
+.container, .index
+  border-radius:
+
+
 
 /* ワークス全体 */
 .works

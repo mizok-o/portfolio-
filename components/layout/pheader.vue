@@ -2,9 +2,9 @@
 header.header-content
     ul.header-menu
       li
-        a.header-link.link-about(href="/about") about
+        a.sns-content.link-about(href="/about") about
       li
-        a.header-link.link-index(href="/") works
+        a.sns-content.link-index(href="/") works
 </template>
 <style lang="sass">
   /* ヘッダー全体 */
@@ -20,6 +20,7 @@ header.header-content
   width: 88%
   justify-content: space-between
   z-index: 1000
+  font-size: 20px
   +sp-view
     display: block
     font-size: 16px
@@ -31,9 +32,8 @@ header.header-content
   &::after
     content: "13"
     position: absolute
-    right: -36%
+    right: -30%
     top: -20%
-    display: inline-block
     font-size: 14px
 
 /* 線アニメーション */
@@ -42,7 +42,7 @@ header.header-content
   &::before
     content: ""
     position: absolute
-    top: 56%
+    top: 50%
     left: 0
     width: 100%
     height: 1px
@@ -59,6 +59,7 @@ header.header-content
 /* 線を表示させっぱなし */
 .content-about
   .link-about
+    color: #870000
     pointer-events: none
     &::before
       transform: scale(1,1)
@@ -67,6 +68,7 @@ header.header-content
       display: none
 .content-index
   .link-index
+    color: #870000
     pointer-events: none
     &::before
       transform: scale(1,1)
