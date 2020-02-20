@@ -43,7 +43,7 @@ export default{
 .show
   position: relative
   overflow: hidden
-  &::before
+  /* &::before
     content: ""
     position: absolute
     top: 0
@@ -53,7 +53,7 @@ export default{
     height: 100%
     z-index: 5
     transform: translateX(-100%)
-    animation: shown 2s cubic-bezier(0.77, 0, 0.175, 1) 1
+    animation: shown 2s cubic-bezier(0.77, 0, 0.175, 1) 1 */
   .my-image
     padding-top: 67%
 

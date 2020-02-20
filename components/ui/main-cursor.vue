@@ -14,23 +14,25 @@ document.addEventListener('mousemove', function (e) {
 },false);
 
 const follower = document.getElementById('follower');
-
+let hovFlag = false;
 document.addEventListener('mousemove', function(e) {
   if (!hovFlag) {
     follower.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
   }
 });
 
-const link = document.querySelectorAll('div');
+const link = document.querySelectorAll('a');
 for (let i = 0; i < link.length; i++) {
 
     link[i].addEventListener('mouseover', function (e) {
       hovFlag = true;
+      follower.classList.add('hov')
       let rect = e.target.getBoundingClientRect();
       let posX = rect.left + (rect.width / 2);
       let posY = rect.top + (rect.height / 2);
 
       follower.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
+
     });
     link[i].addEventListener('mouseout', function (e) {
         hovFlag = false;
@@ -48,7 +50,7 @@ for (let i = 0; i < link.length; i++) {
   height: 1.5%
   background: #fff
   border-radius: 50%
-  z-index: 999
+  z-index: 22
 .follower
   pointer-events: none
   position: fixed
@@ -60,5 +62,8 @@ for (let i = 0; i < link.length; i++) {
   opacity: 0.5
   border-radius: 50%
   transition: all .4s
-  z-index: 999
+  z-index: 22
+.hov
+  width: 0
+  height: 0
 </style>

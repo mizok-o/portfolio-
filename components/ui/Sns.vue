@@ -81,6 +81,7 @@ export default{
 
 /* 1つずつ設定 */
 .sns-item
+  z-index: 23
   transform: translateX(480px)
   margin-right: 10%
   transition: transform 2.4s cubic-bezier(0.77, 0, 0.175, 1)

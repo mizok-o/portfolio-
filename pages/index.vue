@@ -209,6 +209,7 @@ export default {
 .product-main
   position: relative
   display: flex
+  z-index: 21
   +sp-view
     display: block
 .main-link
