@@ -2,7 +2,7 @@
   .about-text
     p.text-item Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
       | I post on instagram about my travel. My dream is remote-working abroad with a  computer once.
-    h2.text-item.about-subtitle skills
+    h2.text-item.about-subtitle Skills
     p.text-item.about-subtext figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
 </template>
 <script>
@@ -57,16 +57,14 @@ export default{
 
 /* アニメーション設定 */
 .text-item
-  transform: translateX(32%)
-  transition: transform .8s cubic-bezier(0.6, 0.6, 0.22, 1)
-  &:nth-child(1)
-    transition-delay: .05s
+  transform: translateX(1600px)
+  transition: transform 2.1s cubic-bezier(0.77, 0, 0.175, 1)
   &:nth-child(2)
+    transition-delay: .1s
     margin-top: 10%
-    transition-delay: .4s
   &:nth-child(3)
+    transition-delay: .1s
     margin-top: 2%
-    transition-delay: .45s
   +sp-view
     width: 100%
     margin-top: 8%

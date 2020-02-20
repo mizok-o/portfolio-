@@ -1,6 +1,6 @@
 <template lang="pug" class=".index">
 .index
-  cursor
+  maincursor
   pheader
   logo
   .works
@@ -32,16 +32,16 @@
       sns
 </template>
 <script>
+import maincursor from '~/components/ui/main-cursor.vue'
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
-import cursor from '~/components/ui/cursor.vue'
 export default {
   components: {
-    Logo: Logo,
-    pheader: pheader,
-    Sns: Sns,
-    corsor: cursor
+    maincursor,
+    Logo,
+    pheader,
+    Sns
   },
   head: {
     bodyAttrs: {
@@ -55,7 +55,7 @@ export default {
           slidesPerView: 1.14,
           spaceBetween: 16,
           paginationClickable: true,
-          speed: 1000,
+          speed: 500,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
@@ -154,13 +154,10 @@ export default {
 </script>
 <style lang="sass">
 /* カーソル遅延 */
-.container, .index
-  border-radius:
-
-
 
 /* ワークス全体 */
 .works
+  position: relative
   width: 100%
   +sp-view
 
@@ -197,7 +194,7 @@ export default {
   align-items: baseline
   margin: 6% 0 2% 0
   .title-text
-    font-size: 320%
+    font-size: 240%
     +sp-view
       font-size: 180%
 /* スライドの番号 */
@@ -224,7 +221,7 @@ export default {
 /* 画像横のテキスト */
 .main-text
   position: absolute
-  right: -2%
+  right: 2%
   bottom: -48%
   width: 32%
   height: 50%
@@ -264,7 +261,7 @@ export default {
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 91%
+  top: 82%
   left: 0
   width: 72px
   height: 72px

@@ -31,7 +31,6 @@
 export default{
   name: 'animation',
  mounted() {
-   // rootからbottom:-150pxの位置で発火
    this.onIntersect()
  },
  methods: {
@@ -65,7 +64,7 @@ export default{
   margin: 8% 12% 0 0
   &.showd
     .sns-item
-      transform: translate(0, 0)
+      transform: translateX(0)
 
 /* トップの場合 */
 .content-index
@@ -75,33 +74,30 @@ export default{
 
 .sns-content
   color: #fafafa
-  transition: color .2s cubic-bezier(0.6, 0.6, 0.22, 1)
+  transition: color .4s cubic-bezier(0.6, 0.6, 0.22, 1)
   &:hover
     color: #870000
 
 
 /* 1つずつ設定 */
 .sns-item
-  transform: translate(120%, 120%)
+  transform: translateX(480px)
   margin-right: 10%
-  transition: transform .9s cubic-bezier(0.6, 0.6, 0.22, 1)
+  transition: transform 2.4s cubic-bezier(0.77, 0, 0.175, 1)
   +sp-view
     transition-duration: .6s
   &:nth-child(1)
-    /* transform: translateX(144%) */
-    transition-delay: .05s
+    transition-delay: calc(.05s * 4)
   &:nth-child(2)
-    /* transform: translateX(120%) */
-    transition-delay: .25s
+    transition-delay: calc(.05s * 3)
   &:nth-child(3)
-    /* transform: translateX(112%) */
-    transition-delay: .45s
+    transition-delay: calc(.05s * 2)
     +sp-view
       margin-right: 8%
       stroke-width: 2px
   &:nth-child(4)
     margin-right: 0
-    transition-delay: .65s
+    transition-delay: calc(.05s * 1)
     +sp-view
       margin-right: -4%
 </style>

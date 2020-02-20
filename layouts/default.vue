@@ -1,5 +1,4 @@
 <template lang="pug">
-.container
   nuxt
 </template>
 <script>
@@ -16,7 +15,7 @@ html
   box-sizing: border-box
   background-color: #B70000
   color: #f0f0f0
-  box-sizing: border-box
+
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -27,6 +26,8 @@ html
 /* body
   position: relative
   cursor: none */
+*
+  box-sizing: border-box
 body, .container
   overflow-x: hidden
   /* メニューアニメーション */

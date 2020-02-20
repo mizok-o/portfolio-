@@ -38,8 +38,8 @@ export default{
 /* アニメーション設定 */
 .title-text
   font-size: 64px
-  transform: translateX(24%)
-  transition: transform 1s cubic-bezier(0.6, 0.6, 0.22, 1)
+  transform: translateX(1600px)
+  transition: transform 2.1s cubic-bezier(0.77, 0, 0.175, 1)
   +sp-view
     font-size: 48px
     margin-top: 8%
