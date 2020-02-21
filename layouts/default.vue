@@ -23,9 +23,9 @@ html
     display: none
   +sp-view
     font-size: 14px
-/* body
+body
   position: relative
-  cursor: none */
+  cursor: none
 *
   box-sizing: border-box
 body, .container

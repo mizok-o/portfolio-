@@ -39,6 +39,7 @@ export default{
 
 /* 左側テキスト系 */
 .about-description
+  margin: 4% 8% 0 0
   width: 48%
 
 /* 画像 */

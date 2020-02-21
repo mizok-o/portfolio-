@@ -209,7 +209,7 @@ export default {
 .product-main
   position: relative
   display: flex
-  z-index: 21
+  z-index: 23
   +sp-view
     display: block
 .main-link
@@ -248,7 +248,7 @@ export default {
     bottom: 0
     left: 0
     height: 1px
-    width: 12%
+    width: 10%
     background-color: #fafafa
     transform: scale(0)
     transform-origin: left

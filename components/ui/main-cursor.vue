@@ -43,26 +43,27 @@ for (let i = 0; i < link.length; i++) {
 </script>
 <style lang="sass">
 .cursor
+  pointer-events: none
   position: fixed
   top: -8px
-  left: -6px
-  width: 1%
-  height: 1.5%
-  background: #fff
+  left: -8px
+  width: 16px
+  height: 16px
+  background: #910000
   border-radius: 50%
   z-index: 22
 .follower
   pointer-events: none
   position: fixed
-  top: -24px
-  left: -24px
+  top: -36px
+  left: -36px
   width: 72px
   height: 72px
-  background-color: #f1C444
+  border: 1px solid #eee
   opacity: 0.5
   border-radius: 50%
-  transition: all .4s
-  z-index: 22
+  transition: all .2s
+  z-index: 21
 .hov
   width: 0
   height: 0

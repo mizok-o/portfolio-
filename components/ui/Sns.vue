@@ -64,7 +64,8 @@ export default{
   margin: 8% 12% 0 0
   &.showd
     .sns-item
-      transform: translateX(0)
+      transform: translateY(0)
+      opacity: 1
 
 /* トップの場合 */
 .content-index
@@ -82,23 +83,27 @@ export default{
 /* 1つずつ設定 */
 .sns-item
   z-index: 23
-  transform: translateX(480px)
+  transform: translateY(8px)
+  opacity: 0
   margin-right: 10%
-  transition: transform 2.4s cubic-bezier(0.77, 0, 0.175, 1)
+  transition: all 2.5s cubic-bezier(0.77, 0, 0.175, 1) .3s
   +sp-view
     transition-duration: .6s
   &:nth-child(1)
-    transition-delay: calc(.05s * 4)
+    /* transition-delay: .2s */
   &:nth-child(2)
-    transition-delay: calc(.05s * 3)
+    transition-duration: 2.5s
+    transition-delay: .4s
   &:nth-child(3)
-    transition-delay: calc(.05s * 2)
+    transition-duration: 3s
+    transition-delay: .5s
     +sp-view
       margin-right: 8%
       stroke-width: 2px
   &:nth-child(4)
     margin-right: 0
-    transition-delay: calc(.05s * 1)
+    transition-duration: 3.4s
+    transition-delay: .5s
     +sp-view
       margin-right: -4%
 </style>

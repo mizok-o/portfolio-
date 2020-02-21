@@ -36,7 +36,7 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-  margin: 12% 0 0
+  margin: 4% 0 0
   width: 72%
   +pc-md-view
     margin-top: 4%
@@ -57,14 +57,14 @@ export default{
 
 /* アニメーション設定 */
 .text-item
-  transform: translateX(1600px)
-  transition: transform 2.1s cubic-bezier(0.77, 0, 0.175, 1)
+  transform: translateX(1800px)
+  transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1).5s
   &:nth-child(2)
-    transition-delay: .1s
-    margin-top: 10%
+    transition-duration: 2.8s
+    margin-top: 12%
   &:nth-child(3)
-    transition-delay: .1s
-    margin-top: 2%
+    transition-duration: 3.2s
+    margin-top: 4%
   +sp-view
     width: 100%
     margin-top: 8%
