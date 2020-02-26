@@ -59,7 +59,7 @@ header.header-content
 /* 線を表示させっぱなし */
 .content-about
   .link-about
-    color: #870000
+    color: #770000
     pointer-events: none
     &::before
       transform: scale(1,1)

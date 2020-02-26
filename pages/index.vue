@@ -27,15 +27,23 @@
               .link-dribbble
                 a(:href="product.url", target="_blank") visit
       .swiper-button-prev
+        .prev
+          .prev-box
+            img.menu-bar(src="~/assets/img/button_swiper/arrow_next.svg")
+            img.menu-bar-late(src="~/assets/img/button_swiper/arrow_next.svg")
       .swiper-button-next
+        .prev
+          .prev-box
+            img.menu-bar(src="~/assets/img/button_swiper/arrow_prev.svg")
+            img.menu-bar-later(src="~/assets/img/button_swiper/arrow_prev.svg")
     .index-sns.u-sp-view
       sns
 </template>
 <script>
-import maincursor from '~/components/ui/main-cursor.vue'
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
+import maincursor from '~/components/ui/main-cursor.vue'
 export default {
   components: {
     maincursor,
@@ -45,22 +53,22 @@ export default {
   },
   head: {
     bodyAttrs: {
-      "class": 'content-index fadeout'
+      "class": 'content-index main-cursor'
     }
   },
   name: 'carrousel',
     data() {
       return {
         swiperOption: {
-          slidesPerView: 1.14,
+          slidesPerView: 1.2,
           spaceBetween: 16,
           paginationClickable: true,
-          speed: 500,
+          speed: 1000,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           autoplay: {
-            delay: 4500,
+            delay: 3000,
             disableOnInteraction: false
           },
           navigation: {
@@ -159,7 +167,6 @@ export default {
 .works
   position: relative
   width: 100%
-  +sp-view
 
 /* 自動再生currentワークス */
 .works-title
@@ -186,6 +193,12 @@ export default {
   padding: 0 0 7% 10%
   +sp-view
     padding-left: 0%
+
+.swiper-slide
+  transform: scale(0.9)
+  transition: transform .6s cubic-bezier(0.77, 0, 0.175, 1)
+.swiper-slide-active
+  transform: scale(1.1)
 
 /* スライドのタイトル */
 .product-title
@@ -262,11 +275,11 @@ export default {
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 82%
+  top: 88%
   left: 0
   width: 72px
   height: 72px
-  background-size: 24% 24%
+  cursor: none
   +pc-md-view
     width: 44px
     height: 44px
@@ -278,14 +291,49 @@ export default {
     outline: 0
 .swiper-button-prev
   left: 3%
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.84375 5.90625L0 6.75L6.75 13.5L7.59375 12.6562L1.6875 6.75L7.59375 0.84375L6.75 0L3.375 3.375L0.84375 5.90625Z' fill='white'/%3E%3C/svg%3E")
+  background-image: none
   +sp-view
     left: 62%
 .swiper-button-next
-  left: 9%
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.82031 7.59375L7.66406 6.75L0.84375 0L0 0.84375L5.90625 6.75L0 12.6562L0.84375 13.5L4.28906 10.125L6.82031 7.59375Z' fill='white'/%3E%3C/svg%3E")
+  left: 8%
+  background-image: none
   +sp-view
     left: 76%
+
+.prev
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 100%
+  transition: all .2s cubic-bezier(0.215, 0.61, 0.355, 1)
+.prev-box
+  position: relative
+  overflow: hidden
+  margin: 24% 38%
+
+.menu-bar-late
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 85.85%
+  transform: translateX(100%)
+  transition: transform .5s
+
+.menu-bar-later
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 85.85%
+  transform: translateX(-100%)
+  transition: transform .5s
+
+.menu-bar
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 100%
 
 @keyframes automove
   0%

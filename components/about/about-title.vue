@@ -1,6 +1,6 @@
 <template lang="pug">
   .about-title
-    h1.title-text Who am I?
+    h1.title-text About me
 </template>
 <script>
 export default{
@@ -32,14 +32,17 @@ export default{
 
 /* スクロール後に表示 */
 .showc
+  width: 100%
+  text-align: center
+  margin: 20% 0 0
   .title-text
     transform: translateX(0)
 
 /* アニメーション設定 */
 .title-text
   font-size: 64px
-  transform: translateX(1800px)
-  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1) .3s
+  transform: translateX(1000px)
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1) .7s
   +sp-view
     font-size: 48px
     margin-top: 8%

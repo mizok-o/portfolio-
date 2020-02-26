@@ -2,24 +2,20 @@
 .container
    maincursor
    pheader
-   logo
    aboutcontainer
 </template>
 
 <script>
 import maincursor from '~/components/ui/main-cursor.vue'
-import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
 import aboutcontainer from '~/components/about/about-container.vue'
-
 export default {
   components: {
-      maincursor,
-      Logo,
       pheader,
       Sns,
-      aboutcontainer
+      aboutcontainer,
+      maincursor
   },
   head: {
     bodyAttrs: {
@@ -29,6 +25,8 @@ export default {
 }
 </script>
 <style lang="sass">
+.container
+  height: 100vh
 .content-about
   overflow-y: hidden
   +sp-view

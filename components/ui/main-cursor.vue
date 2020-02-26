@@ -4,39 +4,34 @@
     .follower#follower
 </template>
 <script>
+export default{}
 if (process.client) {
-let cursorR = 4;  //カーソルの半径
-const cursor = document.getElementById('cursor');  //カーソル用のdivを取得
-
-
-document.addEventListener('mousemove', function (e) {
-    cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
-},false);
-
-const follower = document.getElementById('follower');
+let cursorR = 4;
+const follow = document.getElementById('cursor');
 let hovFlag = false;
 document.addEventListener('mousemove', function(e) {
   if (!hovFlag) {
-    follower.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+    follow.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
   }
 });
 
-const link = document.querySelectorAll('a');
+const link =
+  document.querySelectorAll('a');
 for (let i = 0; i < link.length; i++) {
 
     link[i].addEventListener('mouseover', function (e) {
       hovFlag = true;
-      follower.classList.add('hov')
+      follow.classList.add('hov')
       let rect = e.target.getBoundingClientRect();
       let posX = rect.left + (rect.width / 2);
       let posY = rect.top + (rect.height / 2);
 
-      follower.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
+      follow.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
 
     });
     link[i].addEventListener('mouseout', function (e) {
         hovFlag = false;
-        follower.classList.remove('hov');
+        follow.classList.remove('hov');
     });
 }
 }
@@ -45,26 +40,20 @@ for (let i = 0; i < link.length; i++) {
 .cursor
   pointer-events: none
   position: fixed
-  top: -8px
-  left: -8px
-  width: 16px
-  height: 16px
-  background: #910000
+  top: -12px
+  left: -12px
+  width: 24px
+  height: 24px
   border-radius: 50%
-  z-index: 22
-.follower
-  pointer-events: none
-  position: fixed
-  top: -36px
-  left: -36px
+  background-color: #eee
+  z-index: 21
+  transition-duration: .1s
+.hov
+  transition: all .3s
+  background-color: #fff
   width: 72px
   height: 72px
-  border: 1px solid #eee
-  opacity: 0.5
-  border-radius: 50%
-  transition: all .2s
-  z-index: 21
-.hov
-  width: 0
-  height: 0
+  top: -36px
+  left: -36px
+  opacity: .6
 </style>

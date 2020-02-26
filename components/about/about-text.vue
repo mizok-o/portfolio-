@@ -1,9 +1,10 @@
 <template lang="pug">
-  .about-text
-    p.text-item Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
-      | I post on instagram about my travel. My dream is remote-working abroad with a  computer once.
+  .text-content
+    p.about-text.text-item Hi, I'm Kotaro Mizoguchi, 19 years old. I'm learning economics at Univ and I’m working as an intern in a web studio.
+      | Currently I can write css and html and a little bit vue.js.  I’m interested in getting new knowlidge. I’d like to try many new things. I usually prefer go somewhere alone.
+      | But I also like to do something with freinds. I post on instagram about my travel. Check it out, I gonna renew it. I make efforts to be valuable person and have a fun.
     h2.text-item.about-subtitle Skills
-    p.text-item.about-subtext figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
+    p.text-item.about-text figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
 </template>
 <script>
 export default{
@@ -36,8 +37,9 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-  margin: 4% 0 0
-  width: 72%
+  margin: 4% 16% 0
+  width: 64%
+  text-align: center
   +pc-md-view
     margin-top: 4%
   +sp-view
@@ -45,13 +47,15 @@ export default{
   .text-item
     transform: translateX(0)
 
-/* skillsテキスト */
-.about-subtext
-  word-wrap: break-word
+.about-text
+  font-size: 17px
+  font-family: 'Gill Sans'
+  font-weight: 400
+  letter-spacing: 1px
 
 /* skillsタイトル
 .about-subtitle
-  font-size: 32px
+  font-size: 36px
   +sp-view
     font-size: 24px
 
@@ -59,12 +63,14 @@ export default{
 .text-item
   transform: translateX(1800px)
   transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1).5s
+  margin: 0 2% 0
   &:nth-child(2)
-    transition-duration: 2.8s
-    margin-top: 12%
+    transition-duration: 2.6s
+    margin-top: 6%
   &:nth-child(3)
-    transition-duration: 3.2s
-    margin-top: 4%
+    transition-duration: 3s
+    margin: 2% 12% 12%
+    word-wrap: break-word
   +sp-view
     width: 100%
     margin-top: 8%

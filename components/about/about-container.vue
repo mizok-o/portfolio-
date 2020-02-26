@@ -1,12 +1,12 @@
 <template lang="pug">
   .about-container
     .about-content
+      .about-visual
+        aboutimage
       .about-description
         abouttitle
         abouttext
-      .about-visual
-        aboutimage
-    Sns
+      Sns
 </template>
 <script>
 import abouttitle from '~/components/about/about-title.vue'
@@ -29,20 +29,24 @@ export default{
   position: absolute
   top: 0
   left: 0
-  margin: 12% 12% 0 12%
 
 /* 横並びさせる */
 .about-content
+  position: relative
   display: flex
+  height: 100vh
+  margin: 0 1.75% 0
   +pc-md-view
     display: block
 
 /* 左側テキスト系 */
 .about-description
-  margin: 4% 8% 0 0
-  width: 48%
+  width: 50%
+  background-color: #aa0000
+  margin: 1.75% 0 1.75%
 
 /* 画像 */
-.about-visual, .about-description
-  width: 100%
+.about-visual
+  width: 50%
+  margin: 1.75% 0 1.75%
 </style>

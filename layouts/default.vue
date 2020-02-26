@@ -14,8 +14,7 @@ html
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
   background-color: #B70000
-  color: #f0f0f0
-
+  color: #eee
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -30,24 +29,6 @@ body
   box-sizing: border-box
 body, .container
   overflow-x: hidden
-  /* メニューアニメーション */
-body::after
-  content: ""
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  background-color: #333
-  z-index: 9999
-  pointer-events: none
-  /* animation: load 2s cubic-bezier(0.895, 0.08, 0.42, 0.3) 1 */
-  transform: translateX(100%)
-@keyframes load
-  0%
-    transform: translate(0%)
-  100%
-    transform: translate(100%)
 li, a
   margin: 0
   padding: 0
@@ -65,6 +46,7 @@ ul, ol
     margin: 0
 
 a
+  cursor: none
   text-decoration: none
   color: #fff
 
