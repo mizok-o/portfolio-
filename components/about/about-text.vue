@@ -65,6 +65,7 @@ export default{
   transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1).5s
   margin: 0 2% 0
   &:nth-child(2)
+    transition-duration: .6s
     transition-duration: 2.6s
     margin-top: 6%
   &:nth-child(3)

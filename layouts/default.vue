@@ -25,6 +25,7 @@ html
 body
   position: relative
   cursor: none
+  width: 100%
 *
   box-sizing: border-box
 body, .container

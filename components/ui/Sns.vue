@@ -59,10 +59,14 @@ export default{
 /* 全体 */
 .sns-container
   position: absolute
-  bottom: 4%
-  right: 2%
+  bottom: 5%
+  right: 4%
   z-index: 22
-
+  +sp-view
+    display: flex
+    position: relative
+    justify-content: flex-end
+    width: 100%
   &.showd
     .sns-item
       transform: translateY(0)
@@ -78,6 +82,7 @@ export default{
   margin-bottom: 12%
   transition: all 2.5s cubic-bezier(0.77, 0, 0.175, 1) 1s
   +sp-view
+    margin-right: 10%
     transition-duration: .6s
   &:nth-child(1)
   &:nth-child(2)
@@ -87,17 +92,16 @@ export default{
     transition-duration: 2.9s
     transition-delay: 1.2s
     +sp-view
-      margin-right: 8%
+      margin-right: 5%
       stroke-width: 2px
   &:nth-child(4)
     margin-right: 0
     transition-duration: 3.1s
     transition-delay: 1.3s
     +sp-view
-      margin-right: -4%
+      margin-right: 0
 
 .sns-content
-  margin-left: auto
   color: #fafafa
   transition: color .4s cubic-bezier(0.6, 0.6, 0.22, 1)
   &:hover

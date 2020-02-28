@@ -335,6 +335,9 @@ export default {
   width: 100%
   height: 100%
 
+.index-sns
+  margin-right: 18%
+
 @keyframes automove
   0%
     transform: translate(-50%)

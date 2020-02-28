@@ -2,7 +2,7 @@
   .main-visual
     .svg-container
       .NuxtLogo
-        img.logo-anime1(src="~/assets/img/Kotarog.svg")
+        img.logo-anime1(src="~/assets/img/Kotaro.svg")
       .NuxtLogo
         img.logo-anime2(src="~/assets/img/Mizoguchi.svg")
 
@@ -10,18 +10,15 @@
 <style lang="sass">
 /* 全体の入れ物 */
 .main-visual
-  height: 860px
+  height: 88vh
   position: relative
 
 /* 画像の入れ物 */
 .svg-container
   position: absolute
   width: 100%
-  height: 48%
+  height: 44vh
   margin: 8% 0 0 12%
-  &:hover
-    .NuxtLogo
-      fill: #B70000
 
 /* 画像 */
 .NuxtLogo
@@ -29,6 +26,9 @@
   overflow: hidden
   height: 50%
   width: 100%
+  text-align: left
+  &:first-child
+    height: 40%
 
 
 .logo-anime1
@@ -36,14 +36,15 @@
   top: 0
   left: 0
   height: 100%
-  width: 54%
+  width: 60%
+  margin-right: auto
   animation: logoAnime  2s cubic-bezier(0.77, 0, 0.175, 1)
 .logo-anime2
   position: absolute
   top: 0
   left: 0
   height: 100%
-  width: 64%
+  width: 80%
   animation: logoAnime 2.1s cubic-bezier(0.77, 0, 0.175, 1)
 
 /* aboutページのとき

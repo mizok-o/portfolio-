@@ -6,7 +6,7 @@
       .about-description
         abouttitle
         abouttext
-      Sns
+    Sns
 </template>
 <script>
 import abouttitle from '~/components/about/about-title.vue'
@@ -35,18 +35,18 @@ export default{
   position: relative
   display: flex
   height: 100vh
-  margin: 0 1.75% 0
+  margin: 0 2% 0 0
   +pc-md-view
     display: block
 
 /* 左側テキスト系 */
 .about-description
-  width: 50%
-  background-color: #aa0000
-  margin: 1.75% 0 1.75%
+  width: 54%
+  background-color: #b00000
+  margin: 12% 0 2%
 
 /* 画像 */
 .about-visual
-  width: 50%
-  margin: 1.75% 0 1.75%
+  width: 64%
+  margin: 4.5% 0 0 0
 </style>

@@ -9,10 +9,10 @@ header.header-content
 <style lang="sass">
   /* ヘッダー全体 */
 .header-content
-  margin: 3.5% 6% 0
+  margin: 3.5% 5% 0
   position: relative
   +sp-view
-    margin: 5% 0 0 85%
+    margin: 6% 0 0 80%
 
 .header-menu
   position: fixed
@@ -20,7 +20,7 @@ header.header-content
   width: 88%
   justify-content: space-between
   z-index: 1000
-  font-size: 20px
+  font-size: 1.2em
   +sp-view
     display: block
     font-size: 16px

@@ -34,7 +34,7 @@ export default{
 .showc
   width: 100%
   text-align: center
-  margin: 20% 0 0
+  margin: 18% 0 0
   .title-text
     transform: translateX(0)
 
