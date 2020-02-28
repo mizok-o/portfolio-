@@ -4,7 +4,6 @@
    pheader
    aboutcontainer
 </template>
-
 <script>
 import maincursor from '~/components/ui/main-cursor.vue'
 import pheader from '~/components/layout/pheader.vue'
