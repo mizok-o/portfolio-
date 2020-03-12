@@ -37,40 +37,34 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-  margin: 4% 16% 0
-  width: 64%
-  text-align: center
-  +pc-md-view
-    margin-top: 4%
+  margin: 4% 12% 0
+  width: 72%
   +sp-view
     width: 100%
   .text-item
     transform: translateX(0)
 
 .about-text
-  font-size: 17px
-  font-family: 'Gill Sans'
-  font-weight: 400
+  font-size: 16px
+  font-weight: 300
   letter-spacing: 1px
 
 /* skillsタイトル
 .about-subtitle
-  font-size: 36px
-  +sp-view
-    font-size: 24px
+  font-size: 24px
+  font-weight: 400
 
 /* アニメーション設定 */
 .text-item
   transform: translateX(1800px)
   transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1).5s
-  margin: 0 2% 0
   &:nth-child(2)
     transition-duration: .6s
     transition-duration: 2.6s
     margin-top: 6%
   &:nth-child(3)
     transition-duration: 3s
-    margin: 2% 12% 12%
+    margin: 2% 0 20%
     word-wrap: break-word
   +sp-view
     width: 100%

@@ -14,26 +14,26 @@ document.addEventListener('mousemove', function(e) {
     follow.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
   }
 });
-
-const link =
-  document.querySelectorAll('a');
-for (let i = 0; i < link.length; i++) {
-
-    link[i].addEventListener('mouseover', function (e) {
-      hovFlag = true;
-      follow.classList.add('hov')
-      let rect = e.target.getBoundingClientRect();
-      let posX = rect.left + (rect.width / 2);
-      let posY = rect.top + (rect.height / 2);
-
-      follow.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
-
-    });
-    link[i].addEventListener('mouseout', function (e) {
-        hovFlag = false;
-        follow.classList.remove('hov');
-    });
-}
+//
+// const link =
+//   document.querySelectorAll('a');
+// for (let i = 0; i < link.length; i++) {
+//
+//     link[i].addEventListener('mouseover', function (e) {
+//       hovFlag = true;
+//       follow.classList.add('hov')
+//       let rect = e.target.getBoundingClientRect();
+//       let posX = rect.left + (rect.width / 2);
+//       let posY = rect.top + (rect.height / 2);
+//
+//       follow.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
+//
+//     });
+//     link[i].addEventListener('mouseout', function (e) {
+//         hovFlag = false;
+//         follow.classList.remove('hov');
+//     });
+// }
 }
 </script>
 <style lang="sass">
@@ -47,13 +47,4 @@ for (let i = 0; i < link.length; i++) {
   border-radius: 50%
   background-color: #eee
   z-index: 21
-  transition-duration: .1s
-.hov
-  transition: all .3s
-  background-color: #fff
-  width: 72px
-  height: 72px
-  top: -36px
-  left: -36px
-  opacity: .6
 </style>

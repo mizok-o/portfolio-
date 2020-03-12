@@ -33,14 +33,14 @@ export default{
 /* スクロール後に表示 */
 .showc
   width: 100%
-  text-align: center
-  margin: 18% 0 0
+  margin: 50% 0 0 12%
   .title-text
     transform: translateX(0)
 
 /* アニメーション設定 */
 .title-text
-  font-size: 64px
+  font-size: 44px
+  font-weight: 400
   transform: translateX(1000px)
   transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1) .7s
   +sp-view

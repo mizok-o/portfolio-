@@ -9,7 +9,7 @@ header.header-content
 <style lang="sass">
   /* ヘッダー全体 */
 .header-content
-  margin: 3.5% 5% 0
+  margin: 7vh 5% 0
   position: relative
   +sp-view
     margin: 6% 0 0 80%

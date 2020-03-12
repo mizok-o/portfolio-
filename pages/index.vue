@@ -60,10 +60,10 @@ export default {
     data() {
       return {
         swiperOption: {
-          slidesPerView: 1.2,
-          spaceBetween: 16,
+          slidesPerView: 1.15,
+          spaceBetween: 12,
           paginationClickable: true,
-          speed: 1000,
+          speed: 800,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
@@ -194,12 +194,6 @@ export default {
   +sp-view
     padding-left: 0%
 
-.swiper-slide
-  transform: scale(0.9)
-  transition: transform .6s cubic-bezier(0.77, 0, 0.175, 1)
-.swiper-slide-active
-  transform: scale(1.1)
-
 /* スライドのタイトル */
 .product-title
   display: flex
@@ -226,7 +220,7 @@ export default {
   +sp-view
     display: block
 .main-link
-  width: 68%
+  width: 72%
   +sp-view
     width: 88%
 .main-img
@@ -275,7 +269,7 @@ export default {
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 88%
+  top: 85%
   left: 0
   width: 72px
   height: 72px

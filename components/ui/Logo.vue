@@ -11,25 +11,50 @@
 /* 全体の入れ物 */
 .main-visual
   height: 88vh
+  width: 100%
   position: relative
+  transition: transform 1s
+  +sp-view
+    transform: rotate(90deg)
 
 /* 画像の入れ物 */
 .svg-container
   position: absolute
-  width: 100%
+  width: 1400px
   height: 44vh
-  margin: 8% 0 0 12%
+  margin: 8% 0 0 14%
+  +pc-lg-view
+    width: 1200px
+    margin-left: 16%
+  +pc-md-view
+    width: 1100px
+    margin-left: 10%
+  +pc-sm-view
+    width: 880px
+  +sp-view
+    top: 32%
+    bottom: 50%
+    left: -60px
+    margin: 0
+    width: 720px
 
 /* 画像 */
 .NuxtLogo
   position: relative
   overflow: hidden
-  height: 50%
+  height: 60%
   width: 100%
   text-align: left
+  +pc-lg-view
+    height: 42%
+  +sp-view
+    height: 32%
   &:first-child
-    height: 40%
-
+    height: 41%
+    +pc-lg-view
+      height: 36%
+    +sp-view
+      height: 32%
 
 .logo-anime1
   position: absolute
@@ -38,21 +63,16 @@
   height: 100%
   width: 60%
   margin-right: auto
-  animation: logoAnime  2s cubic-bezier(0.77, 0, 0.175, 1)
+  animation: logoAnime  1.6s cubic-bezier(0.77, 0, 0.175, 1)
+  +pc-lg-view
+    width: 54%
 .logo-anime2
   position: absolute
   top: 0
   left: 0
   height: 100%
   width: 80%
-  animation: logoAnime 2.1s cubic-bezier(0.77, 0, 0.175, 1)
-
-/* aboutページのとき
-.content-about
-  .NuxtLogo
-    opacity: .3
-    overflow: hidden
-    position: relative
+  animation: logoAnime 1.7s cubic-bezier(0.77, 0, 0.175, 1)
 
 @keyframes logoAnime
   0%
