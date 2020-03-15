@@ -1,22 +1,21 @@
 <template lang="pug">
 .container
+   maincursor
    pheader
    logo
    aboutcontainer
 </template>
-
-<script lang='coffee'>
-import Logo from '~/components/ui/Logo.vue'
+<script>
+import maincursor from '~/components/ui/main-cursor.vue'
 import pheader from '~/components/layout/pheader.vue'
-import Sns from '~/components/ui/Sns.vue'
+import Logo from '~/components/ui/Logo.vue'
 import aboutcontainer from '~/components/about/about-container.vue'
-
 export default {
   components: {
-      Logo,
       pheader,
-      Sns,
-      aboutcontainer
+      Logo,
+      aboutcontainer,
+      maincursor
   },
   head: {
     bodyAttrs: {
@@ -26,6 +25,10 @@ export default {
 }
 </script>
 <style lang="sass">
+.container
+  height: 100vh
 .content-about
-  overflow: hidden
+  overflow-y: hidden
+  +sp-view
+    overflow: inherit
 </style>

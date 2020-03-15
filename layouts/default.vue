@@ -1,5 +1,4 @@
 <template lang="pug">
-.container
   nuxt
 </template>
 <script>
@@ -15,13 +14,22 @@ html
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
   background-color: #B70000
-  color: #f0f0f0
-  box-sizing: border-box
+  color: #eee
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
   &::-webkit-scrollbar
     display: none
+  +sp-view
+    font-size: 14px
+body
+  position: relative
+  cursor: none
+  width: 100%
+*
+  box-sizing: border-box
+body, .container
+  overflow-x: hidden
 li, a
   margin: 0
   padding: 0
@@ -30,7 +38,6 @@ ul, ol
   list-style: none
   padding: 0
   margin: 0
-
 *
   box-sizing: border-box
   margin: 0
@@ -40,6 +47,7 @@ ul, ol
     margin: 0
 
 a
+  cursor: none
   text-decoration: none
   color: #fff
 

@@ -1,10 +1,49 @@
 <template lang="pug">
-  h1.about-titile Who am I?
+  .about-title
+    h1.title-text About me
 </template>
+<script>
+export default{
+ mounted() {
+   this.onIntersect()
+   },
+ methods: {
+   onIntersect() {
+     const options = {
+       root: null,
+       rootMargin: "-72px",
+       threshold: 0.6
+     }
+     const observer = new IntersectionObserver(this.addShowClass)
+     observer.observe(this.$el)
+   },
+   addShowClass(entries) {
+     for(const e of entries) {
+       if (e.intersectionRatio) {
+         e.target.classList.add("showc")
+        e.target.classList.remove("about-title")
+       }
+     }
+   }
+ }
+}
+</script>
 <style lang="sass">
-.about-titile
-  font-size: 64px
-  font-weight: bold
 
+/* スクロール後に表示 */
+.showc
+  width: 100%
+  margin: 50% 0 0 12%
+  .title-text
+    transform: translateX(0)
 
+/* アニメーション設定 */
+.title-text
+  font-size: 44px
+  font-weight: 400
+  transform: translateX(1000px)
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1) .7s
+  +sp-view
+    font-size: 48px
+    margin-top: 8%
 </style>
