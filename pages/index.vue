@@ -1,6 +1,6 @@
 <template lang="pug" class=".index">
 .index
-  maincursor
+  <!-- maincursor -->
   pheader
   logo
   .works
@@ -26,16 +26,17 @@
               .textarea {{product.text}}
               .link-dribbble
                 a(:href="product.url", target="_blank") visit
-      .swiper-button-prev
+      .swiper-button-prev(v-bind:class="{ active: isActive }")
         .prev
           .prev-box
             img.menu-bar(src="~/assets/img/button_swiper/arrow_next.svg")
             img.menu-bar-late(src="~/assets/img/button_swiper/arrow_next.svg")
-      .swiper-button-next
+      .swiper-button-next(v-bind:class="{ active: isActive }")
         .prev
           .prev-box
             img.menu-bar(src="~/assets/img/button_swiper/arrow_prev.svg")
             img.menu-bar-later(src="~/assets/img/button_swiper/arrow_prev.svg")
+      .swiper-scrollbar
     .index-sns.u-sp-view
       sns
 </template>
@@ -67,6 +68,10 @@ export default {
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+          },
           autoplay: {
             delay: 3000,
             disableOnInteraction: false
@@ -161,7 +166,6 @@ export default {
 }
 </script>
 <style lang="sass">
-/* カーソル遅延 */
 
 /* ワークス全体 */
 .works
@@ -183,8 +187,6 @@ export default {
   +sp-view
     margin-top: 3%
     width: 480px
-
-/* スワイパー */
 
 /* 全体 */
 .swiper-container
@@ -273,7 +275,9 @@ export default {
   left: 0
   width: 72px
   height: 72px
-  cursor: none
+  &:hover
+    .prev-box
+      display: block
   +pc-md-view
     width: 44px
     height: 44px
@@ -297,13 +301,20 @@ export default {
 .prev
   position: relative
   overflow: hidden
-  width: 100%
-  height: 100%
+  width: 24%
+  height: 24%
   transition: all .2s cubic-bezier(0.215, 0.61, 0.355, 1)
+  background-color: #fafafa
+  border-radius: 50%
+  margin: 38%
+
 .prev-box
+  display: none
   position: relative
   overflow: hidden
   margin: 24% 38%
+
+
 
 .menu-bar-late
   position: absolute
@@ -328,6 +339,17 @@ export default {
   overflow: hidden
   width: 100%
   height: 100%
+
+.swiper-scrollbar
+  position: absolute
+  bottom: 4%
+  left: 5%
+  width: 11%
+  height: 1px
+  background-color: #af0000
+
+.swiper-scrollbar-drag
+  background: rgba(256, 256, 256, .8)
 
 .index-sns
   margin-right: 18%

@@ -11,9 +11,10 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href: "https://fonts.googleapis.com/css?family=Cormorant&display=swap" ,rel: "stylesheet"}
-
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://use.typekit.net/tiv6nbi.js' }
     ]
   },
   /*
@@ -43,6 +44,7 @@ export default {
   modules: [
   '@nuxtjs/style-resources'
  ],
+ axios: {},
  styleResources: {
   sass: [
    '@/assets/sass/_mixin.sass',
@@ -73,5 +75,5 @@ export default {
   //   exclude: /(node_modules)/
   // })
   //   }
-  }
+}
 }

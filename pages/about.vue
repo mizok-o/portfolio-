@@ -2,7 +2,6 @@
 .container
    maincursor
    pheader
-   logo
    aboutcontainer
 </template>
 <script>

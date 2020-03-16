@@ -1,7 +1,7 @@
 <template lang="pug">
   .about-image
-    img.u-pc-view.img-content(src="~/assets/img/about-me.jpg")
-    img.u-sp-view.sp-img-content(src="~/assets/img/about-me_02.jpg")
+    img.img-content(src="~/assets/img/about-me.jpg")
+    h1.about-me About me
 
 </template>
 <script>
@@ -37,42 +37,24 @@ export default{
 /* スクロール後に表示 */
 .show
   position: relative
-  overflow: hidden
-  height: 100%
   width: 100%
-  +pc-md-view
-    width: 138%
-  +pc-sm-view
-    width: 168%
-  +sp-view
-    width: 88%
-  .my-image
-    padding-top: 72vh
-  &::before
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    background-color: #B70000
-    width: 100%
-    height: 100%
-    z-index: 2
-    transform: translateX(100%)
-    animation: shown 2.4s cubic-bezier(0.77, 0, 0.175, 1)
+  height: 100%
+  text-align: center
 
 .img-content
+  height: 120%
+  width: 80%
+
+.about-me
   position: absolute
   top: 0
+  bottom: 0
+  left: 0
   right: 0
-  height: 100%
-  width: auto
-  transform: translateY(-2%)
-  &:nth-child(2)
-    z-index: 1
-  &:nth-child(3)
-    z-index: 2
-  +sp-view
-    transform: translateY(0)
+  margin: auto
+  height: 50%
+  font-weight: 500
+  font-size: 12em
 
 @keyframes shown
   0%
