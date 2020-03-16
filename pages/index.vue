@@ -1,6 +1,5 @@
 <template lang="pug" class=".index">
 .index
-  <!-- maincursor -->
   pheader
   logo
   .works
@@ -28,14 +27,10 @@
                 a(:href="product.url", target="_blank") visit
       .swiper-button-prev(v-bind:class="{ active: isActive }")
         .prev
-          .prev-box
-            img.menu-bar(src="~/assets/img/button_swiper/arrow_next.svg")
-            img.menu-bar-late(src="~/assets/img/button_swiper/arrow_next.svg")
+        img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
       .swiper-button-next(v-bind:class="{ active: isActive }")
         .prev
-          .prev-box
-            img.menu-bar(src="~/assets/img/button_swiper/arrow_prev.svg")
-            img.menu-bar-later(src="~/assets/img/button_swiper/arrow_prev.svg")
+        img.menu-bar(src="~/assets/img/button_swiper/next.svg")
       .swiper-scrollbar
     .index-sns.u-sp-view
       sns
@@ -44,10 +39,8 @@
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
-import maincursor from '~/components/ui/main-cursor.vue'
 export default {
   components: {
-    maincursor,
     Logo,
     pheader,
     Sns
@@ -81,6 +74,7 @@ export default {
           prevEl: '.swiper-button-prev',
         }
         },
+        isActive: true,
         products: [
           {
             title: 'An artist Ariana',
@@ -276,8 +270,10 @@ export default {
   width: 72px
   height: 72px
   &:hover
-    .prev-box
-      display: block
+    .prev
+      opacity: 0
+    .menu-bar
+      opacity: 1
   +pc-md-view
     width: 44px
     height: 44px
@@ -303,42 +299,21 @@ export default {
   overflow: hidden
   width: 24%
   height: 24%
-  transition: all .2s cubic-bezier(0.215, 0.61, 0.355, 1)
   background-color: #fafafa
   border-radius: 50%
   margin: 38%
-
-.prev-box
-  display: none
-  position: relative
-  overflow: hidden
-  margin: 24% 38%
-
-
-
-.menu-bar-late
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 85.85%
-  transform: translateX(100%)
-  transition: transform .5s
-
-.menu-bar-later
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 85.85%
-  transform: translateX(-100%)
-  transition: transform .5s
+  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
 
 .menu-bar
-  position: relative
-  overflow: hidden
-  width: 100%
-  height: 100%
+  position: absolute
+  top: 25%
+  left: 25%
+  width: 50%
+  height: 50%
+  opacity: 0
+  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+
 
 .swiper-scrollbar
   position: absolute
