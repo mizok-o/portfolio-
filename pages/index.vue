@@ -13,18 +13,8 @@
         img.main-title(src="../assets/img/Current Works.svg")
     client-only
       swiper(:options="swiperOption")
-        swiper-slide.product-item(v-for="(product, index) in products" :key="product.id")
-          .product-title
-            .product-number(v-if="index <= 8") 0{{index + 1}}
-            .product-number(v-else) {{index + 1}}
-            h3.title-text {{product.title}}
-          .product-main
-            a.main-link(:href="product.url" ,target="_blank")
-              img.main-img(:src="product.image")
-            .main-text
-              .textarea {{product.text}}
-              .link-dribbble
-                a(:href="product.url", target="_blank") visit
+        swiper-slide.product-item
+          .index-swiper-container
       .swiper-button-prev(v-bind:class="{ active: isActive }")
         .prev
         img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
@@ -39,6 +29,7 @@
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
+import axios from 'axios'
 export default {
   components: {
     Logo,
@@ -53,6 +44,7 @@ export default {
   name: 'carrousel',
     data() {
       return {
+        items: '',
         swiperOption: {
           slidesPerView: 1.15,
           spaceBetween: 12,
@@ -75,88 +67,23 @@ export default {
         }
         },
         isActive: true,
-        products: [
-          {
-            title: 'An artist Ariana',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_001.jpg'),
-            url: 'https://dribbble.com/shots/8973871-Promote-an-artist'
-          },
-          {
-            title: 'Pineapple',
-            text: 'mitarashi This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_002.jpg'),
-            url: 'https://dribbble.com/shots/9838973-pineapple'
-          },
-          {
-            title: 'Panpkin soup',
-            text: 'kinako This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_003.jpg'),
-            url: 'https://dribbble.com/shots/7635966-2'
-          },
-          {
-            title: 'Pianist',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_004.jpg'),
-            url: 'https://dribbble.com/shots/7780934-2019-10-24'
-          },
-          {
-            title: 'Sky blue coat',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_005.jpg'),
-            url: 'https://dribbble.com/shots/7579708-Sky-blue'
-          },
-          {
-            title: 'Happy Donuts',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_006.jpg'),
-            url: 'https://dribbble.com/shots/8801512-Happy-Donuts'
-          },
-          {
-            title: 'Vietnam',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_007.jpg'),
-            url: 'https://dribbble.com/shots/8562682-Viet-nam'
-          },
-          {
-            title: 'Pens',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_008.jpg'),
-            url: "https://zxcvbnmnbvcxz.com/"
-          },
-          {
-            title: 'An artist Ariana',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_001.jpg'),
-            url: "https://dribbble.com/shots/8973871-Promote-an-artist"
-          },
-          {
-            title: 'Cosmetic brand',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_010.jpg'),
-            url: 'https://dribbble.com/shots/8760547-women-s-brand'
-          },
-          {
-            title: 'La Bella',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_011.jpg'),
-            url: "https://zxcvbnmnbvcxz.com/"
-          },
-          {
-            title: 'Mountain',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_012.jpg'),
-            url: 'https://dribbble.com/shots/8568625-Mt-Hida'
-          },
-          {
-            title: 'The third place',
-            text: 'This is an original design made by me on dribbble.',
-            image: require('~/assets/img/dribbble/dribbble_013.jpg'),
-            url: 'https://dribbble.com/shots/7861592-Third-place'
-          },
-        ]
       }
-    }
+    },
+    async asyncData() {
+      const myHttpClient = axios.create({
+        baseURL: 'https://kotaro.microcms.io/api/v1/news',
+        news: {
+          'X-API-KEY': 'daf4248f-d2d5-4cc7-9279-0fde55724490'
+        }
+      })
+      const [Object1, Object2, Object3, Object4] = await Promise.all([
+        myHttpClient.get('endpoint1'),
+        myHttpClient.get('endpoint2'),
+        myHttpClient.get('endpoint3'),
+        myHttpClient.get('endpoint4')
+      ])
+      return { Object1, Object2, Object3, Object4 }
+    },
 }
 </script>
 <style lang="sass">

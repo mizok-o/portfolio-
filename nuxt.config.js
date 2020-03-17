@@ -42,6 +42,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+  '@nuxtjs/axios',
   '@nuxtjs/style-resources'
  ],
  axios: {},
@@ -76,4 +77,13 @@ export default {
   // })
   //   }
 }
+
+}
+require('dotenv').config()
+const { API_KEY, baseUrl } = process.env
+module.exports = {
+ env: {
+    API_KEY: process.env.API_KEY,
+    baseUrl
+  },
 }
