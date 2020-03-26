@@ -43,7 +43,7 @@ export default{
 
 .img-content
   height: 120%
-  width: 80%
+  width: 72%
 
 .about-me
   position: absolute
@@ -54,7 +54,9 @@ export default{
   margin: auto
   height: 50%
   font-weight: 500
-  font-size: 12em
+  font-size: 15em
+  +pc-lg-view
+    font-size: 12em
 
 @keyframes shown
   0%

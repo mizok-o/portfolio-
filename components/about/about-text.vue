@@ -31,23 +31,22 @@ export default{
  }
 }
 </script>
-<style lang="sass">6
+<style lang="sass">
 /* スクロール後に表示 */
 .showe
-  width: 240px
+  width: 224px
   font-family: 'Meta Pro'
   font-weight: 500
   line-height: 144%
   .text-detail
     opacity: 1
-    transform: translateX(0)
-    transition: all 5s cubic-bezier(0.23, 1, 0.32, 1)
+    transform: translateY(0)
+    transition: all 3s cubic-bezier(0.23, 1, 0.32, 1)
   +sp-view
     width: 100%
 
 .text-detail
   opacity: 0
-  transform: translateX(-100%)
-  /* font-family: 'Meta Pro' */
+  transform: translateY(40%)
 
 </style>

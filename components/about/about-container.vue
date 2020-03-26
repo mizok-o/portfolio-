@@ -36,7 +36,7 @@ export default{
 /* 横並びさせる */
 .about-content
   position: relative
-  margin: 12% 16% 10%
+  margin: 14% 16% 8%
   +pc-md-view
     display: block
   +sp-view
@@ -52,9 +52,9 @@ export default{
     width: auto
     left: -24%
 .about-description
-  margin-top: 18%
+  margin: 12% 0 0 2%
   width: 100%
-  height: 90%
+  height: 72%
   +sp-view
     width: 64%
     height: 64%
@@ -63,7 +63,7 @@ export default{
 
 .about-detail
   display: flex
-  margin: 13% 9% 0
+  margin: 8% 9% 0
 
 .about-contact
   display: flex

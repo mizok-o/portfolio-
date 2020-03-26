@@ -32,14 +32,14 @@ export default{
 .showf
   .about-logo
     width: 144%
-    margin: 12% 0 0 -80%
+    margin: 12% 0 0 -40%
     opacity: .8
-    transform: translateY(0) rotate(4deg)
-    transition: transform 5s cubic-bezier(0.19, 1, 0.22, 1), opacity 6s cubic-bezier(0.19, 1, 0.22, 1)
+    transform: translateX(0) rotate(4deg)
+    transition: transform 2.4s cubic-bezier(0.61, 1, 0.78, 1), opacity 2.4s cubic-bezier(0.61, 1, 0.78, 1)
     +sp-view
       width: 100%
 
 .about-logo
   opacity: 0
-  transform: translateY(-32%)
+  transform: translateX(60%)
 </style>

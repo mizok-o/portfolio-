@@ -50,7 +50,7 @@ export default{
      for(const e of entries) {
        if (e.intersectionRatio > 0) {
          e.target.classList.add("showd")
-         e.target.classList.remove("sns-all")
+         e.target.classList.remove("contact-content")
         }
      }
    }
@@ -74,25 +74,38 @@ export default{
     justify-content: flex-end
     width: 80%
     margin-top: 8%
-  &.showd
-    .sns-item
-      transform: translateY(0)
-      opacity: 1
+.showd
+  z-index: 22
+  display: flex
+  justify-content: flex-end
+  height: 27%
+  font-family: 'meta pro'
+  font-weight: 300
+  font-size: 18px
+  +sp-view
+    display: flex
+    position: relative
+    justify-content: flex-end
+    width: 80%
+    margin-top: 8%
+  .sns-title, .contact-title
+    transform: translateY(0)
+    opacity: 1
 
-.sns-title
+.sns-title, .contact-title
   font-weight: 300
   margin-right: 24%
+  transition: all 3s cubic-bezier(0.23, 1, 0.32, 1) .2s
+  transform: translateY(100%)
+  opacity: 0
 
 /* 1つずつ設定 */
 .sns-item
   font-size: 18px
   text-align: left
   z-index: 23
-  transform: translateY(8px)
   margin-top: 12%
   letter-spacing: 2px
-  opacity: 0
-  transition: all 3s cubic-bezier(0.77, 0, 0.175, 1)
   +sp-view
     margin-right: 12%
   &:nth-child(2)

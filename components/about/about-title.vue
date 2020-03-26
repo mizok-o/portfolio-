@@ -37,7 +37,7 @@ export default{
   +sp-view
     width: 100%
   .text-item
-    transform: translateX(0)
+    transform: translateY(0)
     opacity: 1
 
 .about-text
@@ -48,9 +48,9 @@ export default{
 
 /* アニメーション設定 */
 .text-item
-  transform: translateX(20%)
+  transform: translateY(40%)
   opacity: 0
-  transition: transform 7s cubic-bezier(0.23, 1, 0.32, 1), opacity 7s cubic-bezier(0.23, 1, 0.32, 1) .2s
+  transition: transform 2s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
   +sp-view
     width: 100%
     margin-top: 8%

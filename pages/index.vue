@@ -13,12 +13,18 @@
         img.main-title(src="../assets/img/Current Works.svg")
     client-only
       swiper(:options="swiperOption")
-        swiper-slide.product-item
-          .index-swiper-container
-      .swiper-button-prev(v-bind:class="{ active: isActive }")
+        swiper-slide(v-for="item in items")
+          .product-top
+            .product-number {{ item.number }}
+            .product-title {{ item.title }}
+          .product-main
+            a.product-main-link(v-bind:href="item.link")
+              img.product-main-img(v-bind:src="item.img.url")
+            .main-text {{ item.subtext }}
+      .swiper-button-prev
         .prev
         img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
-      .swiper-button-next(v-bind:class="{ active: isActive }")
+      .swiper-button-next
         .prev
         img.menu-bar(src="~/assets/img/button_swiper/next.svg")
       .swiper-scrollbar
@@ -29,7 +35,7 @@
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import Sns from '~/components/ui/Sns.vue'
-import axios from 'axios'
+import axios from "axios"
 export default {
   components: {
     Logo,
@@ -38,13 +44,12 @@ export default {
   },
   head: {
     bodyAttrs: {
-      "class": 'content-index main-cursor'
+      "class": 'content-index'
     }
   },
   name: 'carrousel',
     data() {
       return {
-        items: '',
         swiperOption: {
           slidesPerView: 1.15,
           spaceBetween: 12,
@@ -65,26 +70,23 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }
-        },
-        isActive: true,
+      },
+        items: []
       }
     },
     async asyncData() {
-      const myHttpClient = axios.create({
-        baseURL: 'https://kotaro.microcms.io/api/v1/news',
-        news: {
-          'X-API-KEY': 'daf4248f-d2d5-4cc7-9279-0fde55724490'
-        }
-      })
-      const [Object1, Object2, Object3, Object4] = await Promise.all([
-        myHttpClient.get('endpoint1'),
-        myHttpClient.get('endpoint2'),
-        myHttpClient.get('endpoint3'),
-        myHttpClient.get('endpoint4')
-      ])
-      return { Object1, Object2, Object3, Object4 }
-    },
+    const { data } = await axios.get(
+      "https://kotaro.microcms.io/api/v1/news",
+      {
+        headers: { "X-API-KEY": "daf4248f-d2d5-4cc7-9279-0fde55724490" }
+      }
+    );
+    return {
+      items: data.contents
+    };
+  }
 }
+
 </script>
 <style lang="sass">
 
@@ -118,13 +120,13 @@ export default {
     padding-left: 0%
 
 /* スライドのタイトル */
-.product-title
+.product-top
   display: flex
   justify-content: flex-start
   align-items: baseline
   margin: 6% 0 2% 0
-  .title-text
-    font-size: 240%
+  .product-title
+    font-size: 280%
     +sp-view
       font-size: 180%
 /* スライドの番号 */
@@ -142,22 +144,26 @@ export default {
   z-index: 23
   +sp-view
     display: block
-.main-link
+.product-main-link
   width: 72%
   +sp-view
     width: 88%
-.main-img
-  width: 88%
+.product-main-img
+  width: 100%
 
 /* 画像横のテキスト */
 .main-text
   position: absolute
-  right: 2%
+  right: -32%
   bottom: -48%
-  width: 32%
+  width: 56%
   height: 50%
+  font-size: 24px
+  letter-spacing: 2px
   transform: rotate(-90deg)
   transform-origin: top left
+  +pc-md-view
+    font-size: 18px
   +sp-view
     position: static
     width: 64%
@@ -239,8 +245,6 @@ export default {
   height: 50%
   opacity: 0
   transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-
-
 
 .swiper-scrollbar
   position: absolute
