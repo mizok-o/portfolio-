@@ -13,7 +13,7 @@
         img.main-title(src="../assets/img/Current Works.svg")
     client-only
       swiper(:options="swiperOption")
-        swiper-slide(v-for="item in items")
+        swiper-slide.swiper-content(v-for="item in items")
           .product-top
             .product-number {{ item.number }}
             .product-title {{ item.title }}
@@ -22,14 +22,14 @@
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
       .swiper-button-prev
-        .prev
+        .prev.u-pc-view
         img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
       .swiper-button-next
-        .prev
+        .prev.u-pc-view
         img.menu-bar(src="~/assets/img/button_swiper/next.svg")
       .swiper-scrollbar
-    .index-sns.u-sp-view
-      sns
+  .index-sns.u-sp-view
+    sns
 </template>
 <script>
 import Logo from '~/components/ui/Logo.vue'
@@ -69,6 +69,12 @@ export default {
           navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          750: {
+            slidesPerView: 1.2,
+            spaceBetween: 24
+          }
         }
       },
         items: []
@@ -90,6 +96,11 @@ export default {
 </script>
 <style lang="sass">
 
+.index
+  +sp-view
+    position: relative
+    overflow-x: hidden
+
 /* ワークス全体 */
 .works
   position: relative
@@ -108,7 +119,7 @@ export default {
 .main-title
   width: 960px
   +sp-view
-    margin-top: 3%
+    /* margin-top: 3% */
     width: 480px
 
 /* 全体 */
@@ -118,6 +129,10 @@ export default {
   padding: 0 0 7% 10%
   +sp-view
     padding-left: 0%
+    margin: 12% 0 0 0
+
+.swiper-content
+  margin-right: 4%
 
 /* スライドのタイトル */
 .product-top
@@ -125,17 +140,23 @@ export default {
   justify-content: flex-start
   align-items: baseline
   margin: 6% 0 2% 0
+  +sp-view
+    margin: 6% 0 6% 0
   .product-title
     font-size: 280%
+    +pc-md-view
+      font-size: 200%
     +sp-view
       font-size: 180%
 /* スライドの番号 */
 .product-number
   font-size: 600%
   margin: 0 14% 0 -12%
+  +pc-md-view
+    font-size: 400%
   +sp-view
     font-size: 380%
-    margin: 0 4% 0 0
+    margin: 0 12% 0 0
 
 /* スワイパー画像 */
 .product-main
@@ -166,34 +187,10 @@ export default {
     font-size: 18px
   +sp-view
     position: static
-    width: 64%
+    width: 100%
     transform: none
-    margin: 4% 0 0 0
-
-/* visitリンク */
-.link-dribbble
-  display: block
-  position: relative
-  letter-spacing: 3px
-  font-size: 120%
-  margin: 2% 0 0 1%
-  &::before
-    content: ""
-    position: absolute
-    top: 60%
-    bottom: 0
-    left: 0
-    height: 1px
-    width: 10%
-    background-color: #fafafa
-    transform: scale(0)
-    transform-origin: left
-    transition: transform 0.6s cubic-bezier(0.3, 0.575, 0.565, 1)
-    +sp-view
-      display: none
-  &:hover::before
-    transform: scale(1)
-    transform-origin: left
+    margin: 4% 4% 0 0
+    font-size: 12px
 
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
@@ -203,8 +200,6 @@ export default {
   width: 72px
   height: 72px
   &:hover
-    .prev
-      opacity: 0
     .menu-bar
       opacity: 1
   +pc-md-view
@@ -212,47 +207,61 @@ export default {
     height: 44px
     background-size: 40% 40%
   +sp-view
-    top: 85%
-    background-size: 24% 24%
+    top: 104%
+    width: 36px
+    height: 36px
+    background-size: 40% 40%
   &:focus
     outline: 0
 .swiper-button-prev
   left: 3%
   background-image: none
   +sp-view
-    left: 62%
+    left: 68%
 .swiper-button-next
   left: 8%
   background-image: none
   +sp-view
-    left: 76%
+    left: 80%
+  .menu-bar
+    left: 40%
 
 .prev
   position: relative
   overflow: hidden
-  width: 24%
-  height: 24%
-  background-color: #fafafa
+  width: 50%
+  height: 50%
+  background-color: #8e101b
   border-radius: 50%
-  margin: 38%
+  margin: 25%
   transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+  +sp-view
+    width: 80%
+    height: 80%
+    background-color: #fafafa
+    margin: 10%
 
 .menu-bar
   position: absolute
-  top: 25%
-  left: 25%
-  width: 50%
-  height: 50%
-  opacity: 0
+  top: 40%
+  left: 40%
+  width: 20%
+  height: 20%
+  opacity: .8
   transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+  +sp-view
+    top: 18%
+    left: 18%
+    width: 64%
+    height: 64%
 
 .swiper-scrollbar
   position: absolute
-  bottom: 4%
-  left: 5%
-  width: 11%
+  bottom: -5%
+  left: 9%
+  width: 72px
   height: 1px
-  background-color: #af0000
+  background-color: #8e101b
 
 .swiper-scrollbar-drag
   background: rgba(256, 256, 256, .8)

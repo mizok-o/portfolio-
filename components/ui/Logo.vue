@@ -32,17 +32,17 @@
   +pc-sm-view
     width: 880px
   +sp-view
-    top: 32%
+    top: 33%
     bottom: 50%
-    left: -60px
+    left: -12%
     margin: 0
-    width: 720px
+    width: 560px
 
 /* 画像 */
 .NuxtLogo
   position: relative
   overflow: hidden
-  height: 60%
+  height: 50%
   width: 100%
   text-align: left
   +pc-lg-view
@@ -62,10 +62,13 @@
   left: 0
   height: 100%
   width: 60%
-  margin-right: auto
+  /* margin-right: auto */
   animation: logoAnime  1.6s cubic-bezier(0.77, 0, 0.175, 1)
   +pc-lg-view
     width: 54%
+  +sp-view
+    top: 12%
+    width: 56%
 .logo-anime2
   position: absolute
   top: 0
@@ -73,7 +76,8 @@
   height: 100%
   width: 80%
   animation: logoAnime 1.7s cubic-bezier(0.77, 0, 0.175, 1)
-
+  +sp-view
+    width: 78%
 @keyframes logoAnime
   0%
     transform: translateY(112%)
