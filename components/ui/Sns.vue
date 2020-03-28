@@ -100,20 +100,15 @@ export default{
 .sns-title, .mail-title
   font-weight: 600
   font-size: 20px
-  margin-right: 24%
-  transition: all 3s cubic-bezier(0.23, 1, 0.32, 1) .2s
-  transform: translateY(100%)
-  opacity: 0
-  letter-spacing: 1px
-  +sp-view
-    margin-right: 0
 
 .sns-item, .mail-address
   font-weight: 300
   font-size: 16px
+
+.sns-item, .mail-address, .sns-title, .mail-title
   margin-right: 24%
   transition: all 3s cubic-bezier(0.23, 1, 0.32, 1) .2s
-  transform: translateY(100%)
+  transform: translateY(400%)
   opacity: 0
   letter-spacing: 1px
   +sp-view

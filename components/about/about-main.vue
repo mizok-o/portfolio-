@@ -46,6 +46,7 @@ export default{
   width: 72%
 
 .about-me
+  font-family: 'ITC Galliard Pro'
   position: absolute
   top: 0
   bottom: 0
@@ -62,7 +63,7 @@ export default{
   +pc-sm-view
     font-size: 6.5em
   +sp-view
-    font-size: 4em
+    font-size: 5em
 
 @keyframes shown
   0%

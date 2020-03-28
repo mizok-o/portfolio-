@@ -11,8 +11,9 @@ header.header-content
 .header-content
   margin: 7vh 5% 0
   position: relative
+  font-family: 'ITC Galliard Pro'
   +sp-view
-    margin: 6% 0 0 81%
+    margin: 6% 0 0 75%
 
 .header-menu
   position: fixed
@@ -23,18 +24,9 @@ header.header-content
   font-size: 1.2em
   +sp-view
     display: block
-    font-size: 16px
+    font-size: 19px
     width: auto
     position: fixed
-
-/* works右上の番号 */
-.link-index
-  &::after
-    content: "13"
-    position: absolute
-    right: -30%
-    top: -20%
-    font-size: 14px
 
 /* 線アニメーション */
 .header-link
@@ -59,7 +51,7 @@ header.header-content
 /* 線を表示させっぱなし */
 .content-about
   .link-about
-    color: #770000
+    color: #87120b
     pointer-events: none
     &::before
       transform: scale(1,1)
@@ -68,7 +60,7 @@ header.header-content
       display: none
 .content-index
   .link-index
-    color: #870000
+    color: #87120b
     pointer-events: none
     &::before
       transform: scale(1,1)
