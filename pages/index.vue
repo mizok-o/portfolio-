@@ -126,7 +126,7 @@ export default {
 .swiper-container
   display: flex
   justify-content: flex-start
-  padding: 0 0 8% 12%
+  padding: 0 0 7% 12%
   +sp-view
     padding-left: 0%
     margin: 12% 0 0 0
@@ -195,7 +195,7 @@ export default {
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 84%
+  top: 86.5%
   left: 0
   width: 72px
   height: 72px
@@ -217,12 +217,12 @@ export default {
   left: 7.4%
   background-image: none
   +sp-view
-    left: 68%
+    left: 60%
 .swiper-button-next
   left: 12.6%
   background-image: none
   +sp-view
-    left: 80%
+    left: 78%
   .menu-bar
     left: 40%
 
@@ -269,8 +269,8 @@ export default {
 .swiper-scrollbar-drag
   background: rgba(256, 256, 256, .8)
 
-.index-sns
-  margin-right: 18%
+/* .index-sns
+  margin-right: 18% */
 
 @keyframes automove
   0%

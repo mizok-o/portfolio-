@@ -1,7 +1,7 @@
 <template lang="pug">
-  .about-image
-    img.img-content(src="~/assets/img/about-me.jpg")
-    h1.about-me About me
+.about-main
+  img.img-content(src="~/assets/img/about-me.jpg")
+  h1.about-me About me
 
 </template>
 <script>
@@ -54,9 +54,15 @@ export default{
   margin: auto
   height: 50%
   font-weight: 500
-  font-size: 15em
+  font-size: 13em
   +pc-lg-view
-    font-size: 12em
+    font-size: 10em
+  +pc-md-view
+    font-size: 8.5em
+  +pc-sm-view
+    font-size: 6.5em
+  +sp-view
+    font-size: 4em
 
 @keyframes shown
   0%

@@ -43,7 +43,9 @@ export default{
     transform: translateY(0)
     transition: all 3s cubic-bezier(0.23, 1, 0.32, 1)
   +sp-view
-    width: 100%
+    width: 72%
+    margin: 0 14% 0
+    font-size: 16px
 
 .text-detail
   opacity: 0

@@ -6,7 +6,8 @@ export default {
   mounted() {
     Typekit.load({async: true})
   }
-}
+  }
+
 </script>
 <style lang="sass">
 html
@@ -26,6 +27,7 @@ html
   &::-webkit-scrollbar
     display: none
   +sp-view
+    font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
     font-size: 14px
 body
   position: relative
