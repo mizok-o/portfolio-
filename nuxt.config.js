@@ -110,5 +110,9 @@ generate: {
     vendor: [
       'vue-awesome-swiper'
     ],
+    extend (config) {
+    config.performance = config.performance || {}
+    config.performance.maxEntrypointSize = 700 * 1024
+  },
 }
 }
