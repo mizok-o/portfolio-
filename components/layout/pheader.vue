@@ -12,7 +12,7 @@ header.header-content
   margin: 7vh 5% 0
   position: relative
   +sp-view
-    margin: 6% 0 0 80%
+    margin: 6% 0 0 81%
 
 .header-menu
   position: fixed

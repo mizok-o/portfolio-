@@ -2,10 +2,15 @@
   nuxt
 </template>
 <script>
+export default {
+  mounted() {
+    Typekit.load({async: true})
+  }
+}
 </script>
 <style lang="sass">
 html
-  font-family: 'cormorant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
+  font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%
@@ -14,7 +19,7 @@ html
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
   background-color: #B70000
-  color: #eee
+  color: #fafafa
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -24,7 +29,6 @@ html
     font-size: 14px
 body
   position: relative
-  cursor: none
   width: 100%
 *
   box-sizing: border-box
@@ -47,7 +51,6 @@ ul, ol
     margin: 0
 
 a
-  cursor: none
   text-decoration: none
   color: #fff
 

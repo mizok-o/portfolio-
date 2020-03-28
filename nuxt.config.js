@@ -1,3 +1,9 @@
+// require("dotenv").config();
+// const { API_KEY } = process.env;
+// const axios = require("axios");
+//
+
+
 export default {
   mode: 'universal',
   /*
@@ -11,9 +17,10 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href: "https://fonts.googleapis.com/css?family=Cormorant&display=swap" ,rel: "stylesheet"}
-
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://use.typekit.net/tiv6nbi.js' }
     ]
   },
   /*
@@ -37,12 +44,25 @@ export default {
   */
   buildModules: [
   ],
+  modules: ["@nuxtjs/markdownit"],
+  markdownit: {
+    html: true,
+    injected: true,
+    preset: "default"
+  },
   /*
   ** Nuxt.js modules
   */
   modules: [
-  '@nuxtjs/style-resources'
+  '@nuxtjs/style-resources',
+  '@nuxtjs/markdownit'
  ],
+ markdownit: {
+  html: true,
+  injected: true,
+  preset: 'default',
+ },
+ axios: {},
  styleResources: {
   sass: [
    '@/assets/sass/_mixin.sass',
@@ -56,22 +76,38 @@ export default {
    '@/assets/stylus/layout.styl'
   ]
 },
+generate: {
+    routes() {
+      const careers = axios
+        .get("https://your.microcms.io/api/v1/careers", {
+          headers: { "X-API-KEY": process.env.API_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(career => {
+            return "/careers/" + career.id;
+          });
+        });
+      const posts = axios
+        .get("https://your.microcms.io/api/v1/posts", {
+          headers: { "X-API-KEY": process.env.API_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(post => {
+            return "/careers/posts/" + post.id;
+          });
+        });
+      return Promise.all([careers, posts]).then(values => {
+        return values.join().split(",");
+      });
+    }
+  },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
+     extend(config, ctx) {},
     vendor: [
       'vue-awesome-swiper'
     ],
-    /*
-    ** You can extend webpack config here
-  //   */
-  //   extend (config, ctx) {
-  //     config.module.rules.push({
-  //   test: /\.coffee$/,
-  //   use: 'coffee-loader',
-  //   exclude: /(node_modules)/
-  // })
-  //   }
-  }
+}
 }

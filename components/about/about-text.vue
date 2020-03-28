@@ -1,15 +1,13 @@
 <template lang="pug">
   .text-content
-    p.about-text.text-item Hi, I'm Kotaro Mizoguchi, 19 years old. I'm learning economics at Univ and I’m working as an intern in a web studio.
-      | Currently I can write css and html and a little bit vue.js.  I’m interested in getting new knowlidge. I’d like to try many new things. I usually prefer go somewhere alone.
-      | But I also like to do something with freinds. I post on instagram about my travel. Check it out, I gonna renew it. I make efforts to be valuable person and have a fun.
-    h2.text-item.about-subtitle Skills
-    p.text-item.about-text figma/illustrator/photoshop/sketch/css/html/vue.js/nuxt.js/French
+    p.text-detail Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
+      br
+      br
+      | I post on instagram about my travel. I love traveling. sometimes alone. It will become really precious time to relax. And udon is 8 times delicious after the travel. Traveling is really good experience. I wish to go to Egypt for now.
 </template>
 <script>
 export default{
   mounted() {
-    // rootからbottom:-150pxの位置で発火
     this.onIntersect()
   },
   methods: {
@@ -25,7 +23,7 @@ export default{
    addShowClass(entries) {
      for(const e of entries) {
        if (e.intersectionRatio) {
-         e.target.classList.add("showb")
+         e.target.classList.add("showe")
         e.target.classList.remove("about-text")
        }
      }
@@ -34,39 +32,21 @@ export default{
 }
 </script>
 <style lang="sass">
-
 /* スクロール後に表示 */
-.showb
-  margin: 4% 12% 0
-  width: 72%
+.showe
+  width: 224px
+  font-family: 'Meta Pro'
+  font-weight: 500
+  line-height: 144%
+  .text-detail
+    opacity: 1
+    transform: translateY(0)
+    transition: all 3s cubic-bezier(0.23, 1, 0.32, 1)
   +sp-view
     width: 100%
-  .text-item
-    transform: translateX(0)
 
-.about-text
-  font-size: 16px
-  font-weight: 300
-  letter-spacing: 1px
+.text-detail
+  opacity: 0
+  transform: translateY(40%)
 
-/* skillsタイトル
-.about-subtitle
-  font-size: 24px
-  font-weight: 400
-
-/* アニメーション設定 */
-.text-item
-  transform: translateX(1800px)
-  transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1).5s
-  &:nth-child(2)
-    transition-duration: .6s
-    transition-duration: 2.6s
-    margin-top: 6%
-  &:nth-child(3)
-    transition-duration: 3s
-    margin: 2% 0 20%
-    word-wrap: break-word
-  +sp-view
-    width: 100%
-    margin-top: 8%
 </style>
