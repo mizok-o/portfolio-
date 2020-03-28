@@ -11,7 +11,7 @@ export default {
 </script>
 <style lang="sass">
 html
-  font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
+  /* font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif */
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%
@@ -27,7 +27,6 @@ html
   &::-webkit-scrollbar
     display: none
   +sp-view
-    font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
     font-size: 14px
 body
   position: relative

@@ -31,6 +31,7 @@ export default{
 
 /* 全体 */
 .about-container
+  font-family: 'Meta Pro'
   height: 100%
 
 /* 横並びさせる */

@@ -32,7 +32,7 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-  font-family: 'Meta Pro'
+
   width: 100%
   +sp-view
     width: 92%
@@ -43,7 +43,6 @@ export default{
 
 .about-text
   font-size: 40px
-  font-weight: 500
   letter-spacing: .5px
   width: 100%
   +pc-md-view
