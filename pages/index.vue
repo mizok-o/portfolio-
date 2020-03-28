@@ -27,7 +27,7 @@
       .swiper-button-next
         .prev.u-pc-view
         img.menu-bar(src="~/assets/img/button_swiper/next.svg")
-      .swiper-scrollbar
+      <!-- .swiper-scrollbar -->
   .index-sns.u-sp-view
     sns
 </template>
@@ -52,16 +52,16 @@ export default {
       return {
         swiperOption: {
           slidesPerView: 1.15,
-          spaceBetween: 12,
+          spaceBetween: 64,
           paginationClickable: true,
           speed: 800,
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
-          scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-          },
+          // scrollbar: {
+          //   el: '.swiper-scrollbar',
+          //   draggable: true,
+          // },
           autoplay: {
             delay: 3000,
             disableOnInteraction: false
@@ -126,7 +126,7 @@ export default {
 .swiper-container
   display: flex
   justify-content: flex-start
-  padding: 0 0 7% 10%
+  padding: 0 0 8% 12%
   +sp-view
     padding-left: 0%
     margin: 12% 0 0 0
@@ -139,21 +139,20 @@ export default {
   display: flex
   justify-content: flex-start
   align-items: baseline
-  margin: 6% 0 2% 0
+  margin: 16% 0 4% 0
   +sp-view
     margin: 6% 0 6% 0
   .product-title
-    font-size: 280%
+    font-size: 260%
+    margin-left: 1%
     +pc-md-view
       font-size: 200%
     +sp-view
       font-size: 180%
 /* スライドの番号 */
 .product-number
-  font-size: 600%
-  margin: 0 14% 0 -12%
-  +pc-md-view
-    font-size: 400%
+  font-size: 400%
+  margin: 0 14% 0 -13%
   +sp-view
     font-size: 380%
     margin: 0 12% 0 0
@@ -163,6 +162,7 @@ export default {
   position: relative
   display: flex
   z-index: 23
+  margin-left: 4%
   +sp-view
     display: block
 .product-main-link
@@ -179,8 +179,8 @@ export default {
   bottom: -48%
   width: 56%
   height: 50%
-  font-size: 24px
-  letter-spacing: 2px
+  font-size: 100%
+  letter-spacing: 1.6px
   transform: rotate(-90deg)
   transform-origin: top left
   +pc-md-view
@@ -195,7 +195,7 @@ export default {
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 85%
+  top: 84%
   left: 0
   width: 72px
   height: 72px
@@ -214,12 +214,12 @@ export default {
   &:focus
     outline: 0
 .swiper-button-prev
-  left: 3%
+  left: 7.4%
   background-image: none
   +sp-view
     left: 68%
 .swiper-button-next
-  left: 8%
+  left: 12.6%
   background-image: none
   +sp-view
     left: 80%
@@ -231,7 +231,7 @@ export default {
   overflow: hidden
   width: 50%
   height: 50%
-  background-color: #8e101b
+  background-color: #de101b
   border-radius: 50%
   margin: 25%
   transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
@@ -257,12 +257,15 @@ export default {
 
 .swiper-scrollbar
   position: absolute
-  bottom: -5%
-  left: 9%
-  width: 72px
+  bottom: 8%
+  left: 8%
+  width: 12%
   height: 1px
   background-color: #8e101b
-
+  +sp-view
+    bottom: -5%
+    left: 9%
+    width: 72px
 .swiper-scrollbar-drag
   background: rgba(256, 256, 256, .8)
 

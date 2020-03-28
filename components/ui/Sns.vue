@@ -91,7 +91,7 @@ export default{
     width: 100%
     margin: 120px 0 112px 15%
     text-align: center
-  .sns-title, .mail-title
+  .sns-title, .mail-title, .sns-item, .mail-address
     transform: translateY(0)
     opacity: 1
 
@@ -101,7 +101,7 @@ export default{
     justify-content: center
     margin-top: 12px
 
-.sns-title, .mail-title
+.sns-title, .mail-title, .sns-item, .mail-address
   font-weight: 600
   font-size: 16px
   margin-right: 24%
@@ -114,6 +114,7 @@ export default{
 
 /* 1つずつ設定 */
 .sns-item
+  font-weight: 300
   font-size: 18px
   text-align: left
   z-index: 23
@@ -141,6 +142,7 @@ export default{
 .sns-content
   color: #fff
   transition: color .4s cubic-bezier(0.6, 0.6, 0.22, 1)
+  margin-right: 12%
   &:hover
     color: #770000
 
@@ -148,9 +150,10 @@ export default{
   +sp-view
     margin: 40px 0 0
 .mail-address
+  font-weight: 300
   font-size: 18px
   font-family: inherit
-  margin-top: 7%
+  margin-top: 6%
   +sp-view
     margin-top: 12px
     font-size: 14px
