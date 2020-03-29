@@ -5,7 +5,11 @@
 export default {
   mounted() {
     Typekit.load({async: true})
-  }
+  },
+  performance: {
+    maxEntrypointSize: 500000,
+    maxAssetSize: 500000,
+  },
   }
 
 </script>
