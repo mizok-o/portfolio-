@@ -97,6 +97,7 @@ export default {
 <style lang="sass">
 
 .index
+  font-family: 'ITC Galliard Pro'
   +sp-view
     position: relative
     overflow-x: hidden
@@ -151,7 +152,7 @@ export default {
       font-size: 180%
 /* スライドの番号 */
 .product-number
-  font-size: 400%
+  font-size: 600%
   margin: 0 14% 0 -13%
   +sp-view
     font-size: 380%

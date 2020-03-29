@@ -113,6 +113,7 @@ generate: {
     extend (config) {
     config.performance = config.performance || {}
     config.performance.maxEntrypointSize = 700 * 1024
+    config.performance.maxAssetSize = 300000
   },
 }
 }
