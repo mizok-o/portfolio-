@@ -78,7 +78,7 @@ export default{
   +sp-view
     display: block
     width: 60%
-    margin: 64px 20% 112px
+    margin: 88px 20% 112px
     text-align: center
   .sns-title, .mail-title, .sns-item, .mail-address
     transform: translateY(0)

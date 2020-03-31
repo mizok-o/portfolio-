@@ -11,8 +11,6 @@
 /* 全体の入れ物 */
 .main-visual
   height: 88vh
-  width: 100%
-  position: relative
   transition: transform 1s
   +sp-view
     transform: rotate(90deg)
@@ -47,6 +45,8 @@
   text-align: left
   +pc-lg-view
     height: 42%
+  +pc-sm-view
+    height: 32%
   +sp-view
     height: 32%
     width: 120%

@@ -22,15 +22,11 @@
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
       .swiper-button-prev
-        .prev-round.u-pc-view
+        .prev-round
           .prev-icon
-        <!-- svg.menu-button(viewbox="0" xmlns="http://www.w3.org/2000/svg") -->
-          <!-- path.cls(d="M22 2L4 18L22 34") -->
       .swiper-button-next
-        .next-round.u-pc-view
+        .next-round
           .next-icon
-        <!-- svg.menu-button(viewbox="0" xmlns="http://www.w3.org/2000/svg") -->
-          <!-- path.cls(d="M2 34L20 18L2 2") -->
   .index-sns.u-sp-view
     sns
 </template>
@@ -61,10 +57,6 @@ export default {
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
-          // scrollbar: {
-          //   el: '.swiper-scrollbar',
-          //   draggable: true,
-          // },
           autoplay: {
             delay: 3000,
             disableOnInteraction: false
@@ -74,7 +66,7 @@ export default {
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-          750: {
+          751: {
             slidesPerView: 1.2,
             spaceBetween: 24
           }
@@ -102,28 +94,24 @@ export default {
 .index
   font-family: 'ITC Galliard Pro'
   +sp-view
-    position: relative
     overflow-x: hidden
 
-/* ワークス全体 */
 .works
   position: relative
-  width: 100%
 
-/* 自動再生currentワークス */
 .works-title
   width: 3052px
   +sp-view
     margin-left: -240px
     width: 960px
 .auto-animation
-  animation: automove 12s linear infinite
+  animation: automove 16s linear infinite
   display: flex
-  width: 100%
+  +sp-view
+    animation-duration: 12s
 .main-title
   width: 960px
   +sp-view
-    /* margin-top: 3% */
     width: 480px
 
 /* 全体 */
@@ -131,8 +119,10 @@ export default {
   display: flex
   justify-content: flex-start
   padding: 0 0 7% 12%
+  +pc-sm-view
+    padding-bottom: 10%
   +sp-view
-    padding-left: 0%
+    padding: 0 0 7% 0
     margin: 12% 0 0 0
 
 .swiper-content
@@ -165,33 +155,40 @@ export default {
   display: flex
   z-index: 23
   margin-left: 4%
+  +pc-sm-view
+    display: block
+    margin-right: 16%
   +sp-view
     display: block
+    margin-right: 0
+
 .product-main-link
   width: 72%
   +sp-view
     width: 88%
+
 .product-main-img
   width: 100%
 
-/* 画像横のテキスト */
 .main-text
   position: absolute
-  right: -32%
+  right: -22%
   bottom: -48%
-  width: 56%
+  width: 45%
   height: 50%
-  font-size: 100%
   letter-spacing: 1.6px
   transform: rotate(-90deg)
   transform-origin: top left
-  +pc-md-view
-    font-size: 18px
-  +sp-view
-    position: static
-    width: 100%
+  font-family: 'ff-meta-web-pro'
+  font-weight: 400
+  +pc-sm-view
+    font-size: 16px
     transform: none
-    margin: 4% 4% 0 0
+    position: static
+    margin-top: 4%
+  +sp-view
+    width: 88%
+    margin: 3% 4% 0 0
     font-size: 12px
 
 /* スワイパーのボタン */
@@ -202,31 +199,33 @@ export default {
   width: 44px
   height: 44px
   border-radius: 50%
-  &:hover
-    .prev-round, .next-round
-      background-color: #fafafa
-    .prev-icon, .next-icon
-      &::before, &::after
-        background-color: #de101b
-  +pc-md-view
-    width: 44px
-    height: 44px
-    background-size: 40% 40%
+  +pc-view
+    &:hover
+      .prev-round, .next-round
+        background-color: #fafafa
+      .prev-icon, .next-icon
+        &::before, &::after
+          background-color: #de101b
+  +pc-sm-view
+    top: 88%
   +sp-view
     top: 104%
     width: 36px
     height: 36px
-    background-size: 40% 40%
   &:focus
     outline: 0
 .swiper-button-prev
   left: 7.4%
   background-image: none
+  +pc-sm-view
+    left: 67%
   +sp-view
     left: 60%
 .swiper-button-next
   left: 12.6%
   background-image: none
+  +pc-sm-view
+    left: 77%
   +sp-view
     left: 78%
   .menu-bar
@@ -241,31 +240,9 @@ export default {
   background-color: #de101b
   transition: all .6s cubic-bezier(0.61, 1, 0.78, 1)
   +sp-view
-    width: 80%
-    height: 80%
+    width: 100%
+    height: 100%
     background-color: #fafafa
-    margin: 10%
-
-/* .menu-button
-  position: absolute
-  top: 25%
-  left: 30%
-  width: 40%
-  height: 100%
-  opacity: .8
-  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-  .cls
-    width: 16px
-    height: 40px
-    fill: none
-    stroke: #fafafa
-    stroke-width: 3px
-  +sp-view
-    top: 18%
-    left: 18%
-    width: 64%
-    height: 64% */
-
 .prev-icon
   &::before
     content: ""
@@ -278,6 +255,12 @@ export default {
     height: 3px
     width: 16px
     background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      top: 17px
+      right: 11px
   &::after
     content: ""
     transform-origin: left bottom
@@ -289,6 +272,12 @@ export default {
     height: 3px
     width: 16px
     background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      bottom: 18px
+      right: 12px
 
 .next-icon
   &::before
@@ -302,6 +291,12 @@ export default {
     height: 3px
     width: 16px
     background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      top: 17px
+      left: 11px
   &::after
     content: ""
     transform-origin: right bottom
@@ -313,6 +308,13 @@ export default {
     height: 3px
     width: 16px
     background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      bottom: 18px
+      left: 12px
+
 
 @keyframes automove
   0%

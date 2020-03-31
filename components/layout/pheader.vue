@@ -11,7 +11,6 @@ header.header-content
 .header-content
   margin: 7vh 5% 0
   position: relative
-  font-family: 'ITC Galliard Pro'
   +sp-view
     margin: 6% 0 0 75%
 
@@ -24,29 +23,7 @@ header.header-content
   font-size: 1.2em
   +sp-view
     display: block
-    font-size: 19px
-    width: auto
     position: fixed
-
-/* 線アニメーション */
-.header-link
-  position: relative
-  &::before
-    content: ""
-    position: absolute
-    top: 50%
-    left: 0
-    width: 100%
-    height: 1px
-    background-color: #fff
-    transform: scale(0,1)
-    transform-origin: right
-    transition: transform .8s cubic-bezier(0.3, 0.575, 0.565, 1)
-    +sp-view
-      display: none
-  &:hover::before
-    transform: scale(1)
-    transform-origin: left
 
 /* 線を表示させっぱなし */
 .content-about
