@@ -1,7 +1,3 @@
-// require("dotenv").config();
-// const { API_KEY } = process.env;
-// const axios = require("axios");
-//
 
 
 export default {
@@ -100,6 +96,9 @@ generate: {
         return values.join().split(",");
       });
     }
+  },
+  performance: {
+    maxEntrypointSize: 400000
   },
   /*
    ** Build configuration
