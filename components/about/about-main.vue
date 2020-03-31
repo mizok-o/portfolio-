@@ -44,6 +44,8 @@ export default{
 .img-content
   height: 120%
   width: 72%
+  +sp-view
+    width: 100%
 
 .about-me
   font-family: 'ITC Galliard Pro'
@@ -64,6 +66,11 @@ export default{
     font-size: 6.5em
   +sp-view
     font-size: 5em
+    bottom: 0
+    margin-top: 48.5%
+    height: 30%
+    -webkit-text-stroke: 1px #fafafa
+    color: transparent
 
 @keyframes shown
   0%

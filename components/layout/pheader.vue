@@ -13,7 +13,7 @@ header.header-content
   position: relative
   font-family: 'ITC Galliard Pro'
   +sp-view
-    margin: 7% 0 0 75%
+    margin: 6% 0 0 75%
 
 .header-menu
   position: fixed

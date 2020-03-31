@@ -32,7 +32,6 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-
   width: 100%
   +sp-view
     width: 92%
@@ -41,7 +40,13 @@ export default{
     transform: translateY(0)
     opacity: 1
 
-.about-text
+/* アニメーション設定 */
+.text-item
+  transform: translateY(40%)
+  opacity: 0
+  transition: transform 2s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
+  font-family: 'ff-meta-web-pro'
+  font-weight: 500
   font-size: 40px
   letter-spacing: .5px
   width: 100%
@@ -49,17 +54,9 @@ export default{
     font-size: 32px
     letter-spacing: 1px
   +sp-view
-    font-size: 23px
-    line-height: 128%
-    letter-spacing: 1.8px
-
-
-/* アニメーション設定 */
-.text-item
-  transform: translateY(40%)
-  opacity: 0
-  transition: transform 2s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
-  +sp-view
     width: 100%
     margin-top: 8%
+    font-size: 24px
+    line-height: 128%
+    letter-spacing: 1.1px
 </style>

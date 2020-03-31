@@ -71,14 +71,14 @@ export default{
   flex-flow: column
   justify-content: flex-end
   height: 27%
-  font-family: 'meta pro'
+  font-family: 'ff-meta-web-pro'
   +pc-sm-view
     height: 50%
     margin: 138% 0 0 -4%
   +sp-view
     display: block
-    width: 80%
-    margin: 120px 10% 112px 10%
+    width: 60%
+    margin: 64px 20% 112px
     text-align: center
   .sns-title, .mail-title, .sns-item, .mail-address
     transform: translateY(0)
@@ -102,7 +102,7 @@ export default{
   font-size: 20px
 
 .sns-item, .mail-address
-  font-weight: 300
+  font-weight: 400
   font-size: 16px
 
 .sns-item, .mail-address, .sns-title, .mail-title
@@ -113,6 +113,9 @@ export default{
   letter-spacing: 1px
   +sp-view
     margin-right: 0
+
+.mail-address, .mail-title
+  transition: all 3s cubic-bezier(0.23, 1, 0.32, 1) .4s
 
 /* 1つずつ設定 */
 .sns-item
@@ -146,6 +149,7 @@ export default{
     color: #770000
 
 .mail-content
+  margin-top: 12%
   +sp-view
     margin: 24px 0 0
 .mail-address

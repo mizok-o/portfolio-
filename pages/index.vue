@@ -22,12 +22,15 @@
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
       .swiper-button-prev
-        .prev.u-pc-view
-        img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
+        .prev-round.u-pc-view
+          .prev-icon
+        <!-- svg.menu-button(viewbox="0" xmlns="http://www.w3.org/2000/svg") -->
+          <!-- path.cls(d="M22 2L4 18L22 34") -->
       .swiper-button-next
-        .prev.u-pc-view
-        img.menu-bar(src="~/assets/img/button_swiper/next.svg")
-      <!-- .swiper-scrollbar -->
+        .next-round.u-pc-view
+          .next-icon
+        <!-- svg.menu-button(viewbox="0" xmlns="http://www.w3.org/2000/svg") -->
+          <!-- path.cls(d="M2 34L20 18L2 2") -->
   .index-sns.u-sp-view
     sns
 </template>
@@ -140,7 +143,7 @@ export default {
   display: flex
   justify-content: flex-start
   align-items: baseline
-  margin: 16% 0 4% 0
+  margin: 12% 0 4% 0
   +sp-view
     margin: 6% 0 6% 0
   .product-title
@@ -148,8 +151,6 @@ export default {
     margin-left: 1%
     +pc-md-view
       font-size: 200%
-    +sp-view
-      font-size: 180%
 /* スライドの番号 */
 .product-number
   font-size: 600%
@@ -198,11 +199,15 @@ export default {
   position: absolute
   top: 86.5%
   left: 0
-  width: 72px
-  height: 72px
+  width: 44px
+  height: 44px
+  border-radius: 50%
   &:hover
-    .menu-bar
-      opacity: 1
+    .prev-round, .next-round
+      background-color: #fafafa
+    .prev-icon, .next-icon
+      &::before, &::after
+        background-color: #de101b
   +pc-md-view
     width: 44px
     height: 44px
@@ -227,51 +232,87 @@ export default {
   .menu-bar
     left: 40%
 
-.prev
+.prev-round, .next-round
   position: relative
   overflow: hidden
-  width: 50%
-  height: 50%
-  background-color: #de101b
+  width: 100%
+  height: 100%
   border-radius: 50%
-  margin: 25%
-  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+  background-color: #de101b
+  transition: all .6s cubic-bezier(0.61, 1, 0.78, 1)
   +sp-view
     width: 80%
     height: 80%
     background-color: #fafafa
     margin: 10%
 
-.menu-bar
+/* .menu-button
   position: absolute
-  top: 40%
-  left: 40%
-  width: 20%
-  height: 20%
+  top: 25%
+  left: 30%
+  width: 40%
+  height: 100%
   opacity: .8
   transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+  .cls
+    width: 16px
+    height: 40px
+    fill: none
+    stroke: #fafafa
+    stroke-width: 3px
   +sp-view
     top: 18%
     left: 18%
     width: 64%
-    height: 64%
+    height: 64% */
 
-.swiper-scrollbar
-  position: absolute
-  bottom: 8%
-  left: 8%
-  width: 12%
-  height: 1px
-  background-color: #8e101b
-  +sp-view
-    bottom: -5%
-    left: 9%
-    width: 72px
-.swiper-scrollbar-drag
-  background: rgba(256, 256, 256, .8)
+.prev-icon
+  &::before
+    content: ""
+    transform-origin: left bottom
+    transform: rotate(-40deg)
+    position: absolute
+    display: block
+    top: 21px
+    right: 12px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+  &::after
+    content: ""
+    transform-origin: left bottom
+    transform: rotate(40deg)
+    position: absolute
+    display: block
+    bottom: 21px
+    right: 14px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
 
-/* .index-sns
-  margin-right: 18% */
+.next-icon
+  &::before
+    content: ""
+    transform-origin: right bottom
+    transform: rotate(40deg)
+    position: absolute
+    display: block
+    top: 21px
+    left: 13px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+  &::after
+    content: ""
+    transform-origin: right bottom
+    transform: rotate(-40deg)
+    position: absolute
+    display: block
+    bottom: 21px
+    left: 15px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
 
 @keyframes automove
   0%

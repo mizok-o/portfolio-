@@ -41,7 +41,7 @@ export default{
   +pc-md-view
     display: block
   +sp-view
-    margin: 14% 0 4%
+    margin: 18% 0 4%
 
 /* 画像 */
 .about-top
@@ -61,11 +61,11 @@ export default{
     height: 64%
     top: 32%
     right: 16%
-    margin-left: 0
+    margin: 16% 0 0 0
 
 .about-detail
   display: flex
-  margin: 8% 9% 0
+  margin: 10% 9% 0
   justify-content: space-between
   +pc-md-view
     margin: 8% 0 0
