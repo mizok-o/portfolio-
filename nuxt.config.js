@@ -73,6 +73,19 @@ export default {
    '@/assets/stylus/layout.styl'
   ]
 },
+generate: {
+    routes() {
+      const news = require('axios')
+        .get("https://kotaro.microcms.io/apis/news", {
+          headers: { "X-API-KEY": process.env.API_KEY }
+        })
+        .then(res => {
+          return res.data.contents.map(news => {
+            return "/news/" + news.id;
+          });
+        });
+    }
+  },
   build: {
      extend(config, ctx) {},
     vendor: [
