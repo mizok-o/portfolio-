@@ -12,6 +12,7 @@ export default {
 </script>
 <style lang="sass">
 html
+  font-family: 'ITC Galliard pro'
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%

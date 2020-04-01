@@ -1,3 +1,4 @@
+
 export default {
   mode: 'universal',
   /*
@@ -50,7 +51,8 @@ export default {
   */
   modules: [
   '@nuxtjs/style-resources',
-  '@nuxtjs/markdownit'
+  '@nuxtjs/markdownit',
+  '@nuxtjs/axios'
  ],
  markdownit: {
   html: true,
@@ -71,43 +73,10 @@ export default {
    '@/assets/stylus/layout.styl'
   ]
 },
-generate: {
-    routes() {
-      const careers = axios
-        .get("https://your.microcms.io/api/v1/careers", {
-          headers: { "X-API-KEY": process.env.API_KEY }
-        })
-        .then(res => {
-          return res.data.contents.map(career => {
-            return "/careers/" + career.id;
-          });
-        });
-      const posts = axios
-        .get("https://your.microcms.io/api/v1/posts", {
-          headers: { "X-API-KEY": process.env.API_KEY }
-        })
-        .then(res => {
-          return res.data.contents.map(post => {
-            return "/careers/posts/" + post.id;
-          });
-        });
-      return Promise.all([careers, posts]).then(values => {
-        return values.join().split(",");
-      });
-    }
-  },
-  performance: {
-    maxEntrypointSize: 400000
-  },
   build: {
      extend(config, ctx) {},
     vendor: [
       'vue-awesome-swiper'
-    ],
-    extend (config) {
-    config.performance = config.performance || {}
-    config.performance.maxEntrypointSize = 700 * 1024
-    config.performance.maxAssetSize = 300000
-  },
+    ]
 }
 }

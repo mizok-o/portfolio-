@@ -87,18 +87,14 @@ export default {
     };
   }
 }
-
 </script>
 <style lang="sass">
-
 .index
   font-family: 'ITC Galliard Pro'
   +sp-view
     overflow-x: hidden
-
 .works
   position: relative
-
 .works-title
   width: 3052px
   +sp-view
@@ -113,7 +109,6 @@ export default {
   width: 960px
   +sp-view
     width: 480px
-
 /* 全体 */
 .swiper-container
   display: flex
@@ -124,10 +119,8 @@ export default {
   +sp-view
     padding: 0 0 7% 0
     margin: 12% 0 0 0
-
 .swiper-content
   margin-right: 4%
-
 /* スライドのタイトル */
 .product-top
   display: flex
@@ -148,7 +141,6 @@ export default {
   +sp-view
     font-size: 380%
     margin: 0 12% 0 0
-
 /* スワイパー画像 */
 .product-main
   position: relative
@@ -161,15 +153,12 @@ export default {
   +sp-view
     display: block
     margin-right: 0
-
 .product-main-link
   width: 72%
   +sp-view
     width: 88%
-
 .product-main-img
   width: 100%
-
 .main-text
   position: absolute
   right: -22%
@@ -190,7 +179,6 @@ export default {
     width: 88%
     margin: 3% 4% 0 0
     font-size: 12px
-
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
@@ -230,7 +218,6 @@ export default {
     left: 78%
   .menu-bar
     left: 40%
-
 .prev-round, .next-round
   position: relative
   overflow: hidden
@@ -278,7 +265,6 @@ export default {
       width: 12px
       bottom: 18px
       right: 12px
-
 .next-icon
   &::before
     content: ""
@@ -314,8 +300,6 @@ export default {
       width: 12px
       bottom: 18px
       left: 12px
-
-
 @keyframes automove
   0%
     transform: translate(-50%)
