@@ -1,5 +1,3 @@
-
-
 export default {
   mode: 'universal',
   /*
@@ -100,9 +98,6 @@ generate: {
   performance: {
     maxEntrypointSize: 400000
   },
-  /*
-   ** Build configuration
-   */
   build: {
      extend(config, ctx) {},
     vendor: [

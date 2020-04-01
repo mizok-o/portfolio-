@@ -16,7 +16,7 @@ import abouttitle from '~/components/about/about-title.vue'
 import abouttext from '~/components/about/about-text.vue'
 import aboutimage from '~/components/about/about-image.vue'
 import Sns from '~/components/ui/Sns.vue'
-import aboutlogo from '~/components/ui/about-logo.vue'
+import aboutlogo from '~/components/about/about-logo.vue'
 export default{
   components: {
     abouttitle,
