@@ -1,6 +1,6 @@
 <template lang="pug">
-  .text-content
-    p.about-text.text-item I’m learning economics but I’m also really interested in design. Designers thoughts are surprising so I wanna work with them and improve my skills.
+.text-content
+  p.about-text.text-item I’m learning economics but I’m also really interested in design. Designers thoughts are surprising so I wanna work with them and improve my skills.
 </template>
 <script>
 export default{
@@ -32,26 +32,31 @@ export default{
 
 /* スクロール後に表示 */
 .showb
-  font-family: 'Meta Pro'
   width: 100%
   +sp-view
-    width: 100%
+    width: 92%
+    margin: 28% 4% 0
   .text-item
     transform: translateY(0)
     opacity: 1
-
-.about-text
-  font-size: 40px
-  font-weight: 500
-  letter-spacing: .5px
-  width: 100%
 
 /* アニメーション設定 */
 .text-item
   transform: translateY(40%)
   opacity: 0
   transition: transform 2s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
+  font-family: 'ff-meta-web-pro'
+  font-weight: 500
+  font-size: 40px
+  letter-spacing: .5px
+  width: 100%
+  +pc-md-view
+    font-size: 32px
+    letter-spacing: 1px
   +sp-view
     width: 100%
     margin-top: 8%
+    font-size: 24px
+    line-height: 128%
+    letter-spacing: 1.1px
 </style>

@@ -22,12 +22,11 @@
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
       .swiper-button-prev
-        .prev.u-pc-view
-        img.menu-bar(src="~/assets/img/button_swiper/prev.svg")
+        .prev-round
+          .prev-icon
       .swiper-button-next
-        .prev.u-pc-view
-        img.menu-bar(src="~/assets/img/button_swiper/next.svg")
-      <!-- .swiper-scrollbar -->
+        .next-round
+          .next-icon
   .index-sns.u-sp-view
     sns
 </template>
@@ -58,10 +57,6 @@ export default {
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
-          // scrollbar: {
-          //   el: '.swiper-scrollbar',
-          //   draggable: true,
-          // },
           autoplay: {
             delay: 3000,
             disableOnInteraction: false
@@ -71,7 +66,7 @@ export default {
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-          750: {
+          751: {
             slidesPerView: 1.2,
             spaceBetween: 24
           }
@@ -97,38 +92,37 @@ export default {
 <style lang="sass">
 
 .index
+  font-family: 'ITC Galliard Pro'
   +sp-view
-    position: relative
     overflow-x: hidden
 
-/* ワークス全体 */
 .works
   position: relative
-  width: 100%
 
-/* 自動再生currentワークス */
 .works-title
   width: 3052px
   +sp-view
     margin-left: -240px
     width: 960px
 .auto-animation
-  animation: automove 12s linear infinite
+  animation: automove 16s linear infinite
   display: flex
-  width: 100%
+  +sp-view
+    animation-duration: 12s
 .main-title
   width: 960px
   +sp-view
-    /* margin-top: 3% */
     width: 480px
 
 /* 全体 */
 .swiper-container
   display: flex
   justify-content: flex-start
-  padding: 0 0 8% 12%
+  padding: 0 0 7% 12%
+  +pc-sm-view
+    padding-bottom: 10%
   +sp-view
-    padding-left: 0%
+    padding: 0 0 7% 0
     margin: 12% 0 0 0
 
 .swiper-content
@@ -139,7 +133,7 @@ export default {
   display: flex
   justify-content: flex-start
   align-items: baseline
-  margin: 16% 0 4% 0
+  margin: 12% 0 4% 0
   +sp-view
     margin: 6% 0 6% 0
   .product-title
@@ -147,11 +141,9 @@ export default {
     margin-left: 1%
     +pc-md-view
       font-size: 200%
-    +sp-view
-      font-size: 180%
 /* スライドの番号 */
 .product-number
-  font-size: 400%
+  font-size: 600%
   margin: 0 14% 0 -13%
   +sp-view
     font-size: 380%
@@ -163,114 +155,166 @@ export default {
   display: flex
   z-index: 23
   margin-left: 4%
+  +pc-sm-view
+    display: block
+    margin-right: 16%
   +sp-view
     display: block
+    margin-right: 0
+
 .product-main-link
   width: 72%
   +sp-view
     width: 88%
+
 .product-main-img
   width: 100%
 
-/* 画像横のテキスト */
 .main-text
   position: absolute
-  right: -32%
+  right: -22%
   bottom: -48%
-  width: 56%
+  width: 45%
   height: 50%
-  font-size: 100%
   letter-spacing: 1.6px
   transform: rotate(-90deg)
   transform-origin: top left
-  +pc-md-view
-    font-size: 18px
-  +sp-view
-    position: static
-    width: 100%
+  font-family: 'ff-meta-web-pro'
+  font-weight: 400
+  +pc-sm-view
+    font-size: 16px
     transform: none
-    margin: 4% 4% 0 0
+    position: static
+    margin-top: 4%
+  +sp-view
+    width: 88%
+    margin: 3% 4% 0 0
     font-size: 12px
 
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
-  top: 84%
+  top: 86.5%
   left: 0
-  width: 72px
-  height: 72px
-  &:hover
-    .menu-bar
-      opacity: 1
-  +pc-md-view
-    width: 44px
-    height: 44px
-    background-size: 40% 40%
+  width: 44px
+  height: 44px
+  border-radius: 50%
+  +pc-view
+    &:hover
+      .prev-round, .next-round
+        background-color: #fafafa
+      .prev-icon, .next-icon
+        &::before, &::after
+          background-color: #de101b
+  +pc-sm-view
+    top: 88%
   +sp-view
     top: 104%
     width: 36px
     height: 36px
-    background-size: 40% 40%
   &:focus
     outline: 0
 .swiper-button-prev
   left: 7.4%
   background-image: none
+  +pc-sm-view
+    left: 67%
   +sp-view
-    left: 68%
+    left: 60%
 .swiper-button-next
   left: 12.6%
   background-image: none
+  +pc-sm-view
+    left: 77%
   +sp-view
-    left: 80%
+    left: 78%
   .menu-bar
     left: 40%
 
-.prev
+.prev-round, .next-round
   position: relative
   overflow: hidden
-  width: 50%
-  height: 50%
-  background-color: #de101b
+  width: 100%
+  height: 100%
   border-radius: 50%
-  margin: 25%
-  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
+  background-color: #de101b
+  transition: all .6s cubic-bezier(0.61, 1, 0.78, 1)
   +sp-view
-    width: 80%
-    height: 80%
+    width: 100%
+    height: 100%
     background-color: #fafafa
-    margin: 10%
+.prev-icon
+  &::before
+    content: ""
+    transform-origin: left bottom
+    transform: rotate(-40deg)
+    position: absolute
+    display: block
+    top: 21px
+    right: 12px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      top: 17px
+      right: 11px
+  &::after
+    content: ""
+    transform-origin: left bottom
+    transform: rotate(40deg)
+    position: absolute
+    display: block
+    bottom: 21px
+    right: 14px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      bottom: 18px
+      right: 12px
 
-.menu-bar
-  position: absolute
-  top: 40%
-  left: 40%
-  width: 20%
-  height: 20%
-  opacity: .8
-  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1)
-  +sp-view
-    top: 18%
-    left: 18%
-    width: 64%
-    height: 64%
+.next-icon
+  &::before
+    content: ""
+    transform-origin: right bottom
+    transform: rotate(40deg)
+    position: absolute
+    display: block
+    top: 21px
+    left: 13px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      top: 17px
+      left: 11px
+  &::after
+    content: ""
+    transform-origin: right bottom
+    transform: rotate(-40deg)
+    position: absolute
+    display: block
+    bottom: 21px
+    left: 15px
+    height: 3px
+    width: 16px
+    background-color: #fafafa
+    +sp-view
+      background-color: #de101b
+      height: 2px
+      width: 12px
+      bottom: 18px
+      left: 12px
 
-.swiper-scrollbar
-  position: absolute
-  bottom: 8%
-  left: 8%
-  width: 12%
-  height: 1px
-  background-color: #8e101b
-  +sp-view
-    bottom: -5%
-    left: 9%
-    width: 72px
-.swiper-scrollbar-drag
-  background: rgba(256, 256, 256, .8)
-
-.index-sns
-  margin-right: 18%
 
 @keyframes automove
   0%

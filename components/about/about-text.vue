@@ -1,9 +1,9 @@
 <template lang="pug">
-  .text-content
-    p.text-detail Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
-      br
-      br
-      | I post on instagram about my travel. I love traveling. sometimes alone. It will become really precious time to relax. And udon is 8 times delicious after the travel. Traveling is really good experience. I wish to go to Egypt for now.
+.text-content
+  p.text-detail Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
+    br
+    br
+    | I post on instagram about my travel. I love traveling. sometimes alone. It will become really precious time to relax. And udon is 8 times delicious after the travel. Traveling is really good experience. I wish to go to Egypt for now.
 </template>
 <script>
 export default{
@@ -24,7 +24,6 @@ export default{
      for(const e of entries) {
        if (e.intersectionRatio) {
          e.target.classList.add("showe")
-        e.target.classList.remove("about-text")
        }
      }
    }
@@ -35,15 +34,20 @@ export default{
 /* スクロール後に表示 */
 .showe
   width: 224px
-  font-family: 'Meta Pro'
   font-weight: 500
   line-height: 144%
+  font-family: 'ff-meta-web-pro'
+  font-weight: 400
   .text-detail
     opacity: 1
     transform: translateY(0)
     transition: all 3s cubic-bezier(0.23, 1, 0.32, 1)
   +sp-view
-    width: 100%
+    width: 76%
+    margin: 0 12% 0
+    font-size: 15px
+    line-height: 152%
+    letter-spacing: 1.5
 
 .text-detail
   opacity: 0

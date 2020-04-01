@@ -11,7 +11,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"}
     ],
     script: [
       { src: 'https://use.typekit.net/tiv6nbi.js' }
@@ -103,5 +104,10 @@ generate: {
     vendor: [
       'vue-awesome-swiper'
     ],
+    extend (config) {
+    config.performance = config.performance || {}
+    config.performance.maxEntrypointSize = 700 * 1024
+    config.performance.maxAssetSize = 300000
+  },
 }
 }

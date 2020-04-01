@@ -6,11 +6,12 @@ export default {
   mounted() {
     Typekit.load({async: true})
   }
-}
+
+  }
+
 </script>
 <style lang="sass">
 html
-  font-family: 'ITC Galliard Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%
