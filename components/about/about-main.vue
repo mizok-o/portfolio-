@@ -1,7 +1,9 @@
 <template lang="pug">
 .about-main
-  img.img-content(src="~/assets/img/about-me.jpg")
-  h1.about-me About me
+  .about-img-container
+    .img-mask-container
+      img.img-content(src="~/assets/img/about-me.jpg")
+  h1.about-title About me
 
 </template>
 <script>
@@ -37,27 +39,44 @@ export default{
 /* スクロール後に表示 */
 .show
   position: relative
-  width: 100%
-  height: 100%
+  width: 800px
+  height: 488px
   text-align: center
 
+.about-img-container
+  overflow: hidden
+  position: relative
+  transform: rotate(4deg)
+  width: 101%
+  height: 101%
+
+.img-mask-container
+  width: 101%
+  height: 101%
+  transition: .4s
+  animation: shown 1s
+
+  &:hover
+    transform: scale(1.01)
+
+
 .img-content
-  height: 120%
-  width: 72%
+  height: 101%
+  width: 101%
+  vertical-align: top
+
   +sp-view
     width: 100%
 
-.about-me
+.about-title
   font-family: 'ITC Galliard Pro'
   position: absolute
-  top: 0
-  bottom: 0
+  top: 50%
   left: 0
-  right: 0
-  margin: auto
-  height: 50%
+  transform: translateY(-50%)
   font-weight: 500
   font-size: 13em
+  pointer-events: none
   +pc-lg-view
     font-size: 10em
   +pc-md-view
@@ -74,8 +93,10 @@ export default{
 
 @keyframes shown
   0%
-    transform: translateX(0%)
+    transform: matrix(1,0.00,0,1,32,800)
   100%
-    transform: translatex(100%)
+    transform: matrix(1,0.00,0,1,0,0)
+
+
 
 </style>
