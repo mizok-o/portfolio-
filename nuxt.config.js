@@ -75,6 +75,7 @@ export default {
 },
   build: {
      extend(config, ctx) {},
+     transpile: ['gsap'],
     vendor: [
       'vue-awesome-swiper'
     ]

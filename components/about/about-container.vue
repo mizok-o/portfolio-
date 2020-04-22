@@ -26,6 +26,7 @@ export default{
     aboutlogo
   }
 }
+
 </script>
 <style lang="sass">
 

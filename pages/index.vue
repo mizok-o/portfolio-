@@ -159,10 +159,12 @@ export default {
     width: 88%
 .product-main-img
   width: 100%
+
+
 .main-text
   position: absolute
-  right: -22%
-  bottom: -48%
+  right: -264px
+  bottom: -356px
   width: 45%
   height: 50%
   letter-spacing: 1.6px
