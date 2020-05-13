@@ -3,7 +3,7 @@
     .about-content
       .about-top
         aboutmain
-      .about-description
+      .about-description(data-scroll)
         aboutmaintext
         .about-detail
           abouttext

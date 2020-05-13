@@ -1,10 +1,11 @@
 <template lang="pug">
 header.header-content
     ul.header-menu
-      li
-        a.sns-content.link-about(href="/about") about
-      li
-        a.sns-content.link-index(href="/") works
+      li.header-item
+        a.header-link.link-about(href="/about") about
+      li.header-item
+        a.header-link.link-index(href="/")
+          .header-item-index works
 </template>
 <style lang="sass">
   /* ヘッダー全体 */
@@ -25,6 +26,22 @@ header.header-content
     display: block
     position: fixed
 
+.header-item
+  position: relative
+  overflow: hidden
+
+.header-item-index
+  transition: 1.4s
+  &::before
+    content: "works"
+    position: absolute
+    top: 0
+    right: 140px
+
+
+.header-link
+  display: block
+
 /* 線を表示させっぱなし */
 .content-about
   .link-about
@@ -32,9 +49,15 @@ header.header-content
     pointer-events: none
     &::before
       transform: scale(1,1)
-  +sp-view
-    .link-about
+    +sp-view
       display: none
+  .link-index
+    transform: translateX(0)
+    &:hover
+      .header-item-index
+        transition: .4s
+        transform: translateX(140px)
+
 .content-index
   .link-index
     color: #87120b

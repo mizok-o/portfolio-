@@ -57,10 +57,10 @@ export default {
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-          },
+          // autoplay: {
+          //   delay: 3000,
+          //   disableOnInteraction: false
+          // },
           navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
