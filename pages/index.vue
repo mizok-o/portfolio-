@@ -17,7 +17,7 @@
           .product-top
             .product-number {{ item.number }}
             .product-title {{ item.title }}
-          .product-main
+          .product-main(v-bind:class="[swiper ? 'on' : '']" v-scroll="handleScroll")
             a.product-main-link(v-bind:href="item.link")
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
@@ -49,6 +49,7 @@ export default {
   name: 'carrousel',
     data() {
       return {
+        swiper: false,
         swiperOption: {
           slidesPerView: 1.15,
           spaceBetween: 64,
@@ -57,10 +58,6 @@ export default {
           centeredSlides: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
-          // autoplay: {
-          //   delay: 3000,
-          //   disableOnInteraction: false
-          // },
           navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -85,6 +82,18 @@ export default {
     return {
       items: data.contents
     };
+  },
+  methods: {
+    handleScroll: function(evt, el) {
+      let rect = this.$el.getBoundingClientRect();
+      console.log(window.scrollY);
+      console.log(window.pageYOffset);
+      if (window.scrollY > 296) {
+        this.swiper = true
+      }else if (window.scrollY< 296){
+        this.swiper = false
+      }
+    }
   }
 }
 </script>
@@ -147,12 +156,17 @@ export default {
   display: flex
   z-index: 23
   margin-left: 4%
+  opacity: 0
   +pc-sm-view
     display: block
     margin-right: 16%
   +sp-view
     display: block
     margin-right: 0
+  &.on
+    transition: 1s
+    opacity: 1
+
 .product-main-link
   width: 72%
   +sp-view

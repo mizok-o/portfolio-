@@ -34,7 +34,7 @@ export default {
   */
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false },
-    { src: "~plugins/locomotive-scroll", ssr: false}
+    '~plugins/scroll.js'
   ],
   /*
   ** Nuxt.js dev-modules

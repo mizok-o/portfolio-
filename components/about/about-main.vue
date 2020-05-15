@@ -9,38 +9,11 @@
 <script>
 import {TweenMax} from "gsap"
 export default{
-  name: 'animation',
- mounted() {
-   this.onIntersect(),
-   TweenMax.from(".img-content", { duration: 1.3, y: -100, x: -100, rotation: -4, opacity: .2, ease: "power3.in"}),
-   TweenMax.to(".img-content", { duration: 1.3,y: 0, x: 0, opacity: 1 ,height: 544})
- },
- methods: {
-   onIntersect(){
-   const options = {
-     root: null,
-     rootMargin: "-72px",
-     threshold: 0.6
-   }
-   const observer = new IntersectionObserver(this.addShowClass)
-   // 監視したい要素をobserveする。
-   observer.observe(this.$el)
- },
-   addShowClass(entries) {
-     for(const e of entries) {
-       if (e.intersectionRatio) {
-         e.target.classList.add("show")
 
-      }
-     }
-   }
- }
 }
 </script>
 <style lang="sass">
-
-/* スクロール後に表示 */
-.show
+.about-main
   width: 890px
   height: 544px
   margin: 0 auto
@@ -49,16 +22,17 @@ export default{
 .about-img-container
   overflow: hidden
   position: relative
-  width: 101%
-  height: 101%
+  width: auto
+  height: 100%
+  text-align: center
 
 .img-mask-container
-  width: 101%
-  height: 101%
+  width: auto
+  height: 100%
   transition: .4s
+  text-align: center
   &:hover
     transform: scale(1.01)
-
 
 .img-content
   width: 890px
@@ -69,14 +43,13 @@ export default{
 
 .about-title
   position: absolute
-  top: 10%
-  left: 0
-  max-width: 100%
-  width: 100%
-  margin: 0 auto
+  top: 12%
+  left: 50%
+  transform: translateX(-50%)
   font-family: 'ITC Galliard Pro'
   font-weight: 500
   font-size: 12em
+  white-space: nowrap
   pointer-events: none
   +pc-lg-view
     font-size: 10em
