@@ -51,6 +51,7 @@ export default{
 }
 </script>
 <style lang="sass">
+
 /* 全体 */
 .contact-content
   height: 27%
@@ -60,6 +61,11 @@ export default{
     display: block
     width: 100%
     margin-top: 2%
+
+.content-index
+  .showd
+    +sp-view
+      margin-top: 20%
 
 .showd
   z-index: 22
