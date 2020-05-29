@@ -1,13 +1,13 @@
 <template lang="pug">
 header.header-container
   ul.header-content
-    li.header-item
+    li
       a.header-item-link.link-about(href="/about")
         .header-item-text about
-    li.header-item
+    li
       a.header-item-link.link-index(href="/")
         .header-item-text works
-  .header-side-text
+  .header-side-text.u-pc-view
     h2 Portfolio site
 </template>
 <script>
@@ -34,8 +34,6 @@ export default {
   width: 90%
   height: 60px
   z-index: 13
-  +sp-view
-    margin: 6% 0 0 75%
 
 .header-content
   position: relative
@@ -44,6 +42,8 @@ export default {
   justify-content: space-between
   padding: 20px 30px 0
   font-size: 22px
+  +sp-view
+    padding: 18px 16px 0
 
 .header-side-text
   position: absolute
@@ -77,6 +77,9 @@ export default {
   &:hover::before
     transform: scale(1, 1)
     transform-origin: left top
+  +sp-view
+    &::before
+      top: 50%
 
 /* 線を表示させっぱなし */
 .content-about
