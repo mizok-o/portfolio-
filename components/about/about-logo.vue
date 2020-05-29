@@ -31,15 +31,15 @@ export default{
 <style lang="sass">
 .showf
   .about-logo
-    width: 144%
-    margin: 12% 0 0 -24%
-    opacity: .8
+    position: absolute
+    top: 60px
+    right: -160px
+    width: 220px
+    opacity: 1
     transform: translateX(0) rotate(4deg)
     transition: transform 2.4s cubic-bezier(0.61, 1, 0.78, 1), opacity 2.4s cubic-bezier(0.61, 1, 0.78, 1)
-    +pc-lg-view
-      width: 120%
     +sp-view
-      width: 100%
+      width: 120px
 
 .showf, .about-logo-container
   +pc-sm-view

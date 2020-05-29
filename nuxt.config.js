@@ -1,9 +1,6 @@
-
 export default {
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -19,26 +16,16 @@ export default {
       { src: 'https://use.typekit.net/tiv6nbi.js' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
+
   css: [
     'swiper/dist/css/swiper.min.css'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false },
     '~plugins/scroll.js'
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+
   buildModules: [
   ],
   modules: ["@nuxtjs/markdownit"],
@@ -47,9 +34,7 @@ export default {
     injected: true,
     preset: "default"
   },
-  /*
-  ** Nuxt.js modules
-  */
+
   modules: [
   '@nuxtjs/style-resources',
   '@nuxtjs/markdownit',

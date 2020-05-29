@@ -1,6 +1,6 @@
 <template lang="pug">
 .text-content
-  p.about-text.text-item I’m learning economics but I’m also really interested in design. Designers thoughts are surprising so I wanna work with them and improve my skills.
+  p.about-text.text-item I’m learning economics and I’m interested in design and making it. My mission is showing value of valuable products people doesn't realize yet, make people impressed with creative design.
 </template>
 <script>
 export default{
@@ -44,19 +44,18 @@ export default{
 .text-item
   transform: translateY(40%)
   opacity: 0
-  transition: transform 2s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
-  font-family: 'ff-meta-web-pro'
+  transition: transform 1s cubic-bezier(0.61, 1, 0.78, 1), opacity 2s cubic-bezier(0.61, 1, 0.78, 1) .2s
   font-weight: 500
-  font-size: 40px
-  letter-spacing: .5px
+  font-size: 36px
+  letter-spacing: 1px
   width: 100%
   +pc-md-view
     font-size: 32px
     letter-spacing: 1px
   +sp-view
-    width: 100%
+    width: auto
     margin-top: 8%
-    font-size: 24px
+    font-size: 21px
     line-height: 128%
-    letter-spacing: 1.1px
+    letter-spacing: 1.5px
 </style>

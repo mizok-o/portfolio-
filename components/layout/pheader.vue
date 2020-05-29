@@ -81,14 +81,16 @@ export default {
 /* 線を表示させっぱなし */
 .content-about
   .link-about
-    color: #87120b
+    &::before
+      transform: scale(1, 1)
     pointer-events: none
     +sp-view
       display: none
 
 .content-index
   .link-index
-    color: #87120b
+    &::before
+      transform: scale(1, 1)
     pointer-events: none
     +sp-view
       display: none
