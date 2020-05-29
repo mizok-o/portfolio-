@@ -17,7 +17,7 @@
           .product-top
             .product-number {{ item.number }}
             .product-title {{ item.title }}
-          .product-main(v-bind:class="[swiper ? 'on' : '']" v-scroll="handleScroll")
+          .product-main
             a.product-main-link(v-bind:href="item.link")
               img.product-main-img(v-bind:src="item.img.url")
             .main-text {{ item.subtext }}
@@ -49,7 +49,7 @@ export default {
   name: 'carrousel',
     data() {
       return {
-        swiper: false,
+        swiper: true,
         swiperOption: {
           slidesPerView: 1.15,
           spaceBetween: 64,
@@ -100,6 +100,7 @@ export default {
 <style lang="sass">
 .index
   font-family: 'ITC Galliard Pro'
+  padding: 3% 5% 0
   +sp-view
     overflow-x: hidden
 .works
@@ -118,6 +119,7 @@ export default {
   width: 960px
   +sp-view
     width: 480px
+
 /* 全体 */
 .swiper-container
   display: flex
@@ -128,8 +130,10 @@ export default {
   +sp-view
     padding: 0 0 7% 0
     margin: 12% 0 0 0
+
 .swiper-content
   margin-right: 4%
+
 /* スライドのタイトル */
 .product-top
   display: flex
@@ -143,6 +147,7 @@ export default {
     margin-left: 1%
     +pc-md-view
       font-size: 200%
+
 /* スライドの番号 */
 .product-number
   font-size: 600%
@@ -150,6 +155,7 @@ export default {
   +sp-view
     font-size: 380%
     margin: 0 12% 0 0
+
 /* スワイパー画像 */
 .product-main
   position: relative
@@ -171,9 +177,9 @@ export default {
   width: 72%
   +sp-view
     width: 88%
+
 .product-main-img
   width: 100%
-
 
 .main-text
   position: absolute
@@ -195,6 +201,7 @@ export default {
     width: 88%
     margin: 3% 4% 0 0
     font-size: 12px
+
 /* スワイパーのボタン */
 .swiper-button-prev, .swiper-button-next
   position: absolute
@@ -218,6 +225,7 @@ export default {
     height: 36px
   &:focus
     outline: 0
+
 .swiper-button-prev
   left: 7.4%
   background-image: none
@@ -225,6 +233,7 @@ export default {
     left: 67%
   +sp-view
     left: 60%
+
 .swiper-button-next
   left: 12.6%
   background-image: none
@@ -234,6 +243,7 @@ export default {
     left: 78%
   .menu-bar
     left: 40%
+
 .prev-round, .next-round
   position: relative
   overflow: hidden
@@ -246,6 +256,7 @@ export default {
     width: 100%
     height: 100%
     background-color: #fafafa
+
 .prev-icon
   &::before
     content: ""
@@ -281,6 +292,7 @@ export default {
       width: 12px
       bottom: 18px
       right: 12px
+
 .next-icon
   &::before
     content: ""
@@ -316,6 +328,7 @@ export default {
       width: 12px
       bottom: 18px
       left: 12px
+
 @keyframes automove
   0%
     transform: translate(-50%)

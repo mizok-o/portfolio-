@@ -1,20 +1,14 @@
 <template lang="pug">
-header.header-content
-  .header-area.u-pc-view
-    a(href="#").header-icon-container(@mouseover="mouseover"  @mouseleave="mouseleave")
-      .header-icon-background
-        .menu-bar-mask
-          .bar-hover(:class="[menu ? 'move-bar': '']")
-        .menu-bar-mask
-          .bar-hover(:class="[menu ? 'move-bar': '']")
-        .menu-bar-mask
-          .bar-hover(:class="[menu ? 'move-bar': '']")
-  ul.header-menu.u-sp-view
+header.header-container
+  ul.header-content
     li.header-item
-      a.header-link.link-about(href="/about") about
+      a.header-item-link.link-about(href="/about")
+        .header-item-text about
     li.header-item
-      a.header-link.link-index(href="/")
-        .header-item-index works
+      a.header-item-link.link-index(href="/")
+        .header-item-text works
+  .header-side-text
+    h2 portfolio site
 </template>
 <script>
 export default {
@@ -35,135 +29,67 @@ export default {
 </script>
 <style lang="sass">
   /* ヘッダー全体 */
-.header-content
-  margin: 3% 5% 0
-  position: relative
+.header-container
+  position: fixed
+  width: 90%
+  height: 60px
+  z-index: 3
   +sp-view
     margin: 6% 0 0 75%
 
-.header-area
-  width: 80px
-  height: 80px
-  background-color: #b70000
-  border: 2px solid #fafafa
+.header-content
+  position: relative
+  display: flex
+    width: 100%
+  justify-content: space-between
+  padding: 20px 30px 0
+  font-size: 22px
 
-.header-icon-container
+.header-side-text
+  position: absolute
+  top: 44vh
+  right: 40px
+  h2
+    display: block
+    position: fixed
+    font-size: 20px
+    font-weight: bold
+    letter-spacing: 1.5px
+    transform: rotate(90deg)
+    white-space: nowrap
+    opacity: .5
+
+.header-item-link
   position: relative
   display: block
-  overflow: hidden
-  width: 100%
-  height: 100%
   &::before
     content: ""
     position: absolute
-    top: 0
+    top: 45%
     left: 0
     width: 100%
-    height: 100%
-    background-color: #b70000
-    transform: scale(1, 0)
-    transform-origin: left bottom
-    transition: all .3s
-  &:hover
-    &::before
-      transform: scale(1, 1)
-      transform-origin: left top
-
-.header-icon-background
-  width: 100%
-  height: 100%
-
-.move-bar
-  transform: translateX(-100%)
-
-.menu-bar-mask
-  overflow: hidden
-  position: absolute
-  top: 16px
-  left: 20px
-  display: block
-  height: 2px
-  width: 36px
-  background-color: #111
-  margin-top: 10px
-  &:nth-child(2)
-    top: 27px
-    .move-bar
-      transition-delay: .1s
-  &:nth-child(3)
-    top: 38px
-    .move-bar
-      transition-delay: .2s
-
-.bar-hover
-  position: absolute
-  top: -10px
-  left: 36px
-  display: block
-  height: 2px
-  width: 36px
-  background-color: #fafafa
-  margin-top: 10px
-  transition: transform .5s ease-in-out
-
-.header-menu
-  position: fixed
-  display: flex
-  width: 88%
-  justify-content: space-between
-  z-index: 1000
-  font-size: 1.2em
-  +sp-view
-    display: block
-    position: fixed
-
-.header-item
-  position: relative
-  overflow: hidden
-
-.header-item-index
-  transition: 1.4s
-  &::before
-    content: "works"
-    position: absolute
-    top: 0
-    right: 140px
-
-
-.header-link
-  display: block
+    height: 1px
+    background-color: #fff
+    transform: scale(0, 0)
+    transition: transform cubic-bezier(0.61, 1, 0.78, 1) .3s
+    transform-origin: right top
+  &:hover::before
+    transform: scale(1, 1)
+    transform-origin: left top
 
 /* 線を表示させっぱなし */
 .content-about
   .link-about
     color: #87120b
     pointer-events: none
-    &::before
-      transform: scale(1,1)
     +sp-view
       display: none
-  .link-index
-    transform: translateX(0)
-    &:hover
-      .header-item-index
-        transition: .4s
-        transform: translateX(140px)
 
 .content-index
   .link-index
     color: #87120b
     pointer-events: none
-    &::before
-      transform: scale(1,1)
     +sp-view
       display: none
-/* @keyframes menuanime
-  0%
-    transform: translateY(100%)
-    transform-origin: bottom
-    background-color: blue
-  100%
-    transform: translateY(-100%)
-    transform-origin: top
-    background-color: blue */
+
 </style>
