@@ -3,7 +3,7 @@
     .about-content
       .about-top
         aboutmain
-      .about-description
+      .about-description(data-scroll)
         aboutmaintext
         .about-detail
           abouttext
@@ -26,6 +26,7 @@ export default{
     aboutlogo
   }
 }
+
 </script>
 <style lang="sass">
 

@@ -33,7 +33,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/vue-awesome-swiper', ssr: false }
+    { src: '~plugins/vue-awesome-swiper', ssr: false },
+    '~plugins/scroll.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -75,6 +76,7 @@ export default {
 },
   build: {
      extend(config, ctx) {},
+     transpile: ['gsap'],
     vendor: [
       'vue-awesome-swiper'
     ]

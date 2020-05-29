@@ -2,13 +2,6 @@
   nuxt
 </template>
 <script>
-export default {
-  mounted() {
-    Typekit.load({async: true})
-  }
-
-  }
-
 </script>
 <style lang="sass">
 html
