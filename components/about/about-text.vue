@@ -1,9 +1,9 @@
 <template lang="pug">
 .text-content
-  p.text-detail Currently I can write css and html and a little bit vue.js. I’m working as an intern in web studio. I’m not interested in only web, I like architecture, graphic, ui, product as well. I’d like to try many new things. I like coffee, mangas, films, cheeseburger and travel.
+  p.text-detail Currently I can write css and html and js with Nuxt. I’m working as an intern in web studio. I’m not interested in only web, I like graphic, ui, product as well. And my hobby is traveling, films, reading, eating cheezeburgers and udon.
     br
     br
-    | I post on instagram about my travel. I love traveling. sometimes alone. It will become really precious time to relax. And udon is 8 times delicious after the travel. Traveling is really good experience. I wish to go to Egypt for now.
+    | I love traveling, often alone. It's really good opportunity to relax and meet many new things. New cultures, people and places will make me aware new points of view. I'm sure to keep challenging a lot of things to have a fun.
 </template>
 <script>
 export default{
@@ -33,11 +33,9 @@ export default{
 <style lang="sass">
 /* スクロール後に表示 */
 .showe
-  width: 224px
+  width: 560px
   font-weight: 500
   line-height: 144%
-  font-family: 'ff-meta-web-pro'
-  font-weight: 400
   .text-detail
     opacity: 1
     transform: translateY(0)

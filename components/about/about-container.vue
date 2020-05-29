@@ -3,13 +3,13 @@
     .about-content
       .about-top
         aboutmain
-      .about-description(data-scroll)
+      .about-description
         aboutmaintext
         .about-detail
           abouttext
-          .about-contact
-            aboutlogo
-            Sns
+          aboutlogo
+        .about-contact
+          Sns
 </template>
 <script>
 import aboutmaintext from '~/components/about/about-main-text.vue'
@@ -53,32 +53,34 @@ export default{
     height: 80%
     width: auto
     left: -24%
+
 .about-description
-  margin: 12% 0 0 2%
-  width: 100%
+  margin: 12% 2% 0
+  width: 96%
   height: 72%
   +sp-view
     width: 100%
-    height: 64%
     top: 32%
     right: 16%
     margin: 16% 0 0 0
 
 .about-detail
+  position: relative
   display: flex
-  margin: 10% 9% 0
+  margin: 14% 6% 0
   justify-content: space-between
   +pc-md-view
     margin: 8% 0 0
   +pc-sm-view
     margin: 56px 4% 0
   +sp-view
+    margin: 48px 0 0
     display: block
 
 .about-contact
   display: flex
-  flex-flow: column
-  justify-content: space-between
-
+  margin: 80px 6% 0
+  +sp-view
+    margin-top: 40px
 
 </style>
