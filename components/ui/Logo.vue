@@ -1,7 +1,7 @@
 <template lang="pug">
   .main-visual
     .svg-container
-      img.NuxtLogo.u-pc-view(src="~/assets/img/portfolio-logo.svg")
+      img.NuxtLogo(src="~/assets/img/portfolio-logo.svg")
       img.NuxtLogo.u-sp-view(src="~/assets/img/portfolio-logo-sp.svg")
 </template>
 <script>
@@ -24,12 +24,23 @@
 
 /* 画像 */
 .NuxtLogo
-  width: 1040px
+  width: 1200px
   height: auto
-  +pc-sm-view
-    width: 880px
-  +sp-view
-    margin: -16% auto 0 
-    width: 180px
+  margin: 8% 0 0 2%
+  +pc-lg-view
+    width: 970px
+  +pc-md-view
+    width: 820px
+  &:first-child
+    +pc-sm-view
+      display: none
+  &:nth-child(2)
+    +pc-sm-view
+      display: block
+      width: 280px
+      margin: -2% auto 0
+    +sp-view
+      width: 180px
+      margin: -16% auto 0
 
 </style>
