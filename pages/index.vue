@@ -20,7 +20,6 @@
           .product-main
             a.product-main-link(v-bind:href="item.link")
               img.product-main-img(v-bind:src="item.img.url")
-            .main-text {{ item.subtext }}
       .swiper-button-prev
         .prev-round
           .prev-icon
@@ -49,7 +48,6 @@ export default {
   name: 'carrousel',
     data() {
       return {
-        swiper: true,
         swiperOption: {
           slidesPerView: 1.15,
           spaceBetween: 64,
@@ -78,10 +76,10 @@ export default {
       {
         headers: { "X-API-KEY": "daf4248f-d2d5-4cc7-9279-0fde55724490" }
       }
-    );
+    )
     return {
       items: data.contents
-    };
+    }
   },
   methods: {
     handleScroll: function(evt, el) {
@@ -162,16 +160,12 @@ export default {
   display: flex
   z-index: 23
   margin-left: 4%
-  opacity: 0
   +pc-sm-view
     display: block
     margin-right: 16%
   +sp-view
     display: block
     margin-right: 0
-  &.on
-    transition: 1s
-    opacity: 1
 
 .product-main-link
   width: 72%
@@ -183,15 +177,13 @@ export default {
 
 .main-text
   position: absolute
-  right: -264px
-  bottom: -356px
-  width: 45%
-  height: 50%
+  right: 0
+  bottom: 0%
   letter-spacing: 1.6px
-  transform: rotate(-90deg)
+  /* transform: rotate(-90deg) */
   transform-origin: top left
   font-family: 'ff-meta-web-pro'
-  font-weight: 400
+  font-weight: 600
   +pc-sm-view
     font-size: 16px
     transform: none

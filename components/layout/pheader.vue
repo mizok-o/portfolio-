@@ -8,7 +8,7 @@ header.header-container
       a.header-item-link.link-index(href="/")
         .header-item-text works
   .header-side-text
-    h2 portfolio site
+    h2 Portfolio site
 </template>
 <script>
 export default {
@@ -33,7 +33,7 @@ export default {
   position: fixed
   width: 90%
   height: 60px
-  z-index: 3
+  z-index: 13
   +sp-view
     margin: 6% 0 0 75%
 
@@ -48,16 +48,17 @@ export default {
 .header-side-text
   position: absolute
   top: 44vh
-  right: 40px
+  right: -240px
+  width: 290px
+  height: 40px
   h2
     display: block
     position: fixed
     font-size: 20px
-    font-weight: bold
     letter-spacing: 1.5px
     transform: rotate(90deg)
     white-space: nowrap
-    opacity: .5
+    opacity: .7
 
 .header-item-link
   position: relative

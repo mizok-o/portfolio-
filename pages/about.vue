@@ -22,6 +22,7 @@ export default {
 </script>
 <style lang="sass">
 .container
+  padding: 3% 5% 0
   height: 100vh
 .content-about
   overflow-y: hidden
