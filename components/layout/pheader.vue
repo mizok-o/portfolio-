@@ -7,7 +7,7 @@ header.header-container
     li
       a.header-item-link.link-index(href="/")
         .header-item-text works
-  .header-side-text.u-pc-view
+  .header-side-text
     h2 Portfolio site
 </template>
 <script>
@@ -51,6 +51,8 @@ export default {
   right: -240px
   width: 290px
   height: 40px
+  +pc-sm-view
+    display: none
   h2
     display: block
     position: fixed
