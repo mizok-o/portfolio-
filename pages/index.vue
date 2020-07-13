@@ -14,7 +14,7 @@
     client-only
       swiper(:options="swiperOption")
         swiper-slide.swiper-content(v-for="item in items")
-          .product-top
+          .product-top(v-on="")
             .product-number {{ item.number }}
             .product-title {{ item.title }}
           .product-main
@@ -50,7 +50,6 @@ export default {
       return {
         swiperOption: {
           slidesPerView: 1.15,
-          spaceBetween: 64,
           paginationClickable: true,
           speed: 800,
           centeredSlides: true,
@@ -80,25 +79,12 @@ export default {
     return {
       items: data.contents
     }
-  },
-  methods: {
-    handleScroll: function(evt, el) {
-      let rect = this.$el.getBoundingClientRect();
-      console.log(window.scrollY);
-      console.log(window.pageYOffset);
-      if (window.scrollY > 296) {
-        this.swiper = true
-      }else if (window.scrollY< 296){
-        this.swiper = false
-      }
-    }
   }
 }
 </script>
 <style lang="sass">
 .index
-  font-family: 'ITC Galliard Pro'
-  padding: 3% 5% 0
+  padding: 3% 0 0
   +sp-view
     overflow-x: hidden
 .works
@@ -126,8 +112,8 @@ export default {
   +pc-sm-view
     padding-bottom: 10%
   +sp-view
-    padding: 0 0 7% 0
-    margin: 12% 0 0 0
+    padding: 0 0 24px 0
+    margin: 32px 0 0 -24px
 
 .swiper-content
   margin-right: 4%
@@ -224,7 +210,7 @@ export default {
   +pc-sm-view
     left: 67%
   +sp-view
-    left: 60%
+    left: 232px
 
 .swiper-button-next
   left: 12.6%
@@ -232,7 +218,7 @@ export default {
   +pc-sm-view
     left: 77%
   +sp-view
-    left: 78%
+    left: 300px
   .menu-bar
     left: 40%
 

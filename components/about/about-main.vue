@@ -75,7 +75,7 @@ export default{
   top: 10%
   left: 50%
   transform: translateX(-50%)
-  font-family: 'ITC Galliard Pro'
+  font-family: 'Cinzel', serif
   font-weight: 500
   font-size: 14em
   white-space: nowrap
