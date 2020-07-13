@@ -93,8 +93,9 @@ export default{
   display: flex
   +sp-view
     display: flex
+    width: 160px
     justify-content: space-between
-    margin-top: 6px
+    margin: 6px auto 0
 
 .sns-title, .mail-title
   font-weight: 600
@@ -130,7 +131,7 @@ export default{
     top: 48%
     left: 0
     width: 100%
-    height: 1px
+    height: 2px
     background-color: #fff
     transform: scale(0, 0)
     transition: transform cubic-bezier(0.61, 1, 0.78, 1) .3s
@@ -148,10 +149,11 @@ export default{
   +sp-view
     width: 44px
     height: 44px
-    margin: 1% 0 0 0
+    margin: 1% 4px 0
+    &:hover::before
+      transform: scale(0, 0)
 
 .sns-icon
-  margin: 10px
   margin: 10px
 
 .mail-content
@@ -160,7 +162,6 @@ export default{
     margin: 24px 0 0
 .mail-address
   margin-top: 12px
-  font-weight: 600
   +sp-view
     font-size: 11px
 </style>

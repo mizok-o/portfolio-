@@ -5,7 +5,7 @@
 </script>
 <style lang="sass">
 html
-  font-family: 'ITC Galliard pro'
+  font-family: 'Cinzel', serif
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%

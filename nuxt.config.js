@@ -28,18 +28,22 @@ export default {
 
   buildModules: [
   ],
-  modules: ["@nuxtjs/markdownit"],
   markdownit: {
     html: true,
     injected: true,
     preset: "default"
   },
-
   modules: [
   '@nuxtjs/style-resources',
   '@nuxtjs/markdownit',
-  '@nuxtjs/axios'
- ],
+  '@nuxtjs/axios',
+  'nuxt-webfontloader'
+  ],
+  webfontloader: {
+    google: {
+      families: ['Cinzel']
+    }
+  },
  markdownit: {
   html: true,
   injected: true,
