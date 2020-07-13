@@ -10,8 +10,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"},
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"}
+      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"}
     ],
     script: [
       { src: 'https://use.typekit.net/tiv6nbi.js' }
@@ -29,18 +28,22 @@ export default {
 
   buildModules: [
   ],
-  modules: ["@nuxtjs/markdownit"],
   markdownit: {
     html: true,
     injected: true,
     preset: "default"
   },
-
   modules: [
   '@nuxtjs/style-resources',
   '@nuxtjs/markdownit',
-  '@nuxtjs/axios'
- ],
+  '@nuxtjs/axios',
+  'nuxt-webfontloader'
+  ],
+  webfontloader: {
+    google: {
+      families: ['Cinzel']
+    }
+  },
  markdownit: {
   html: true,
   injected: true,
