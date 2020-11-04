@@ -50,5 +50,4 @@ export default{
 .text-detail
   opacity: 0
   transform: translateY(40%)
-
 </style>
