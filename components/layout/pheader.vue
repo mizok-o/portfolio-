@@ -1,70 +1,38 @@
 <template lang="pug">
-header.header-container
-  ul.header-content
-    li
-      a.header-item-link.link-about(href="/about")
-        .header-item-text about
-    li
-      a.header-item-link.link-index(href="/")
-        .header-item-text works
-  .header-side-text
-    p Portfolio site
+header.header
+  .header-container
+    ul.header-content
+      li
+        a.header-item-link.link-about(href="/about")
+          .header-item-text about
+      li
+        a.header-item-link.link-index(href="/")
+          .header-item-text works
 </template>
 <script>
-export default {
-  data() {
-    return{
-      menu: false
-    }
-  },
-  methods:{
-    mouseover: function(){
-      this.menu = true
-    },
-    mouseleave: function(){
-      this.menu = false
-    }
-  }
-}
 </script>
 <style lang="sass">
-  /* ヘッダー全体 */
-.header-container
+.header
   position: fixed
-  width: 90%
-  height: 60px
+  top: 0
+  left: 0
+  width: 100%
+  height: 96px
   z-index: 13
-  margin-left: 5%
+
+.header-container
+  margin: 32px 56px
 
 .header-content
-  position: relative
   display: flex
   width: 100%
   justify-content: space-between
-  padding: 4px 4px 0
   font-size: 22px
   +sp-view
     padding: 18px 16px 0
 
 .header-item-text
   font-size: 18px
-
-.header-side-text
-  position: absolute
-  top: 44vh
-  right: -320px
-  width: 290px
-  height: 40px
-  +pc-sm-view
-    display: none
-  p
-    display: block
-    position: fixed
-    font-size: 18px
-    letter-spacing: 1.5px
-    transform: rotate(90deg)
-    white-space: nowrap
-    opacity: .7
 
 .header-item-link
   position: relative

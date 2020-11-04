@@ -1,5 +1,5 @@
-<template lang="pug" class=".index">
-.index
+<template lang="pug">
+.container
   pheader
   logo
   .works
@@ -83,10 +83,9 @@ export default {
 }
 </script>
 <style lang="sass">
-.index
-  padding: 3% 0 0
-  +sp-view
-    overflow-x: hidden
+.container
+  width: 100%
+
 .works
   position: relative
 .works-title
