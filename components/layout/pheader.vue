@@ -19,9 +19,14 @@ header.header
   width: 100%
   height: 96px
   z-index: 13
+  +sp-view
+    height: 64px
 
 .header-container
   margin: 32px 56px
+  +sp-view
+    margin: 0
+    height: 100%
 
 .header-content
   display: flex
@@ -29,7 +34,10 @@ header.header
   justify-content: space-between
   font-size: 22px
   +sp-view
-    padding: 18px 16px 0
+    height: 24px
+    justify-content: flex-end
+    margin: 20px 0
+    padding-right: 32px
 
 .header-item-text
   font-size: 18px
