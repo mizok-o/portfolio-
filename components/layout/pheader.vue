@@ -1,93 +1,107 @@
 <template lang="pug">
-header.header-content
-    ul.header-menu
-      li
-        a.header-link.link-about(href="/about") about
-      li
-        a.header-link.link-index(href="/") works
-    img.header-text(src="../../assets/img/sidetext.svg")
+header.header-container
+  ul.header-content
+    li
+      a.header-item-link.link-about(href="/about")
+        .header-item-text about
+    li
+      a.header-item-link.link-index(href="/")
+        .header-item-text works
+  .header-side-text
+    p Portfolio site
 </template>
-<script lang='coffee'>
-
+<script>
+export default {
+  data() {
+    return{
+      menu: false
+    }
+  },
+  methods:{
+    mouseover: function(){
+      this.menu = true
+    },
+    mouseleave: function(){
+      this.menu = false
+    }
+  }
+}
 </script>
 <style lang="sass">
-.header-content
-  margin: 3.5% 6% 0
-  position: relative
-
-.header-menu
+  /* ヘッダー全体 */
+.header-container
   position: fixed
-  display: flex
-  width: 88%
-  height: auto
-  justify-content: space-between
+  width: 90%
+  height: 60px
+  z-index: 13
+  margin-left: 5%
 
-.header-text
-  position: absolute
-  right: 0
-  top: 32vh
-  font-size: 14px
-  opacity: 0
-
-.content-about
-  .link-about
-    &::before
-      content: ""
-      position: absolute
-      top: 50%
-      bottom: 50%
-      left: 0
-      width: 100%
-      height: 1px
-      background-color: #fff
-      transform: scale(1,1)
-      pointer-events: none
-.content-index
-  .link-index
-    &::before
-      content: ""
-      position: absolute
-      top: 50%
-      bottom: 50%
-      left: 0
-      width: 100%
-      height: 1px
-      background-color: #fff
-      transform: scale(1,1)
-      pointer-events: none
-
-.link-index
-  &::after
-    content: "24"
-    position: absolute
-    right: -36%
-    top: -20%
-    display: inline-block
-    font-size: 14px
-
-.header-link
-  display: block
-  width: 100%
-  height: 24px
+.header-content
   position: relative
-  /* ヘッダーのホバーアニメーション */
+  display: flex
+  width: 100%
+  justify-content: space-between
+  padding: 4px 4px 0
+  font-size: 22px
+  +sp-view
+    padding: 18px 16px 0
+
+.header-item-text
+  font-size: 18px
+
+.header-side-text
+  position: absolute
+  top: 44vh
+  right: -320px
+  width: 290px
+  height: 40px
+  +pc-sm-view
+    display: none
+  p
+    display: block
+    position: fixed
+    font-size: 18px
+    letter-spacing: 1.5px
+    transform: rotate(90deg)
+    white-space: nowrap
+    opacity: .7
+
+.header-item-link
+  position: relative
+  display: block
   &::before
     content: ""
     position: absolute
-    top: 50%
-    bottom: 50%
+    top: 45%
     left: 0
     width: 100%
-    height: 1px
+    height: 2px
     background-color: #fff
-    transform: scale(0,1)
-    transform-origin: right
-    pointer-events: none
-    transition: transform 0.6s cubic-bezier(0.3, 0.575, 0.565, 1)
+    transform: scale(0, 0)
+    transition: transform cubic-bezier(0.61, 1, 0.78, 1) .3s
+    transform-origin: right top
   &:hover::before
-    transform: scale(1)
-    transform-origin: left
+    transform: scale(1, 1)
+    transform-origin: left top
+  +sp-view
+    &::before
+      top: 50%
 
-  /* #blockLinkList a[href*="/"] */
+/* 線を表示させっぱなし */
+.content-about
+  .link-about
+    &::before
+      transform: scale(1, 1)
+    pointer-events: none
+    +sp-view
+      display: none
+
+.content-index
+  .link-index
+    &::before
+      transform: scale(1, 1)
+    pointer-events: none
+    +sp-view
+      display: none
 
 </style>

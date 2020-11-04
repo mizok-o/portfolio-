@@ -1,12 +1,11 @@
 <template lang="pug">
-.container
   nuxt
 </template>
 <script>
 </script>
 <style lang="sass">
 html
-  font-family: 'cormorant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif
+  font-family: 'Cinzel', serif
   font-size: 18px
   word-spacing: 1px
   -ms-text-size-adjust: 100%
@@ -15,15 +14,22 @@ html
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
   background-color: #B70000
-  color: #f0f0f0
-  box-sizing: border-box
+  color: #fafafa
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
   &::-webkit-scrollbar
     display: none
-
-li, p, a
+  +sp-view
+    font-size: 14px
+body
+  position: relative
+  width: 100%
+*
+  box-sizing: border-box
+body, .container
+  overflow-x: hidden
+li, a
   margin: 0
   padding: 0
 
@@ -31,7 +37,6 @@ ul, ol
   list-style: none
   padding: 0
   margin: 0
-
 *
   box-sizing: border-box
   margin: 0

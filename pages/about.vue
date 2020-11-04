@@ -1,17 +1,17 @@
 <template lang="pug">
 .container
    pheader
-   logo
+   aboutcontainer
 </template>
-
-<script lang='coffee'>
-import Logo from '~/components/ui/Logo.vue'
+<script>
 import pheader from '~/components/layout/pheader.vue'
-
+import Logo from '~/components/ui/Logo.vue'
+import aboutcontainer from '~/components/about/about-container.vue'
 export default {
   components: {
+      pheader,
       Logo,
-      pheader
+      aboutcontainer
   },
   head: {
     bodyAttrs: {
@@ -21,4 +21,11 @@ export default {
 }
 </script>
 <style lang="sass">
+.container
+  padding: 3% 5% 0
+  height: 100vh
+.content-about
+  overflow-y: hidden
+  +sp-view
+    overflow: inherit
 </style>

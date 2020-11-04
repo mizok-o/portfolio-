@@ -1,9 +1,6 @@
-
 export default {
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -12,51 +9,65 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"}
+    ],
+    script: [
+      { src: 'https://use.typekit.net/tiv6nbi.js' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
+
   css: [
     'swiper/dist/css/swiper.min.css'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
-    { src: '~plugins/vue-awesome-swiper', ssr: false }
+    { src: '~plugins/vue-awesome-swiper', ssr: false },
+    '~plugins/scroll.js'
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+
   buildModules: [
   ],
-  /*
-  ** Nuxt.js modules
-  */
+  markdownit: {
+    html: true,
+    injected: true,
+    preset: "default"
+  },
   modules: [
+  '@nuxtjs/style-resources',
+  '@nuxtjs/markdownit',
+  '@nuxtjs/axios',
+  'nuxt-webfontloader'
   ],
-  /*
-  ** Build configuration
-  */
+  webfontloader: {
+    google: {
+      families: ['Cinzel']
+    }
+  },
+ markdownit: {
+  html: true,
+  injected: true,
+  preset: 'default',
+ },
+ axios: {},
+ styleResources: {
+  sass: [
+   '@/assets/sass/_mixin.sass',
+   '@/assets/sass/_user-style.sass'
+  ],
+  scss: [
+   '@/assets/scss/_variable.scss',
+   '@/assets/scss/_mixin.scss'
+  ],
+  stylus: [
+   '@/assets/stylus/layout.styl'
+  ]
+},
   build: {
+     extend(config, ctx) {},
+     transpile: ['gsap'],
     vendor: [
       'vue-awesome-swiper'
-    ],
-    /*
-    ** You can extend webpack config here
-  //   */
-  //   extend (config, ctx) {
-  //     config.module.rules.push({
-  //   test: /\.coffee$/,
-  //   use: 'coffee-loader',
-  //   exclude: /(node_modules)/
-  // })
-  //   }
-  }
+    ]
+}
 }
