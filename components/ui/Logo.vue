@@ -13,7 +13,7 @@
 /* 全体の入れ物 */
 .main-visual
   width: 100%
-  margin: 168px 0 112px
+  margin: 168px 0 0
   transition: transform 1s
 
 /* 画像の入れ物 */
