@@ -30,10 +30,6 @@ export default {
         navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          751: {
-          }
         }
       }
     }
@@ -56,8 +52,6 @@ export default {
   height: 96px
   justify-content: center
   align-items: center
-  +sp-view
-    margin: 6% 0 6% 0
 
 .product-title
   font-size: 260%
@@ -75,14 +69,9 @@ export default {
 /* スワイパー画像 */
 .product-main
   max-width: 880px
+  width: 80%
   margin: 48px auto 48px
   z-index: 20
-  +pc-sm-view
-    display: block
-    margin-right: 16%
-  +sp-view
-    display: block
-    margin-right: 0
 
 .product-main-img
   height: 0
