@@ -9,11 +9,10 @@
         .product-main
           a.product-main-link(:href="item.link")
             .product-main-img(:style="{ backgroundImage: `url(${item.img.url})` }")
-    //.swiper-button-prev
-      .prev-round
+    .swiper-nav
+      .swiper-button-prev
         .prev-icon
-    //.swiper-button-next
-      .next-round
+      .swiper-button-next
         .next-icon
 </template>
 <script>
@@ -40,6 +39,7 @@ export default {
 <style lang="sass">
 /* 全体 */
 .swiper
+  position: relative
   margin-top: 112px
 
 .swiper-content
@@ -71,6 +71,8 @@ export default {
   max-width: 880px
   width: 80%
   margin: 48px auto 48px
+  border: 10px solid #111
+  border-radius: 8px
   z-index: 20
 
 .product-main-img
@@ -98,49 +100,28 @@ export default {
     margin: 3% 4% 0 0
     font-size: 12px
 
-
-
 /* スワイパーのボタン */
-//.swiper-button-prev, .swiper-button-next
+.swiper-nav
   position: absolute
-  top: 86.5%
+  top: 50%
+  bottom: 0
   left: 0
+  right: 0
+  width: 100%
+  height: 44px
+
+.swiper-button-prev, .swiper-button-next
+  transform: translateY(-50%)
   width: 44px
   height: 44px
   border-radius: 50%
-  +pc-view
-    &:hover
-      .prev-round, .next-round
-        background-color: #fafafa
-      .prev-icon, .next-icon
-        &::before, &::after
-          background-color: #de101b
-  +pc-sm-view
-    top: 88%
-  +sp-view
-    top: 104%
-    width: 36px
-    height: 36px
+  border: 1px solid #ffffff
+  background-image: none
+  &:hover
+    transition: 1s
+    background-color: #ffffff
   &:focus
     outline: 0
-
-.swiper-button-prev
-  left: 7.4%
-  background-image: none
-  +pc-sm-view
-    left: 67%
-  +sp-view
-    left: 232px
-
-.swiper-button-next
-  left: 12.6%
-  background-image: none
-  +pc-sm-view
-    left: 77%
-  +sp-view
-    left: 300px
-  .menu-bar
-    left: 40%
 
 .prev-round, .next-round
   position: relative
@@ -154,78 +135,6 @@ export default {
     width: 100%
     height: 100%
     background-color: #fafafa
-
-.prev-icon
-  &::before
-    content: ""
-    transform-origin: left bottom
-    transform: rotate(-40deg)
-    position: absolute
-    display: block
-    top: 21px
-    right: 12px
-    height: 3px
-    width: 16px
-    background-color: #fafafa
-    +sp-view
-      background-color: #de101b
-      height: 2px
-      width: 12px
-      top: 17px
-      right: 11px
-  &::after
-    content: ""
-    transform-origin: left bottom
-    transform: rotate(40deg)
-    position: absolute
-    display: block
-    bottom: 21px
-    right: 14px
-    height: 3px
-    width: 16px
-    background-color: #fafafa
-    +sp-view
-      background-color: #de101b
-      height: 2px
-      width: 12px
-      bottom: 18px
-      right: 12px
-
-.next-icon
-  &::before
-    content: ""
-    transform-origin: right bottom
-    transform: rotate(40deg)
-    position: absolute
-    display: block
-    top: 21px
-    left: 13px
-    height: 3px
-    width: 16px
-    background-color: #fafafa
-    +sp-view
-      background-color: #de101b
-      height: 2px
-      width: 12px
-      top: 17px
-      left: 11px
-  &::after
-    content: ""
-    transform-origin: right bottom
-    transform: rotate(-40deg)
-    position: absolute
-    display: block
-    bottom: 21px
-    left: 15px
-    height: 3px
-    width: 16px
-    background-color: #fafafa
-    +sp-view
-      background-color: #de101b
-      height: 2px
-      width: 12px
-      bottom: 18px
-      left: 12px
 
 @keyframes automove
   0%
