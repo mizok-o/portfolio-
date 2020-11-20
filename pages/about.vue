@@ -1,17 +1,15 @@
 <template lang="pug">
 .container
-   pheader
-   aboutcontainer
+   Button
+   Background
 </template>
 <script>
-import pheader from '~/components/layout/pheader.vue'
-import Logo from '~/components/ui/Logo.vue'
-import aboutcontainer from '~/components/about/about-container.vue'
+import Button from '~/components/praAbout/Button.vue'
+import Background from '~/components/praAbout/Background.vue'
 export default {
   components: {
-      pheader,
-      Logo,
-      aboutcontainer
+      Button,
+      Background
   },
   head: {
     bodyAttrs: {

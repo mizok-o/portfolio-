@@ -2,8 +2,11 @@
   nuxt
 </template>
 <script>
+export default {
+}
 </script>
 <style lang="sass">
+
 html
   font-family: 'Cinzel', serif
   font-size: 18px
@@ -13,7 +16,7 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #B70000
+  background-color: #111111
   color: #fafafa
   -ms-overflow-style: none
   scrollbar-width: none

@@ -1,5 +1,6 @@
 <template lang="pug">
-.container
+.container(:class="{'showContent': show}")
+  .anime-cotainer
   pheader
   logo
   .works
@@ -35,6 +36,7 @@ export default {
   },
   data(){
     return {
+      show: false,
       items: []
     }
   },
@@ -48,12 +50,21 @@ export default {
     return {
       items: items.data.contents
     }
+  },
+  mounted(){
+    window:onload = () => {
+      this.show = !this.show
+    }
   }
 }
 </script>
 <style lang="sass">
 .container
   width: 100%
+
+
+.showContent
+  opacity: 1
 
 .works
   margin-top: 216px

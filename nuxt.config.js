@@ -1,6 +1,6 @@
 export default {
   mode: 'universal',
-
+  pageTransition: 'page',
   head: {
     title: process.env.npm_package_name || '',
     meta: [
