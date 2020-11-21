@@ -1,53 +1,90 @@
 <template lang="pug">
-.text-content
-  p.text-detail Currently I can write css and html and js with Nuxt. I’m working as an intern in web studio. I’m not interested in only web, I like graphic, ui, product as well. And my hobby is traveling, films, reading, eating cheezeburgers and udon.
-    br
-    br
-    | I love traveling, often alone. It's really good opportunity to relax and meet many new things. New cultures, people and places will make me aware new points of view. I'm sure to keep challenging a lot of things to have a fun.
+.Button
+  .Button_Start(@click="click")
+    transition-group(
+      tag='div'
+      @enter='enter'
+      @leave='leave'
+      :css='false')
+      .Button_StartTitle(v-if='!entered' key='start') Click Return
+      .Button_StartTitle(v-if='entered' key='return') Click Return
+    .Button_StartUnderline
 </template>
 <script>
+import {mapGetters, mapMutations} from 'vuex'
+import {TweenMax, Expo} from "gsap"
+
 export default{
-  mounted() {
-    this.onIntersect()
+  computed: {
+    ...mapGetters({
+      entered: 'entered'
+    })
   },
   methods: {
-    onIntersect() {
-      const options = {
-        root: null,
-        rootMargin: "-72px",
-        threshold: 0.6
-      }
-      const observer = new IntersectionObserver(this.addShowClass)
-      observer.observe(this.$el)
+    enter (el, done) {
+      TweenMax.to(el, 1.5, {
+        opacity: 1,
+        x: 0,
+        startAt: {
+          opacity: 0,
+          x: '-20px'
+        },
+        ease: Expo.easeOut,
+        onComplete: () => {
+          done()
+        }
+      })
     },
-   addShowClass(entries) {
-     for(const e of entries) {
-       if (e.intersectionRatio) {
-         e.target.classList.add("showe")
-       }
-     }
-   }
- }
+    leave (el, done) {
+      TweenMax.to(el, 1.5, {
+        opacity: 0,
+        x: '20px',
+        startAt: {
+          opacity: 1,
+          x: 0
+        },
+        ease: Expo.easeOut,
+        onComplete: () => {
+          done()
+        }
+      })
+    },
+    ...mapMutations({
+      click: 'click'
+    })
+  }
 }
 </script>
 <style lang="sass">
-/* スクロール後に表示 */
-.showe
-  width: 560px
-  font-weight: 500
-  line-height: 144%
-  .text-detail
-    opacity: 1
-    transform: translateY(0)
-    transition: all 3s cubic-bezier(0.23, 1, 0.32, 1)
-  +sp-view
-    width: 76%
-    margin: 0 12% 0
-    font-size: 15px
-    line-height: 152%
-    letter-spacing: 1.5
+.Button
+  display: flex
+  justify-content: center
+  position: relative
+  width: 100%
+  height: 40px
+.Button_Start
+  position: relative
+  margin-top: 100px
+  width: 150px
+  height: 100%
+  font-size: 20px
+  letter-spacing: 2px
+  color: white
+  line-height: 2
+  text-align: center
+  cursor: pointer
 
-.text-detail
-  opacity: 0
-  transform: translateY(40%)
+.Button_StartTitle
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  margin: auto
+
+.Button_StartUnderline
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 2px
+  background: #555
 </style>

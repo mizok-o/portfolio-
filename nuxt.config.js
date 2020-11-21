@@ -23,7 +23,7 @@ export default {
   ],
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false },
-    '~plugins/scroll.js'
+    { src: '~plugins/mixin' }
   ],
 
   buildModules: [

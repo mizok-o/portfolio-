@@ -1,97 +1,89 @@
 <template lang="pug">
-.about-main
-  .about-img-container
-    .img-mask-container(ref="imgback")
-      img.img-content(src="~/assets/img/about-me.jpg")
-  h1.about-title About me
-
+.TheBackground
+  .TheBackground_Wrap(ref='wrap')
+    .TheBackground_WrapShadow(ref='shadow')
+      | TheBackground
+    .TheBackground_WrapFace(ref='face')
+      | TheBackground
 </template>
 <script>
-import {TweenMax} from "gsap"
-export default{
-  mounted() {
-    this.onIntersect()
+import {mapGetters} from 'vuex'
+import {TweenMax, Expo} from 'gsap'
+
+export default {
+  computed: {
+    ...mapGetters({
+      entered: 'entered'
+    })
+  },
+  watch: {
+    async entered (val) {
+      await this.$delay(1100)
+      val ? this.enter() : this.leave()
+    }
   },
   methods: {
-    onIntersect() {
-      const options = {
-        root: null,
-        rootMargin: "-72px",
-        threshold: 0.6
-      }
-      const observer = new IntersectionObserver(this.addShowClass)
-      observer.observe(this.$refs.imgback)
+    enter () {
+      requestAnimationFrame(() => {
+        TweenMax.to(this.$refs.wrap, 2, {
+          scale: 1.2,
+          rotation: 712,
+          startAt: {
+            rotation: 0,
+          },
+          ease: Expo.easeInOut
+        })
+        TweenMax.to(this.$refs.shadow, 2, {
+          y: '3px',
+          x: '3px',
+          ease: Expo.easeOut
+        })
+        TweenMax.to(this.$refs.face, 2, {
+          y: '-3px',
+          x: '-3px',
+          ease: Expo.easeOut
+        })
+      })
     },
-   addShowClass(entries) {
-     for(const e of entries) {
-       if (e.intersectionRatio) {
-         e.target.classList.add("img-in")
-       }
-     }
-   }
- }
+    leave () {
+      requestAnimationFrame(() => {
+        TweenMax.to(this.$refs.wrap, 2, {
+          scale: 0,
+          rotation: 0,
+          startAt: {
+            rotation: 712,
+          },
+          ease: Expo.easeInOut
+        })
+      })
+    }
+  }
 }
 </script>
 <style lang="sass">
-.about-main
-  width: 90%
-  margin: 0 auto
-
-.about-img-container
+.TheBackground
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  width: 100%
+  height: 100%
+  font-size: 12vw
+  font-weight: bold
+  line-height: 1.5
+.TheBackground_Wrap
   position: relative
-  width: 100%
-  height: 100%
-  overflow: hidden
-  text-align: center
-
-.img-mask-container
-  position: relative
-  width: 100%
-  height: 100%
-  text-align: center
-  &::before
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    display: block
-    width: 100%
-    height: 100%
-    background-color: #b70000
-    transition: 1.8s cubic-bezier(0.5, 0, 0.75, 0)
-
-.img-in
-  &::before
-    transform: translate(100%)
-
-.img-content
-  width: 100%
-  height: 100%
-  +sp-view
-    width: 100%
-
-.about-title
+  transform: scale(0)
+.TheBackground_WrapShadow
+  color: #0f0f0f
+.TheBackground_WrapFace
   position: absolute
-  top: 10%
-  left: 50%
-  transform: translateX(-50%)
-  font-family: 'Cinzel', serif
-  font-weight: 500
-  font-size: 14em
-  white-space: nowrap
-  pointer-events: none
-  +pc-lg-view
-    font-size: 11em
-  +pc-md-view
-    font-size: 8.5em
-  +pc-sm-view
-    font-size: 7.5em
-  +sp-view
-    font-size: 5em
-    bottom: 0
-    margin-top: 10%
-    height: 30%
-    -webkit-text-stroke: 1px #fafafa
-    color: transparent
-
+  top: 0
+  left: 0
+  color: #2d2d2d
 </style>
