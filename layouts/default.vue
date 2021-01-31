@@ -16,8 +16,8 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #111111
-  color: #fafafa
+  background-color: #ffffff
+  color: #222222
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
