@@ -1,6 +1,5 @@
 <template lang="pug">
 .index__container(:class="{'showContent': show}")
-  .anime-cotainer
   pheader
   logo
   .works
@@ -61,25 +60,36 @@ export default {
 <style lang="sass">
 .index__container
   width: 100%
+  -ms-overflow-style: none
+  scrollbar-width: none
 
 .showContent
   opacity: 1
 
 .works
   margin-top: 160px
+  +sp-view
+    margin-top: 48px
+
 .works-title
   width: 3052px
   +sp-view
     margin-left: -240px
     width: 960px
+
 .auto-animation
   animation: automove 16s linear infinite
   display: flex
   +sp-view
-    animation-duration: 12s
+    animation-duration: 8s
+@keyframes automove
+  0%
+    transform: translate(-50%)
+  100%
+    transform: translate(-100%)
+
 .main-title
   width: 960px
   +sp-view
     width: 480px
-
 </style>

@@ -9,8 +9,6 @@ header.header
         a.header-item-link.link-index(href="/")
           .header-item-text works
 </template>
-<script>
-</script>
 <style lang="sass">
 .header
   position: fixed
@@ -20,7 +18,6 @@ header.header
   height: 64px
   z-index: 13
   +sp-view
-    height: 64px
 
 .header-container
   margin: 20px 56px

@@ -64,7 +64,8 @@ export default{
 .content-index
   .showd
     +sp-view
-      margin-top: 20%
+      width: 80%
+      margin-top: 64px
 
 .showd
   z-index: 22

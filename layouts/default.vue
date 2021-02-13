@@ -28,6 +28,10 @@ html
 body
   position: relative
   width: 100%
+
+#__nuxt
+  position: relative
+  overflow-x: hidden
 *
   box-sizing: border-box
 body, .container
@@ -52,11 +56,6 @@ a
   text-decoration: none
   color: #fafafa
 
-.container
-  position: relative
-  height: auto
-  -ms-overflow-style: none
-  scrollbar-width: none
 .container::-webkit-scrollbar
   display: none
 </style>

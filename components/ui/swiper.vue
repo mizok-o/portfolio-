@@ -42,6 +42,8 @@ export default {
 .swiper
   position: relative
   margin-top: 72px
+  +sp-view
+    margin-top: 32px
 
 .swiper-content
   display: block
@@ -62,13 +64,14 @@ export default {
   line-height: 1
   +sp-view
     font-size: 380%
-    margin: 0 12% 0 0
 
 .product-text
   font-size: 360%
   margin-left: 32px
   +pc-md-view
     font-size: 200%
+  +sp-view
+    margin-left: 12px
 
 /* スワイパー画像 */
 .product-main
@@ -76,6 +79,10 @@ export default {
   border: 10px solid #111
   border-radius: 8px
   z-index: 20
+  +sp-view
+    margin: 12px auto 0
+    border: 5px solid #111
+    border-radius: 4px
 
 .product-main-img
   height: 0
@@ -97,6 +104,10 @@ export default {
   width: calc(80% + 48px)
   height: 44px
   z-index: 1
+  +sp-view
+    bottom: -60px
+    width: 80%
+    height: 28px
 
 .swiper-button-prev, .swiper-button-next
   width: 44px
@@ -109,6 +120,9 @@ export default {
     background-color: #ffffff
   &:focus
     outline: 0
+  +sp-view
+    position: static
+    width: 28px
 
 .prev-round, .next-round
   width: 100%
@@ -120,11 +134,5 @@ export default {
     width: 100%
     height: 100%
     background-color: #fafafa
-
-@keyframes automove
-  0%
-    transform: translate(-50%)
-  100%
-    transform: translate(0%)
 
 </style>
