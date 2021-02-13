@@ -8,13 +8,14 @@
     "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/markdownit": "^1.2.9",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "gsap": "^3.2.6",
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
