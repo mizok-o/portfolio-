@@ -4,7 +4,6 @@
     .img-mask-container(ref="imgback")
       img.img-content(src="~/assets/img/about-me.jpg")
   h1.about-title About me
-
 </template>
 <script>
 import {TweenMax} from "gsap"
@@ -34,8 +33,7 @@ export default{
 </script>
 <style lang="sass">
 .about-main
-  width: 90%
-  margin: 0 auto
+  width: 100%
 
 .about-img-container
   position: relative
@@ -72,16 +70,13 @@ export default{
 
 .about-title
   position: absolute
-  top: 10%
+  top: 14%
   left: 50%
   transform: translateX(-50%)
-  font-family: 'Cinzel', serif
   font-weight: 500
-  font-size: 14em
+  font-size: 10em
   white-space: nowrap
   pointer-events: none
-  +pc-lg-view
-    font-size: 11em
   +pc-md-view
     font-size: 8.5em
   +pc-sm-view

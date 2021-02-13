@@ -4,12 +4,13 @@
     swiper(:options="swiperOption")
       swiper-slide.swiper-content(v-for="item in items")
         .product-top
-          .product-number {{ item.number }}
-          .product-title {{ item.title }}
-        .product-main
-          a.product-main-link(:href="item.link")
-            .product-main-img(:style="{ backgroundImage: `url(${item.img.url})` }")
-    .swiper-nav
+          a(:href="item.link")
+            .product-title
+              .product-number {{ item.number }}
+              .product-text {{ item.title }}
+            .product-main
+              .product-main-img(:style="{ backgroundImage: `url(${item.img.url})` }")
+    .swiper-buttons
       .swiper-button-prev
         .prev-icon
       .swiper-button-next
@@ -40,37 +41,38 @@ export default {
 /* 全体 */
 .swiper
   position: relative
-  margin-top: 112px
+  margin-top: 72px
 
 .swiper-content
   display: block
-  /* margin: 0 12% */
 
 /* スライドのタイトル */
 .product-top
-  display: flex
-  height: 96px
-  justify-content: center
-  align-items: center
+  max-width: 880px
+  width: 80%
+  margin: 0 auto
 
 .product-title
-  font-size: 260%
-  margin-left: 72px
-  +pc-md-view
-    font-size: 200%
+  display: flex
+  justify-content: flex-start
+  align-items: center
 
-/* スライドの番号 */
 .product-number
   font-size: 600%
+  line-height: 1
   +sp-view
     font-size: 380%
     margin: 0 12% 0 0
 
+.product-text
+  font-size: 360%
+  margin-left: 32px
+  +pc-md-view
+    font-size: 200%
+
 /* スワイパー画像 */
 .product-main
-  max-width: 880px
-  width: 80%
-  margin: 48px auto 48px
+  margin: 24px auto
   border: 10px solid #111
   border-radius: 8px
   z-index: 20
@@ -82,38 +84,23 @@ export default {
   background-position: center center
   background-repeat: no-repeat
 
-//.main-text
-  position: absolute
-  right: 0
-  bottom: 0%
-  letter-spacing: 1.6px
-  transform-origin: top left
-  font-family: 'ff-meta-web-pro'
-  font-weight: 600
-  +pc-sm-view
-    font-size: 16px
-    transform: none
-    position: static
-    margin-top: 4%
-  +sp-view
-    width: 88%
-    margin: 3% 4% 0 0
-    font-size: 12px
-
 /* スワイパーのボタン */
-.swiper-nav
+.swiper-buttons
   position: absolute
-  top: 50%
-  bottom: 0
-  left: 0
+  bottom: 28px
   right: 0
-  width: 100%
+  left: 50%
+  transform: translateX(-50%)
+  display: flex
+  justify-content: space-between
+  max-width: 1052px
+  width: calc(80% + 48px)
   height: 44px
+  z-index: 1
 
 .swiper-button-prev, .swiper-button-next
-  transform: translateY(-50%)
   width: 44px
-  height: 44px
+  height: 100%
   border-radius: 50%
   border: 1px solid #ffffff
   background-image: none
@@ -124,8 +111,6 @@ export default {
     outline: 0
 
 .prev-round, .next-round
-  position: relative
-  overflow: hidden
   width: 100%
   height: 100%
   border-radius: 50%

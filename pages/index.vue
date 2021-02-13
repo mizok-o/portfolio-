@@ -1,5 +1,5 @@
 <template lang="pug">
-.container(:class="{'showContent': show}")
+.index__container(:class="{'showContent': show}")
   .anime-cotainer
   pheader
   logo
@@ -20,13 +20,13 @@
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import swiper from '~/components/ui/swiper.vue'
-import Sns from '~/components/ui/Sns.vue'
+import sns from '~/components/ui/sns.vue'
 import axios from "axios"
 export default {
   components: {
     Logo,
     pheader,
-    Sns,
+    sns,
     swiper
   },
   head: {
@@ -59,15 +59,14 @@ export default {
 }
 </script>
 <style lang="sass">
-.container
+.index__container
   width: 100%
-
 
 .showContent
   opacity: 1
 
 .works
-  margin-top: 216px
+  margin-top: 160px
 .works-title
   width: 3052px
   +sp-view

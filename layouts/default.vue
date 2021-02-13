@@ -16,8 +16,8 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #ffffff
-  color: #222222
+  color: #fafafa
+  background-color: #b70500
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -50,7 +50,7 @@ ul, ol
 
 a
   text-decoration: none
-  color: #fff
+  color: #fafafa
 
 .container
   position: relative
