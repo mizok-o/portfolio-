@@ -69,5 +69,8 @@ export default {
     vendor: [
       'vue-awesome-swiper'
     ]
-}
+  },
+  generate: {
+    fallback: true
+  }
 }
