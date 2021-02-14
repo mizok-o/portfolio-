@@ -33,6 +33,7 @@ export default{
 </script>
 <style lang="sass">
 .about-main
+  position: relative
   width: 100%
 
 .about-img-container
@@ -43,7 +44,6 @@ export default{
   text-align: center
 
 .img-mask-container
-  position: relative
   width: 100%
   height: 100%
   text-align: center
@@ -70,10 +70,11 @@ export default{
 
 .about-title
   position: absolute
-  top: 14%
+  top: 50%
   left: 50%
-  transform: translateX(-50%)
+  transform: translate(-50%, -50%)
   font-weight: 500
+  line-height: 1
   font-size: 10em
   white-space: nowrap
   pointer-events: none
@@ -83,9 +84,8 @@ export default{
     font-size: 7.5em
   +sp-view
     font-size: 5em
-    bottom: 0
-    margin-top: 10%
-    height: 30%
+    top: 80%
+    transform: translate(-50%, 0)
     -webkit-text-stroke: 1px #fafafa
     color: transparent
 
