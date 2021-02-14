@@ -1,6 +1,6 @@
 export default {
   mode: 'universal',
-
+  pageTransition: 'page',
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -23,7 +23,7 @@ export default {
   ],
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false },
-    '~plugins/scroll.js'
+    { src: '~plugins/mixin' }
   ],
 
   buildModules: [
@@ -69,5 +69,8 @@ export default {
     vendor: [
       'vue-awesome-swiper'
     ]
-}
+  },
+  generate: {
+    fallback: true
+  }
 }

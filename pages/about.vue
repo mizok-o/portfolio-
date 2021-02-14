@@ -1,17 +1,22 @@
 <template lang="pug">
-.container
-   pheader
-   aboutcontainer
+.about__container
+  pheader
+  .about__content
+    aboutmain
+    abouttext
+    .about__skills
+    //Sns
 </template>
 <script>
 import pheader from '~/components/layout/pheader.vue'
-import Logo from '~/components/ui/Logo.vue'
-import aboutcontainer from '~/components/about/about-container.vue'
+import aboutmain from '~/components/about/about-main.vue'
+import abouttext from '~/components/about/about-text.vue'
+// import Sns from '~/components/ui/Sns.vue'
 export default {
   components: {
-      pheader,
-      Logo,
-      aboutcontainer
+    pheader,
+    aboutmain,
+    abouttext
   },
   head: {
     bodyAttrs: {
@@ -21,11 +26,18 @@ export default {
 }
 </script>
 <style lang="sass">
-.container
-  //padding: 3% 5% 0
-  //height: 100vh
-.content-about
-  overflow-y: hidden
+.about__container
+  margin: 128px auto
+  max-width: 1080px
+  width: 100%
+  height: 100%
+  +pc-sm-view
+    margin: 104px auto 32px
   +sp-view
-    overflow: inherit
+    margin: 72px auto 24px
+
+.about__content
+  max-width: 720px
+  width: 80%
+  margin: 0 auto
 </style>

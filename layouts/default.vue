@@ -2,8 +2,11 @@
   nuxt
 </template>
 <script>
+export default {
+}
 </script>
 <style lang="sass">
+
 html
   font-family: 'Cinzel', serif
   font-size: 18px
@@ -13,8 +16,8 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #B70000
   color: #fafafa
+  background-color: #b70500
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -25,6 +28,10 @@ html
 body
   position: relative
   width: 100%
+
+#__nuxt
+  position: relative
+  overflow-x: hidden
 *
   box-sizing: border-box
 body, .container
@@ -47,13 +54,8 @@ ul, ol
 
 a
   text-decoration: none
-  color: #fff
+  color: #fafafa
 
-.container
-  position: relative
-  height: auto
-  -ms-overflow-style: none
-  scrollbar-width: none
 .container::-webkit-scrollbar
   display: none
 </style>
