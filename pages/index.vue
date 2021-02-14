@@ -25,8 +25,8 @@ export default {
   components: {
     Logo,
     pheader,
-    sns,
-    swiper
+    swiper,
+    sns
   },
   head: {
     bodyAttrs: {

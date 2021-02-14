@@ -23,7 +23,6 @@
     p.mail-address mizoko320@gmail.com
 </template>
 <script>
-
 export default{
   name: 'animation',
  mounted() {
@@ -150,5 +149,4 @@ export default{
     margin-top: 8px
 .mail-address
   margin-top: 8px
-  font-family: "ff-meta"
 </style>
