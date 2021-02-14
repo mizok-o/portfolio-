@@ -5,19 +5,19 @@
     aboutmain
     abouttext
     .about__skills
-    sns
+    Sns
 </template>
 <script>
 import pheader from '~/components/layout/pheader.vue'
 import aboutmain from '~/components/about/about-main.vue'
 import abouttext from '~/components/about/about-text.vue'
-import sns from '~/components/ui/sns.vue'
+import Sns from '~/components/ui/Sns.vue'
 export default {
   components: {
     pheader,
     aboutmain,
     abouttext,
-    sns
+    Sns
   },
   head: {
     bodyAttrs: {

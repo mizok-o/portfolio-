@@ -13,20 +13,20 @@
         img.main-title(src="../assets/img/Current Works.svg")
     swiper(:items="items")
   .index-sns.u-sp-view
-    sns
+    Sns
 </template>
 <script>
 import Logo from '~/components/ui/Logo.vue'
 import pheader from '~/components/layout/pheader.vue'
 import swiper from '~/components/ui/swiper.vue'
-import sns from '~/components/ui/sns.vue'
+import Sns from '~/components/ui/Sns.vue'
 import axios from "axios"
 export default {
   components: {
     Logo,
     pheader,
     swiper,
-    sns
+    Sns
   },
   head: {
     bodyAttrs: {
