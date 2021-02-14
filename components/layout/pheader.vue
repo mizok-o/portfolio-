@@ -3,7 +3,7 @@ header.header
   .header-container
     ul.header-content
       li
-        a.header-item-link.link-about(href="/")
+        a.header-item-link.link-about(href="/about")
           .header-item-text about
       li
         a.header-item-link.link-index(href="/")
